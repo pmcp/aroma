@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script>document.getElementsByTagName("html")[0].className += " js";</script>
+  <script>
+    function addCss(path) {
+      var link = document.createElement('link');
+      link.type = 'text/css';
+      link.rel = 'stylesheet';
+      link.href = path;
+      document.head.appendChild(link);
+    }
+    if('CSS' in window && CSS.supports('color', 'var(--color-var)')) {
+      addCss('assets/css/style.css');
+    } else {
+      addCss('assets/css/style-fallback.css');
+    }
+  </script>
+  <noscript>
+    <link rel="stylesheet" href="assets/css/style-fallback.css">
+  </noscript>
+
+  <title>Aroma Prototype</title>
+</head>
+<body>
+  
+    <header
+    class="f-header js-f-header hide-nav hide-nav--fixed js-hide-nav js-hide-nav--main"
+    data-mobile-trigger='js-anim-menu-btn'
+    style="z-index:3;background-color: rgba(250,250,250,1);"
+  >
+    <div class="f-header__mobile-content container max-width-lg">
+      <a
+        href="#0"
+        class="f-header__logo"
+      >
+        <svg
+          width="130"
+          height="32"
+          viewBox="0 0 130 32"
+        >
+          <title>Go to homepage</title>
+          <circle
+            fill="var(--color-primary)"
+            cx="16"
+            cy="16"
+            r="16"
+          />
+          <rect
+            fill="var(--color-contrast-higher)"
+            x="41"
+            y="11"
+            width="89"
+            height="10"
+          />
+        </svg>
+      </a>
+
+      <button
+        class="reset anim-menu-btn js-anim-menu-btn f-header__nav-control js-tab-focus"
+        aria-label="Toggle menu"
+      >
+        <i
+          class="anim-menu-btn__icon anim-menu-btn__icon--close"
+          aria-hidden="true"
+        ></i>
+      </button>
+    </div>
+
+    <div
+      class="f-header__nav"
+      role="navigation"
+    >
+      <div class="f-header__nav-grid justify-between@md container max-width-lg">
+        <div class="f-header__nav-logo-wrapper flex-grow flex-basis-0">
+          <a
+            href="/"
+            class="f-header__logo"
+          >
+            <svg
+              width="130"
+              height="32"
+              viewBox="0 0 130 32"
+            >
+              <title>Go to homepage</title>
+              <circle
+                fill="var(--color-primary)"
+                cx="16"
+                cy="16"
+                r="16"
+              />
+              <rect
+                fill="var(--color-contrast-higher)"
+                x="41"
+                y="11"
+                width="89"
+                height="10"
+              />
+            </svg>
+          </a>
+        </div>
+
+        <ul class="f-header__list flex-grow flex-basis-0 justify-center@md">
+          <li class="f-header__item"><a
+              href="/article.html"
+              class="f-header__link"
+            >Article</a></li>
+         
+          <!-- <li class="f-header__item"><a
+              href="#0"
+              class="f-header__link"
+              aria-current="page"
+            >Resources</a></li>
+          <li class="f-header__item"><a
+              href="#0"
+              class="f-header__link"
+            >Pricing</a></li>
+          <li class="f-header__item"><a
+              href="#0"
+              class="f-header__link"
+            >Contact</a></li> -->
+        </ul>
+
+        <ul class="f-header__list flex-grow flex-basis-0 justify-end@md">
+
+            <li class="f-header__item">
+
+                <button class="btn btn--primary" aria-controls="modalForm1">Newsletter</button>
+    
+    
+              </li>
+
+
+          <li class="f-header__item"><a
+              href="#0"
+              class="f-header__link"
+            >
+              <button
+                class="btn btn--subtle btn--icon"
+                aria-controls="modal-search"
+              >
+                <svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                >
+                  <title>Toggle search</title>
+                  <g
+                    stroke-linecap="square"
+                    stroke-linejoin="miter"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-miterlimit="10"
+                  >
+                    <line
+                      x1="22"
+                      y1="22"
+                      x2="15.656"
+                      y2="15.656"
+                    ></line>
+                    <circle
+                      cx="10"
+                      cy="10"
+                      r="8"
+                    ></circle>
+                  </g>
+                </svg>
+              </button>
+            </a></li>
+         
+        </ul>
+      </div>
+    </div>
+
+  </header>
+
+
+<!-- Functionality: Modal Form -->
+
+  <div class="modal js-modal modal--search" id="modalForm1" data-animation="on">
+    <div class="modal__content padding-md max-width-xs" role="alertdialog" tabindex="-1" aria-labelledby="modalFormTitle1" aria-describedby="modalFormDescription1">
+      <div class="text-component margin-bottom-md">
+        <h3 id="modalFormTitle1">Join our Newsletter</h3>
+        <p id="modalFormDescription1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit asperiores molestiae ex.</p>
+      </div>
+  
+      <form class="margin-bottom-sm">
+        <div class="flex flex-column flex-row@xs flex-gap-xxxs">
+          <input aria-label="Email" class="form-control flex-grow" type="email" placeholder="Email">
+          <button class="btn btn--primary">Subscribe</button>
+        </div>
+      </form>
+  
+      <div class="text-component">
+        <p class="text-xs color-contrast-medium">Lorem ipsum dolor sit, amet <a href="#0" class="color-contrast-high">consectetur adipisicing</a> elit. Nisi molestias hic voluptatibus.</p>
+      </div>
+    </div>
+  
+    <button class="reset modal__close-btn js-modal__close">
+      <svg class="icon" viewBox="0 0 16 16"><title>Close modal window</title><g stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"><line x1="13.5" y1="2.5" x2="2.5" y2="13.5"></line><line x1="2.5" y1="2.5" x2="13.5" y2="13.5"></line></g></svg>
+    </button>
+  </div>
+
+
+
+<!-- Functionality: Modal Search -->
+
+<div
+class="modal modal--search js-modal"
+id="modal-search"
+data-animation="on"
+>
+<form class="full-screen-search">
+  <label
+    for="searchInputX"
+    class="sr-only"
+  >Search</label>
+  <input
+    class="reset full-screen-search__input"
+    type="search"
+    name="searchInputX"
+    id="searchInputX"
+    placeholder="Search..."
+  >
+  <button class="reset full-screen-search__btn">
+    <svg
+      class="icon"
+      viewBox="0 0 24 24"
+    >
+      <title>Search</title>
+      <g
+        stroke-linecap="square"
+        stroke-linejoin="miter"
+        stroke-width="2"
+        stroke="currentColor"
+        fill="none"
+        stroke-miterlimit="10"
+      >
+        <line
+          x1="22"
+          y1="22"
+          x2="15.656"
+          y2="15.656"
+        ></line>
+        <circle
+          cx="10"
+          cy="10"
+          r="8"
+        ></circle>
+      </g>
+    </svg>
+  </button>
+</form>
+
+<button class="reset modal__close-btn js-modal__close">
+  <svg
+    class="icon"
+    viewBox="0 0 16 16"
+  >
+    <title>Close modal window</title>
+    <g
+      stroke-width="1"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-miterlimit="10"
+    >
+      <line
+        x1="13.5"
+        y1="2.5"
+        x2="2.5"
+        y2="13.5"
+      ></line>
+      <line
+        x1="2.5"
+        y1="2.5"
+        x2="13.5"
+        y2="13.5"
+      ></line>
+    </g>
+  </svg>
+</button>
+</div>
+
+  
+
+
+
+<section class="sticky-hero sticky-hero--overlay-layer margin-bottom-xl js-sticky-hero">
+  <div class="sticky-hero__media" style="background-image:url(assets/img/2.jpg)" aria-hidden="true"></div>
+
+  <div class="sticky-hero__content">
+    <div class="container max-width-sm text-component text-center">
+      <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam obcaecati quas exercitationem.</h1>
+    </div>
+  </div>
+</section>
+
+<article class="article text-component container max-width-sm margin-bottom-xl" >
+    <!-- <h1>Lorem ipsum dolor sit amet consectetur.</h1> -->
+  
+    <p class="text-md color-contrast-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+  
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius, temporibus, aut officia minus sequi quae <a href="#0">molestias beatae</a>, qui ipsa mollitia alias accusamus voluptate ratione provident numquam iure quia aliquam tempore possimus consequatur vel. Iure atque enim in? Magnam quis cupiditate quia labore quaerat, eligendi nobis, ab similique harum nostrum nulla aliquam dolore adipisci ut. Eaque doloremque iure veniam nobis asperiores!</p>
+   
+    <figure class="text-component__block text-component__block--outset">
+      <img src="/assets/img/1.jpg" alt="Image description here">
+      <figcaption>Image caption</figcaption>
+    </figure>
+  
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis architecto doloribus perspiciatis.</p>
+  
+    <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h2>
+  
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, animi. <mark>Praesentium esse magnam sequi aut, repellat pariatur beatae quis</mark>. Quidem harum dolores ab velit neque suscipit vitae pariatur, perspiciatis voluptatum molestiae facere ad tempora. Non omnis fugiat libero magnam sapiente vel. Optio a, enim explicabo totam amet omnis accusantium! Quod.</p>
+  
+    <blockquote>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt soluta similique quia.</blockquote>
+  
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat fuga architecto accusamus?</p>
+  
+    <ul>
+      <li>Lorem, ipsum.</li>
+      <li>Lorem ipsum dolor sit amet.</li>
+      <li>Lorem, ipsum.</li>
+    </ul>
+  
+    <ol>
+      <li>Lorem, ipsum.</li>
+      <li>Lorem ipsum dolor sit amet.</li>
+      <li>Lorem, ipsum.</li>
+    </ol>
+  
+    <hr>
+  
+    <div class="text-component__block text-component__block--outset">
+      <h3 class="text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae officiis similique enim?</h3>
+    </div>
+  
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat hic autem consequatur libero, impedit fugiat facere ex! Fugit, cumque minus!</p>
+  
+    <figure class="text-component__block">
+      <img src="/assets/img/2.jpg" alt="Image description here">
+      <figcaption>Image caption</figcaption>
+    </figure>
+  
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto odit incidunt nobis cumque, assumenda quidem ducimus! Architecto, molestias reiciendis tempora pariatur nobis nam quibusdam, nemo repellendus rerum rem quam soluta.</p>
+  
+    <figure class="text-component__block text-component__block--left">
+      <img src="/assets/img/1.jpg" alt="Image description here">
+      <figcaption>Image caption</figcaption>
+    </figure>
+  
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis incidunt minus vero deserunt illum perspiciatis sed sit. Officia, quia at? Nisi dolores quis culpa nulla eveniet? Rem vel numquam ipsa voluptatum voluptate illo minima, temporibus atque officia soluta magnam laborum neque alias consequuntur enim aliquid consequatur non accusamus exercitationem. Perspiciatis dolorem a commodi alias, ad corporis iusto magnam in quae deleniti incidunt facilis voluptatibus. Aliquid reprehenderit, provident, totam necessitatibus cumque vel veniam consequuntur maxime iure accusamus explicabo recusandae neque quas?</p>
+  
+    <figure class="text-component__block text-component__block--outset text-component__block--right">
+      <img src="/assets/img/2.jpg" alt="Image description here">
+      <figcaption>Image caption</figcaption>
+    </figure>
+  
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod incidunt provident aspernatur quibusdam expedita soluta voluptas, sapiente ipsa praesentium eum earum, modi necessitatibus a eveniet quidem doloribus, sequi sed tenetur nesciunt consectetur totam asperiores assumenda inventore porro. Enim beatae iure ullam consequuntur, quibusdam similique quae doloribus delectus ipsa, cumque odit voluptatem? Natus, dolorem quaerat! Magni fugit enim nam quam beatae facilis, consequuntur sunt totam pariatur aperiam sequi laboriosam similique dolores aspernatur alias consectetur maxime voluptas, ut tempore. Ipsam vel, id repellat maiores non fuga unde modi voluptates nam reiciendis blanditiis. At veniam odit illum porro maiores magni quasi deserunt est?</p>
+  
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos vitae, sequi officia dignissimos laboriosam atque esse omnis. Perspiciatis, ratione eius.</p>
+  
+    <div class="text-component__block text-component__block--outset">
+      <div class="grid grid-gap-xs">
+        <figure class="col">
+          <img src="/assets/img/1.jpg" alt="Image description here">
+          <figcaption>Image caption</figcaption>
+        </figure>
+  
+        <figure class="col">
+          <img src="/assets/img/2.jpg" alt="Image description here">
+          <figcaption>Image caption</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam voluptatem dolore fugiat facilis sint quidem obcaecati voluptas ut quae aliquam dolorem omnis, odit nihil! Sint doloremque voluptates laborum illo excepturi eligendi asperiores corporis voluptatem iusto? Voluptatem repellendus consectetur exercitationem, quisquam corrupti rem reiciendis maiores aspernatur quaerat impedit aliquid minus voluptate, incidunt eveniet, et numquam non eligendi! Officiis suscipit ad illo.</p>
+  </article>
+
+  <!-- <div class="text-divider container max-width-lg"><span>The story continues...</span></div> -->
+
+
+<!-- Back to top -->
+
+<a class="back-to-top js-back-to-top" href="#" data-offset="100" data-duration="300">
+    <svg class="icon" viewBox="0 0 16 16"><title>Go to top of page</title><g stroke-width="1" stroke="currentColor"><polyline fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="15.5,11.5 8,4 0.5,11.5 "></polyline></g></svg>
+  </a>
+
+  
+<div class="margin-bottom-lg">
+    <h2 class="text-center">Keep on reading</h2>
+  </div>
+  
+<section class="container max-width-adaptive-lg padding-top-xl padding-bottom-xxl">
+  
+      <ul class="features-v3__cards grid grid-gap-lg">
+        <li class="col-4@md">
+          <a href="#0" class="card-v8">
+            <figure>
+              <img src="/assets/img/1.jpg" alt="Image description">
+            </figure>
+  
+            <footer class="padding-sm">
+              <p class="text-sm color-contrast-medium margin-bottom-sm">Label</p>
+              <div class="text-component">
+                <h4><span class="card-v8__title">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</span></h4>
+              </div>
+            </footer>
+          </a>
+        </li>
+  
+        <li class="col-4@md">
+          <a href="#0" class="card-v8">
+            <figure>
+              <img src="/assets/img/1.jpg" alt="Image description">
+            </figure>
+  
+            <footer class="padding-sm">
+              <p class="text-sm color-contrast-medium margin-bottom-sm">Label</p>
+              <div class="text-component">
+                <h4><span class="card-v8__title">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</span></h4>
+              </div>
+            </footer>
+          </a>
+        </li>
+  
+        <li class="col-4@md">
+          <a href="#0" class="card-v8">
+            <figure>
+              <img src="/assets/img/1.jpg" alt="Image description">
+            </figure>
+  
+            <footer class="padding-sm">
+              <p class="text-sm color-contrast-medium margin-bottom-sm">Label</p>
+              <div class="text-component">
+                <h4><span class="card-v8__title">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</span></h4>
+              </div>
+            </footer>
+          </a>
+        </li>
+      </ul>
+    
+  </section>
+
+  
+
+
+
+<div class="margin-bottom-lg">
+    <h2 class="text-center">Stay in touch</h2>
+  </div>
+<section class="socials-v5 padding-y-xxl">
+    
+  <div class="socials-v5__grid container max-width-adaptive-lg">
+    <div class="socials-v5__grid-item">
+      <form class="socials-v5__form">
+        <div class="flex flex-column flex-gap-xxxs">
+          <input aria-label="Email" class="form-control" type="email" placeholder="Email Address">
+          <button class="btn btn--primary">Join our Newsletter</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="socials-v5__grid-item">
+      <ul class="socials-v5__btns flex flex-gap-xs flex-wrap">
+        <li>
+          <a href="#0" class="socials-v5__btn">
+            <svg class="icon" viewBox="0 0 32 32"><title>Follow us on Twitter</title><g><path d="M32,6.1c-1.2,0.5-2.4,0.9-3.8,1c1.4-0.8,2.4-2.1,2.9-3.6c-1.3,0.8-2.7,1.3-4.2,1.6C25.7,3.8,24,3,22.2,3 c-3.6,0-6.6,2.9-6.6,6.6c0,0.5,0.1,1,0.2,1.5C10.3,10.8,5.5,8.2,2.2,4.2c-0.6,1-0.9,2.1-0.9,3.3c0,2.3,1.2,4.3,2.9,5.5 c-1.1,0-2.1-0.3-3-0.8c0,0,0,0.1,0,0.1c0,3.2,2.3,5.8,5.3,6.4c-0.6,0.1-1.1,0.2-1.7,0.2c-0.4,0-0.8,0-1.2-0.1 c0.8,2.6,3.3,4.5,6.1,4.6c-2.2,1.8-5.1,2.8-8.2,2.8c-0.5,0-1.1,0-1.6-0.1C2.9,27.9,6.4,29,10.1,29c12.1,0,18.7-10,18.7-18.7 c0-0.3,0-0.6,0-0.8C30,8.5,31.1,7.4,32,6.1z"></path></g></svg>
+          </a>
+        </li>
+  
+        <li>
+          <a href="#0" class="socials-v5__btn">
+            <svg class="icon" viewBox="0 0 32 32"><title>Follow us on Facebook</title><path d="M32,16A16,16,0,1,0,13.5,31.806V20.625H9.438V16H13.5V12.475c0-4.01,2.389-6.225,6.043-6.225a24.644,24.644,0,0,1,3.582.312V10.5H21.107A2.312,2.312,0,0,0,18.5,13v3h4.438l-.71,4.625H18.5V31.806A16,16,0,0,0,32,16Z"></path></svg>
+          </a>
+        </li>
+  
+        <li>
+          <a href="#0" class="socials-v5__btn">
+            <svg class="icon" viewBox="0 0 32 32"><title>Follow us on Youtube</title><path d="M31.7,9.6c0,0-0.3-2.2-1.3-3.2c-1.2-1.3-2.6-1.3-3.2-1.4C22.7,4.7,16,4.7,16,4.7h0c0,0-6.7,0-11.2,0.3 c-0.6,0.1-2,0.1-3.2,1.4c-1,1-1.3,3.2-1.3,3.2S0,12.2,0,14.8v2.4c0,2.6,0.3,5.2,0.3,5.2s0.3,2.2,1.3,3.2c1.2,1.3,2.8,1.2,3.5,1.4 C7.7,27.2,16,27.3,16,27.3s6.7,0,11.2-0.3c0.6-0.1,2-0.1,3.2-1.4c1-1,1.3-3.2,1.3-3.2s0.3-2.6,0.3-5.2v-2.4 C32,12.2,31.7,9.6,31.7,9.6z M12.7,20.2l0-9l8.6,4.5L12.7,20.2z"></path></svg>
+          </a>
+        </li>
+  
+        <li>
+          <a href="#0" class="socials-v5__btn">
+            <svg class="icon" viewBox="0 0 32 32"><title>Join our Slack channel</title><rect x="17" y="1" width="6" height="14" rx="3"></rect><rect x="1" y="9" width="14" height="6" rx="3"></rect><rect x="17" y="17" width="14" height="6" rx="3"></rect><rect x="9" y="17" width="6" height="14" rx="3"></rect><path d="M12,1a3,3,0,0,0,0,6h3V4A3,3,0,0,0,12,1Z"></path><path d="M1,20a3,3,0,0,0,6,0V17H4A3,3,0,0,0,1,20Z"></path><path d="M31,12a3,3,0,0,0-6,0v3h3A3,3,0,0,0,31,12Z"></path><path d="M20,31a3,3,0,0,0,0-6H17v3A3,3,0,0,0,20,31Z"></path></svg>
+          </a>
+        </li>
+  
+        <li>
+          <a href="#0" class="socials-v5__btn">
+            <svg class="icon" viewBox="0 0 32 32"><title>Follow us on Instagram</title><path d="M16,3.7c4,0,4.479.015,6.061.087a6.426,6.426,0,0,1,4.51,1.639,6.426,6.426,0,0,1,1.639,4.51C28.282,11.521,28.3,12,28.3,16s-.015,4.479-.087,6.061a6.426,6.426,0,0,1-1.639,4.51,6.425,6.425,0,0,1-4.51,1.639c-1.582.072-2.056.087-6.061.087s-4.479-.015-6.061-.087a6.426,6.426,0,0,1-4.51-1.639,6.425,6.425,0,0,1-1.639-4.51C3.718,20.479,3.7,20.005,3.7,16s.015-4.479.087-6.061a6.426,6.426,0,0,1,1.639-4.51A6.426,6.426,0,0,1,9.939,3.79C11.521,3.718,12,3.7,16,3.7M16,1c-4.073,0-4.584.017-6.185.09a8.974,8.974,0,0,0-6.3,2.427,8.971,8.971,0,0,0-2.427,6.3C1.017,11.416,1,11.927,1,16s.017,4.584.09,6.185a8.974,8.974,0,0,0,2.427,6.3,8.971,8.971,0,0,0,6.3,2.427c1.6.073,2.112.09,6.185.09s4.584-.017,6.185-.09a8.974,8.974,0,0,0,6.3-2.427,8.971,8.971,0,0,0,2.427-6.3c.073-1.6.09-2.112.09-6.185s-.017-4.584-.09-6.185a8.974,8.974,0,0,0-2.427-6.3,8.971,8.971,0,0,0-6.3-2.427C20.584,1.017,20.073,1,16,1Z"></path><path d="M16,8.3A7.7,7.7,0,1,0,23.7,16,7.7,7.7,0,0,0,16,8.3ZM16,21a5,5,0,1,1,5-5A5,5,0,0,1,16,21Z"></path><circle cx="24.007" cy="7.993" r="1.8"></circle></svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer class="footer-v4 padding-y-lg">
+    <div class="container max-width-lg">
+      <nav class="footer-v4__nav">
+        <ul class="footer-v4__nav-list">
+          <li class="footer-v4__nav-item"><a href="#0">Pricing</a></li>
+          <li class="footer-v4__nav-item"><a href="#0">Teams</a></li>
+          <li class="footer-v4__nav-item"><a href="#0">Updates</a></li>
+          <li class="footer-v4__nav-item"><a href="#0">Features</a></li>
+          <li class="footer-v4__nav-item"><a href="#0">Integrations</a></li>
+          <li class="footer-v4__nav-item"><a href="#0">Support</a></li>
+          <li class="footer-v4__nav-item"><a href="#0">Documentation</a></li>
+          <li class="footer-v4__nav-item"><a href="#0">Company</a></li>
+          <li class="footer-v4__nav-item"><a href="#0">Customers</a></li>
+          <li class="footer-v4__nav-item"><a href="#0">Our story</a></li>
+        </ul>
+      </nav>
+  
+      <div class="footer-v4__logo">
+        <a href="#0">
+          <svg width="130" height="32" viewBox="0 0 130 32"><title>Go to homepage</title><circle fill="var(--color-primary)" cx="16" cy="16" r="16"/><rect fill="var(--color-contrast-higher)" x="41" y="11" width="89" height="10"/></svg>
+        </a>
+      </div>
+  
+      <p class="footer-v4__print">&copy; Copyright. All rights reserved.</p>
+  
+      <div class="footer-v4__socials">
+        <a href="#0">
+          <svg class="icon" viewBox="0 0 16 16"><title>Follow us on Twitter</title><g><path d="M16,3c-0.6,0.3-1.2,0.4-1.9,0.5c0.7-0.4,1.2-1,1.4-1.8c-0.6,0.4-1.3,0.6-2.1,0.8c-0.6-0.6-1.5-1-2.4-1 C9.3,1.5,7.8,3,7.8,4.8c0,0.3,0,0.5,0.1,0.7C5.2,5.4,2.7,4.1,1.1,2.1c-0.3,0.5-0.4,1-0.4,1.7c0,1.1,0.6,2.1,1.5,2.7 c-0.5,0-1-0.2-1.5-0.4c0,0,0,0,0,0c0,1.6,1.1,2.9,2.6,3.2C3,9.4,2.7,9.4,2.4,9.4c-0.2,0-0.4,0-0.6-0.1c0.4,1.3,1.6,2.3,3.1,2.3 c-1.1,0.9-2.5,1.4-4.1,1.4c-0.3,0-0.5,0-0.8,0c1.5,0.9,3.2,1.5,5,1.5c6,0,9.3-5,9.3-9.3c0-0.1,0-0.3,0-0.4C15,4.3,15.6,3.7,16,3z"></path></g></svg>
+        </a>
+  
+        <a href="#0">
+          <svg class="icon" viewBox="0 0 16 16"><title>Follow us on Youtube</title><g><path d="M15.8,4.8c-0.2-1.3-0.8-2.2-2.2-2.4C11.4,2,8,2,8,2S4.6,2,2.4,2.4C1,2.6,0.3,3.5,0.2,4.8C0,6.1,0,8,0,8 s0,1.9,0.2,3.2c0.2,1.3,0.8,2.2,2.2,2.4C4.6,14,8,14,8,14s3.4,0,5.6-0.4c1.4-0.3,2-1.1,2.2-2.4C16,9.9,16,8,16,8S16,6.1,15.8,4.8z M6,11V5l5,3L6,11z"></path></g></svg>
+        </a>
+  
+        <a href="#0">
+          <svg class="icon" viewBox="0 0 16 16"><title>Follow us on Github</title><g><path  d="M8,0.2c-4.4,0-8,3.6-8,8c0,3.5,2.3,6.5,5.5,7.6 C5.9,15.9,6,15.6,6,15.4c0-0.2,0-0.7,0-1.4C3.8,14.5,3.3,13,3.3,13c-0.4-0.9-0.9-1.2-0.9-1.2c-0.7-0.5,0.1-0.5,0.1-0.5 c0.8,0.1,1.2,0.8,1.2,0.8C4.4,13.4,5.6,13,6,12.8c0.1-0.5,0.3-0.9,0.5-1.1c-1.8-0.2-3.6-0.9-3.6-4c0-0.9,0.3-1.6,0.8-2.1 c-0.1-0.2-0.4-1,0.1-2.1c0,0,0.7-0.2,2.2,0.8c0.6-0.2,1.3-0.3,2-0.3c0.7,0,1.4,0.1,2,0.3c1.5-1,2.2-0.8,2.2-0.8 c0.4,1.1,0.2,1.9,0.1,2.1c0.5,0.6,0.8,1.3,0.8,2.1c0,3.1-1.9,3.7-3.7,3.9C9.7,12,10,12.5,10,13.2c0,1.1,0,1.9,0,2.2 c0,0.2,0.1,0.5,0.6,0.4c3.2-1.1,5.5-4.1,5.5-7.6C16,3.8,12.4,0.2,8,0.2z"></path></g></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+  
+
+
+
+    
+  <script src="assets/js/scripts.js"></script>
+</body>
+</html>

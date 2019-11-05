@@ -13,6 +13,7 @@ var uglify = require('gulp-uglify');
 // js file paths
 var utilJsPath = 'main/assets/js'; // util.js path - you may need to update this if including the framework as external node module
 var componentsJsPath = 'main/assets/js/components/*.js'; // component js files
+var customComponentsJsPath = 'main/assets/js/custom-components/*.js'; // component js files
 var scriptsJsPath = 'main/assets/js'; //folder for final scripts.js/scripts.min.js files
 
 // css file paths
@@ -39,7 +40,7 @@ gulp.task('sass', function() {
 });
 
 gulp.task('scripts', function() {
-  return gulp.src([utilJsPath+'/util.js', componentsJsPath])
+  return gulp.src([utilJsPath+'/util.js', componentsJsPath, customComponentsJsPath])
   .pipe(concat('scripts.js'))
   .pipe(gulp.dest(scriptsJsPath))
   .pipe(browserSync.reload({

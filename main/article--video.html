@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script>document.getElementsByTagName("html")[0].className += " js";</script>
+  <script>
+    function addCss(path) {
+      var link = document.createElement('link');
+      link.type = 'text/css';
+      link.rel = 'stylesheet';
+      link.href = path;
+      document.head.appendChild(link);
+    }
+    if('CSS' in window && CSS.supports('color', 'var(--color-var)')) {
+      addCss('assets/css/style.css');
+    } else {
+      addCss('assets/css/style-fallback.css');
+    }
+  </script>
+  <noscript>
+    <link rel="stylesheet" href="assets/css/style-fallback.css">
+  </noscript>
+
+  <title>Aroma Prototype</title>
+</head>
+<body>
+
+
+
+  
+  <header
+  class="f-header js-f-header hide-nav hide-nav--fixed js-hide-nav js-hide-nav--main"
+  data-mobile-trigger='js-anim-menu-btn'
+  style="z-index:3"
+>
+  <div class="f-header__mobile-content container max-width-lg">
+    <a
+      href="/"
+      class="f-header__logo"
+    >
+      <svg
+        width="130"
+        height="32"
+        viewBox="0 0 130 32"
+      >
+        <title>Go to homepage</title>
+        <circle
+          fill="var(--color-primary)"
+          cx="16"
+          cy="16"
+          r="16"
+        />
+        <rect
+          fill="var(--color-contrast-higher)"
+          x="41"
+          y="11"
+          width="89"
+          height="10"
+        />
+      </svg>
+    </a>
+
+    <button
+      class="reset anim-menu-btn js-anim-menu-btn f-header__nav-control js-tab-focus"
+      aria-label="Toggle menu"
+    >
+      <i
+        class="anim-menu-btn__icon anim-menu-btn__icon--close"
+        aria-hidden="true"
+      ></i>
+    </button>
+  </div>
+
+  <div
+    class="f-header__nav"
+    role="navigation"
+  >
+    <div class="f-header__nav-grid justify-between@md container max-width-lg">
+      <div class="f-header__nav-logo-wrapper flex-grow flex-basis-0">
+        <a
+          href="/"
+          class="f-header__logo"
+        >
+          <svg
+            width="130"
+            height="32"
+            viewBox="0 0 130 32"
+          >
+            <title>Go to homepage</title>
+            <circle
+              fill="var(--color-primary)"
+              cx="16"
+              cy="16"
+              r="16"
+            />
+            <rect
+              fill="var(--color-contrast-higher)"
+              x="41"
+              y="11"
+              width="89"
+              height="10"
+            />
+          </svg>
+        </a>
+      </div>
+
+      <ul class="f-header__list flex-grow flex-basis-0 justify-center@md">
+        <li class="f-header__item"><a
+            href="/article.html"
+            class="f-header__link"
+          >Article</a></li>
+        <li class="f-header__item">
+          <a
+            href="#0"
+            class="f-header__link"
+          >
+            <span>Solutions</span>
+            <svg
+              class="f-header__dropdown-icon icon"
+              aria-hidden="true"
+              viewBox="0 0 12 12"
+            >
+              <path d="M6,9l4-5H2Z" /></svg>
+          </a>
+
+          <ul class="f-header__dropdown">
+            <li><a
+                href="#0"
+                class="f-header__dropdown-link"
+              >Sub Nav Item One</a></li>
+            <li><a
+                href="#0"
+                class="f-header__dropdown-link"
+              >Sub Nav Item Two</a></li>
+            <li><a
+                href="#0"
+                class="f-header__dropdown-link"
+              >Sub Nav Item Three</a></li>
+            <li><a
+                href="#0"
+                class="f-header__dropdown-link"
+              >Sub Nav Item Four</a></li>
+            <li><a
+                href="#0"
+                class="f-header__dropdown-link"
+              >Sub Nav Item Five</a></li>
+          </ul>
+        </li>
+        <li class="f-header__item"><a
+            href="#0"
+            class="f-header__link"
+            aria-current="page"
+          >Resources</a></li>
+        <li class="f-header__item"><a
+            href="#0"
+            class="f-header__link"
+          >Pricing</a></li>
+        <li class="f-header__item"><a
+            href="#0"
+            class="f-header__link"
+          >Contact</a></li>
+      </ul>
+
+      <ul class="f-header__list flex-grow flex-basis-0 justify-end@md">
+        <li class="f-header__item"><a
+            href="#0"
+            class="f-header__link"
+          >
+            <button
+              class="btn btn--subtle btn--icon"
+              aria-controls="modal-search"
+            >
+              <svg
+                class="icon"
+                viewBox="0 0 24 24"
+              >
+                <title>Toggle search</title>
+                <g
+                  stroke-linecap="square"
+                  stroke-linejoin="miter"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-miterlimit="10"
+                >
+                  <line
+                    x1="22"
+                    y1="22"
+                    x2="15.656"
+                    y2="15.656"
+                  ></line>
+                  <circle
+                    cx="10"
+                    cy="10"
+                    r="8"
+                  ></circle>
+                </g>
+              </svg>
+            </button>
+          </a></li>
+        <li class="f-header__item"><a
+            href="#0"
+            class="f-header__btn btn btn--primary"
+          >Button</a></li>
+      </ul>
+    </div>
+  </div>
+
+</header>
+
+
+  
+  
+
+
+<section class="video-bg">
+  <div class="video-bg__media" aria-hidden="true">
+    <img src="../../assets/img/video-background-hero-img-1.jpg" alt="Video Preview">
+    <video autoplay loop muted playsInline src="../../assets/video/1.mp4"></video>
+  </div>
+
+  <div class="video-bg__content container max-width-lg">
+    <div class="flex flex-center padding-y-xxxl">
+      <div class="text-component text-center">
+        <h1>Responsive Video Background</h1>
+      </div>
+    </div>
+  </div>
+</section>   
+
+
+<nav class="breadcrumbs" aria-label="Breadcrumbs">
+    <ol class="breadcrumbs__list">
+      <li class="breadcrumbs__item">
+        <a href="#0">Home</a>
+        <span class="breadcrumbs__separator" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 16 16"><g stroke-width="1" stroke="currentColor"><polyline fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="6.5,3.5 11,8 6.5,12.5 "></polyline></g></svg>
+        </span>
+      </li>
+  
+      <li class="breadcrumbs__item">
+        <a href="#0">Gallery</a>
+        <span class="breadcrumbs__separator" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 16 16"><g stroke-width="1" stroke="currentColor"><polyline fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="6.5,3.5 11,8 6.5,12.5 "></polyline></g></svg>
+        </span>
+      </li>
+  
+      <li class="breadcrumbs__item">
+        <a href="#0">Web</a>
+        <span class="breadcrumbs__separator" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 16 16"><g stroke-width="1" stroke="currentColor"><polyline fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="6.5,3.5 11,8 6.5,12.5 "></polyline></g></svg>
+        </span>
+      </li>
+  
+      <li class="breadcrumbs__item" aria-current="page">Project</li>
+    </ol>
+  </nav>
+  
+
+<script src="assets/js/scripts.js"></script>
+</body>
+</html>
