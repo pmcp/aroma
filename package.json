@@ -1,0 +1,33 @@
+{
+  "name": "aroma-prototype",
+  "version": "1.0.0",
+  "description": "Prototype for the Aroma Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmcp/aroma.git"
+  },
+  "author": "Friendly Internet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pmcp/aroma/issues"
+  },
+  "homepage": "https://github.com/pmcp/aroma#readme",
+  "devDependencies": {
+    "codyhouse-framework": "^2.1.11",
+    "autoprefixer": "^9.4.3",
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sass-glob": "^1.1.0",
+    "gulp-uglify": "^3.0.2",
+    "postcss-calc": "^7.0.1",
+    "postcss-css-variables": "git+https://github.com/CodyHouse/postcss-css-variables.git"
+  }
+}
