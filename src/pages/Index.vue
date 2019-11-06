@@ -5,7 +5,7 @@
     <g-image alt="Example image" src="~/favicon.png" width="135" />
 
     <h1>Hello, world!</h1>
-
+  {{ users }}
     <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores
     </p>
@@ -17,6 +17,20 @@
 
   </Layout>
 </template>
+
+<page-query>
+query {
+    craft {
+      users {
+        id
+        username
+      }
+     	entries(section: "articles", limit: 1, orderBy: "dateCreated DESC") {
+        title
+      }
+    }
+}
+</page-query>
 
 <script>
 export default {
