@@ -6,5 +6,17 @@
 
 module.exports = {
   siteName: 'Gridsome',
-  plugins: []
+  plugins: [
+    {
+      use: '@gridsome/source-graphql',
+      options: {
+        url: process.env.CRAFT_API_URL,
+        fieldName: 'craft',
+        typeName: 'craft',
+        headers: {
+          Authorization: `Bearer $​{process.env.CRAFT_API_TOKEN​}`,
+        }
+      }
+    }
+  ]
 }
