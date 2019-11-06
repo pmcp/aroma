@@ -14,7 +14,7 @@ module.exports = {
         fieldName: 'craft',
         typeName: 'craft',
         headers: {
-          Authorization: `Bearer $​{process.env.CRAFT_API_TOKEN​}`,
+          Authorization: 'Bearer ' + process.env.CRAFT_API_TOKEN
         }
       }
     }
