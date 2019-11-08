@@ -12,14 +12,13 @@ function addStyleResource (rule) {
     .loader('style-resources-loader')
     .options({
       patterns: [
-        path.resolve(__dirname, './src/assets/sass/_globals.sass'),
-        // or if you use scss
-        path.resolve(__dirname, './src/assets/sass/_globals.scss'),
-        // you can also use a glob if you'd prefer
-        path.resolve(__dirname, './src/assets/sass/*.sass'),
-        // or scss
-        path.resolve(__dirname, './src/assets/sass/*.scss'),
+        path.resolve(__dirname, './node_modules/codyhouse-framework/main/assets/css/base/*.scss'),
+        path.resolve(__dirname, './src/assets/scss/_custom-style.scss'),
+        path.resolve(__dirname, './src/assets/scss/style.scss'),
+        path.resolve(__dirname, './src/assets/scss/components/**/*.scss'),
+        path.resolve(__dirname, './src/assets/scss/custom-components/**/*.scss')
       ],
+      injector: 'append'
     })
 }
 
@@ -42,14 +41,10 @@ module.exports = {
   chainWebpack (config) {
     // Load variables for all vue-files
     const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
-    
     types.forEach(type => {
-      addStyleResource(config.module.rule('sass').oneOf(type))
-    })
-
-    // or if you use scss
-    types.forEach(type => {
+      
       addStyleResource(config.module.rule('scss').oneOf(type))
     })
-	}
+  },
 }
+
