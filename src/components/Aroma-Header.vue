@@ -1,11 +1,14 @@
 <template>
   <div>
+
     <header
       class="f-header js-f-header hide-nav hide-nav--fixed js-hide-nav js-hide-nav--main"
       data-mobile-trigger='js-anim-menu-btn'
       style="z-index:3;background-color: rgba(250,250,250,1);"
     >
+
       <div class="f-header__mobile-content container max-width-lg">
+
         <a
           href="#0"
           class="f-header__logo"
@@ -77,12 +80,19 @@
           </div>
 
           <ul class="f-header__list flex-grow flex-basis-0 justify-center@md">
-            <li class="f-header__item"><a
-                href="/article.html"
+            <li
+              v-for="l in $static.craft.entries"
+              :key="l.uid"
+              class="f-header__item"
+            >
+              <a
+                :href="'/article/' + l.slug"
                 class="f-header__link"
-              >Article</a>
+              >
+                {{ l.title }}
+              </a>
             </li>
-          
+
           </ul>
 
           <ul class="f-header__list flex-grow flex-basis-0 justify-end@md">
@@ -116,10 +126,23 @@
 </template>
 
 
+<static-query>
+query {
+  craft {
+    entries(section: "articles", limit: 1, orderBy: "dateCreated DESC") {
+      title,
+      slug,
+      uid 
+    }
+  }
+}
+</static-query>
+
+
 <script>
 import AromaSearch from "~/components/Aroma-Search.vue";
-import AromaModalNewsletter from '~/components/Aroma-ModalNewsletter.vue'
-import AromaModalSearch from '~/components/Aroma-ModalSearch.vue'
+import AromaModalNewsletter from "~/components/Aroma-ModalNewsletter.vue";
+import AromaModalSearch from "~/components/Aroma-ModalSearch.vue";
 
 export default {
   components: {

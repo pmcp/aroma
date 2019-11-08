@@ -1,5 +1,9 @@
 export default [
   {
+    path: "/article/title-of-an-article/",
+    component: () => import(/* webpackChunkName: "page--src--templates--article-vue" */ "/Users/pmcp/dev/aroma/src/templates/Article.vue")
+  },
+  {
     path: "/about/",
     component: () => import(/* webpackChunkName: "page--src--pages--about-vue" */ "/Users/pmcp/dev/aroma/src/pages/About.vue")
   },
