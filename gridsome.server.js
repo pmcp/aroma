@@ -6,33 +6,11 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = function (api) {
-  api.createPages(async ({ graphql, createPage }) => {
-    const { data } = await graphql(`{
-      
-        craft {
-          users {
-            id
-            username
-          }
-           entries(section: "articles", limit: 1, orderBy: "dateCreated DESC") {
-            title
-            id
-          }
-        
-        }
-    
-    }`)
+  api.loadSource(({ addCollection }) => {
+    // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
+  })
 
-    // Articles
-    data.craft.entries.forEach((el) => {
-      createPage({
-        path: `/article/${el.id}/`,
-        component: './src/templates/Article.vue',
-        context: {
-          id: el.id,
-          title: el.title,
-        }
-      })
-    })
+  api.createPages(({ createPage }) => {
+    // Use the Pages API here: https://gridsome.org/docs/pages-api/
   })
 }
