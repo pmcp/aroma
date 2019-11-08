@@ -1,4 +1,4 @@
 node_modules
-src/.temp
+/src/.temp/*
 .cache
-.dist
+/dist/*
