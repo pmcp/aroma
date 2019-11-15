@@ -2,3 +2,4 @@ node_modules
 /src/.temp/*
 .cache
 /dist/*
+/**/*/.DS_Store
