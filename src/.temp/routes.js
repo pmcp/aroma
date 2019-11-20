@@ -4,6 +4,10 @@ export default [
     component: () => import(/* webpackChunkName: "page--src--templates--article-vue" */ "/Users/pmcp/dev/aroma/src/templates/Article.vue")
   },
   {
+    path: "/index-after-launch/",
+    component: () => import(/* webpackChunkName: "page--src--pages--index-after-launch-vue" */ "/Users/pmcp/dev/aroma/src/pages/Index_afterLaunch.vue")
+  },
+  {
     path: "/about/",
     component: () => import(/* webpackChunkName: "page--src--pages--about-vue" */ "/Users/pmcp/dev/aroma/src/pages/About.vue")
   },

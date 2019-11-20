@@ -13,7 +13,8 @@ function addStyleResource (rule) {
     .options({
       patterns: [
         path.resolve(__dirname, './node_modules/codyhouse-framework/main/assets/css/base/*.scss'),
-        path.resolve(__dirname, './src/assets/scss/_custom-style.scss'),
+        path.resolve(__dirname, './src/assets/scss/custom-style/*.scss'),
+        path.resolve(__dirname, './src/assets/scss/aroma-style/*.scss'),
         path.resolve(__dirname, './src/assets/scss/style.scss'),
         path.resolve(__dirname, './src/assets/scss/components/**/*.scss'),
         path.resolve(__dirname, './src/assets/scss/custom-components/**/*.scss')
