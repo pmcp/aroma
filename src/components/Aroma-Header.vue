@@ -5,11 +5,8 @@
       class="f-header js-f-header hide-nav hide-nav--fixed js-hide-nav js-hide-nav--main aroma-nav"
       data-mobile-trigger='js-anim-menu-btn'
     >
-
       <div class="f-header__mobile-content container max-width-lg">
-
-       
-
+        <div></div>
         <button
           class="reset anim-menu-btn js-anim-menu-btn f-header__nav-control js-tab-focus"
           aria-label="Toggle menu"
@@ -26,23 +23,19 @@
         role="navigation"
       >
         <div class="f-header__nav-grid justify-end@md container max-width-lg">
-         
 
-          <ul class="f-header__list flex-grow flex-basis-0 justify-center@md">
+          <!-- <ul class="f-header__list flex-grow flex-basis-0 justify-center@md">
             <li
               v-for="l in $static.craft.entries"
               :key="l.uid"
               class="f-header__item"
             >
-              <a
-                :href="'/article/' + l.slug"
-                
-              >
+              <a :href="'/article/' + l.slug">
                 {{ l.title }}
               </a>
             </li>
 
-          </ul>
+          </ul> -->
 
           <ul class="f-header__list  flex-basis-0 justify-end@md">
 
@@ -55,11 +48,11 @@
 
             </li>
 
-            <li class="f-header__item"><a
+            <!-- <li class="f-header__item"><a
                 href="#0"
               >
                 <aroma-search></aroma-search>
-              </a></li>
+              </a></li> -->
 
           </ul>
         </div>
@@ -68,7 +61,7 @@
     </header>
 
     <aroma-modal-newsletter></aroma-modal-newsletter>
-    <aroma-modal-search></aroma-modal-search>
+    <!-- <aroma-modal-search></aroma-modal-search> -->
 
   </div>
 </template>
@@ -103,8 +96,26 @@ export default {
 
 <style >
 .aroma-nav {
-  z-index:3;
+  z-index: 3;
   background-color: var(--color-primary-darker);
   color: var(--color-primary-lightest);
+  
 }
+
+.f-header__nav {
+  background-color: var(--color-primary-darker);
+}
+.f-header__nav::before {
+  border-bottom: none;
+}
+
+.f-header__item {
+  border-bottom: none;
+  text-align: center;
+}
+
+.anim-menu-btn {
+  color: var(--color-primary-lightest);
+}
+
 </style>

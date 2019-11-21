@@ -1,6 +1,6 @@
 <template>
   <div
-    class="modal js-modal modal--search"
+    class="modal js-modal modal--search .modal--search.modal--searchbg-primary--opacity"
     id="modalForm1"
     data-animation="on"
   >
@@ -67,3 +67,8 @@
     </button>
   </div>
 </template>
+
+
+<style>
+
+</style>

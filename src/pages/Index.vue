@@ -18,31 +18,40 @@
       </div>
       <div class="video-bg__content height-100% container max-width-lg">
         <div class="flex justify-center height-100% max-width-s parent grid grid-gap-xs" style="align-items: center;">          
-          <div class="col-6@sm text-center align-middle">Logo 1</div>
-          <div class="col-6@sm text-center align-middle">Logo 2</div>
+          <div class="col-6@sm text-center align-middle"><g-image src="~/assets/img/interreg.png" width="500"/></div>
+          <div class="col-6@sm text-center align-middle"><g-image src="~/assets/svg/aroma-color.svg" width="500"/></div>
         </div>
       </div>
     </section>
     <!-- What is Aroma: goal -->
     <section
-      class="container max-width-lg padding-bottom-xxl"
+      class="container max-width-lg padding-bottom-md text-component"
       id="learnmore"
     >
-    <div class="flex justify-center height-100% max-width-s parent grid grid-gap-xxl" style="align-items: center;">          
+    <div class="flex justify-center height-100% max-width-s parent grid grid-gap-xxl " style="align-items: center;">          
       <div class="col-6@sm  align-middle">
-        <p class="text-primary--lightest">FR<p>
+        <p class="text-primary--lightest ">FR<p>
         <h2 class="text-primary">Approvisionnement Régional Organisé pour une Meilleure Alimentation.</h2>
         <div class="aroma-arrow"></div>
         <p class="text-primary">Favoriser l’utilisation de produits locaux et de qualité dans les cuisines de collectivités, c’est le but du projet Interreg AROMA lancé en avril 2018 au niveau de la Grande Région.</p>
       </div>
-        <div class="col-6@sm  align-middle">
-        <p class="text-primary--lightest">FR<p>
+        <div class="col-6@sm  align-middle ">
+        <p class="text-primary--lightest ">FR<p>
         <h2 class="text-primary">Approvisionnement Régional Organisé pour une Meilleure Alimentation.</h2>
         <div class="aroma-arrow flip"></div>
         <p class="text-primary">Favoriser l’utilisation de produits locaux et de qualité dans les cuisines de collectivités, c’est le but du projet Interreg AROMA lancé en avril 2018 au niveau de la Grande Région.</p>
       </div>
       </div>
     </section>
+
+
+
+    <section class="container max-width-lg padding-bottom-xxl text-component" id="partners">
+      <h2 class="text-primary align-center text-center">Partners</h2>
+
+    </section>
+
+
 
 
   </Layout>
