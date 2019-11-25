@@ -23,29 +23,42 @@ function addStyleResource (rule) {
     })
 }
 
+// module.exports = {
+//   siteName: 'Storyblok Boilerplate',
+//   plugins: [
+//     {
+//       use: 'gridsome-source-storyblok',
+//       options: {
+//         client: {
+//           accessToken: 'hkENPzbQoYvpZeNPpK6pQgtt'
+//         }
+//       }
+//     }
+//   ]
+// }
+
+
 module.exports = {
+  // SCSS Mixins & Variables Part 2
+  chainWebpack (config) {
+    config.resolve.symlinks(false)
+    // Load variables for all vue-files
+    const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
+    types.forEach(type => {
+      addStyleResource(config.module.rule('scss').oneOf(type))
+    })
+  },
   siteName: 'Gridsome',
   plugins: [
     {
-      use: '@gridsome/source-graphql',
+      use: 'gridsome-source-storyblok',
       options: {
-        url: process.env.CRAFT_API_URL,
-        fieldName: 'craft',
-        typeName: 'craft',
-        headers: {
-          Authorization: 'Bearer ' + process.env.CRAFT_API_TOKEN
+        client: {
+          accessToken: 'hkENPzbQoYvpZeNPpK6pQgtt' // you must be replace with your token
         }
       }
     }
   ],
-  // SCSS Mixins & Variables Part 2
-  chainWebpack (config) {
-    // Load variables for all vue-files
-    const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
-    types.forEach(type => {
-      
-      addStyleResource(config.module.rule('scss').oneOf(type))
-    })
-  },
+
 }
 

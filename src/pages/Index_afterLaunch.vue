@@ -546,18 +546,6 @@
   </Layout>
 </template>
 
-<page-query>
-query {
-    craft {
-     	entries(section: "articles", limit: 1, orderBy: "dateCreated DESC") {
-        title,
-        slug,
-        uid 
-      }
-    }
-}
-</page-query>
-
 <script>
 export default {
   metaInfo: {

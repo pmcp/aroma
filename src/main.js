@@ -5,9 +5,17 @@
 import '~/assets/scss/style.scss'
 import DefaultLayout from '~/layouts/Default.vue'
 
+// Main components Aroma
+import AromaRichtext from '~/components/Aroma-Richtext.vue'
+import AromaHero from '~/components/Aroma-Hero.vue'
+
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout),
+
+  Vue.component('Richtext', AromaRichtext)
+  Vue.component('aroma-hero', AromaHero)
+
   // Add an external Javascript before the closing </body> tag
   head.script.push({
     innerHTML: 'document.getElementsByTagName("html")[0].className += " js";',

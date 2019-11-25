@@ -5,32 +5,32 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
+
 module.exports = function (api) {
+  api.loadSource(({ addCollection }) => {
+    // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
+  })
+
   api.createPages(async ({ graphql, createPage }) => {
+    // load data from Storyblok API
     const { data } = await graphql(`{
-      
-        craft {
-          users {
+      allStoryblokEntry {
+        edges {
+          node {
             id
-            username
+            full_slug
           }
-           entries(section: "articles", limit: 1, orderBy: "dateCreated DESC") {
-            title
-            slug
-          }
-        
         }
-    
+      }
     }`)
 
-    // Articles
-    data.craft.entries.forEach((el) => {
+    // for each content found create a page
+    data.allStoryblokEntry.edges.forEach(({ node }) => {
       createPage({
-        path: `/article/${el.slug}/`,
-        component: './src/templates/Article.vue',
+        path: `/${node.full_slug}`,
+        component: './src/templates/StoryblokEntry.vue',
         context: {
-          id: el.id,
-          title: el.title,
+          id: node.id
         }
       })
     })
