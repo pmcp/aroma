@@ -1,11 +1,43 @@
 export default [
   {
-    path: "/article/title-of-an-article/",
-    component: () => import(/* webpackChunkName: "page--src--templates--article-vue" */ "/Users/pmcp/dev/aroma/src/templates/Article.vue")
+    path: "/fr_be/partners/cartouche/",
+    component: () => import(/* webpackChunkName: "page--src--templates--storyblok-entry-vue" */ "/Users/pmcp/dev/aroma/src/templates/StoryblokEntry.vue")
+  },
+  {
+    path: "/fr_be/partners/alterinnov/",
+    component: () => import(/* webpackChunkName: "page--src--templates--storyblok-entry-vue" */ "/Users/pmcp/dev/aroma/src/templates/StoryblokEntry.vue")
+  },
+  {
+    path: "/partners/cartouche/",
+    component: () => import(/* webpackChunkName: "page--src--templates--storyblok-entry-vue" */ "/Users/pmcp/dev/aroma/src/templates/StoryblokEntry.vue")
+  },
+  {
+    path: "/partners/alterinnov/",
+    component: () => import(/* webpackChunkName: "page--src--templates--storyblok-entry-vue" */ "/Users/pmcp/dev/aroma/src/templates/StoryblokEntry.vue")
+  },
+  {
+    path: "/fr_be/b0130118-a2ad-4a25-84d5-4696e95aaa44/",
+    component: () => import(/* webpackChunkName: "page--src--templates--storyblok-entry-vue" */ "/Users/pmcp/dev/aroma/src/templates/StoryblokEntry.vue")
+  },
+  {
+    path: "/fr_be/disclaimer/",
+    component: () => import(/* webpackChunkName: "page--src--templates--storyblok-entry-vue" */ "/Users/pmcp/dev/aroma/src/templates/StoryblokEntry.vue")
   },
   {
     path: "/index-after-launch/",
     component: () => import(/* webpackChunkName: "page--src--pages--index-after-launch-vue" */ "/Users/pmcp/dev/aroma/src/pages/Index_afterLaunch.vue")
+  },
+  {
+    path: "/b0130118-a2ad-4a25-84d5-4696e95aaa44/",
+    component: () => import(/* webpackChunkName: "page--src--templates--storyblok-entry-vue" */ "/Users/pmcp/dev/aroma/src/templates/StoryblokEntry.vue")
+  },
+  {
+    path: "/editor/",
+    component: () => import(/* webpackChunkName: "page--src--pages--editor-vue" */ "/Users/pmcp/dev/aroma/src/pages/Editor.vue")
+  },
+  {
+    path: "/disclaimer/",
+    component: () => import(/* webpackChunkName: "page--src--templates--storyblok-entry-vue" */ "/Users/pmcp/dev/aroma/src/templates/StoryblokEntry.vue")
   },
   {
     path: "/about/",

@@ -67,18 +67,6 @@
 </template>
 
 
-<static-query>
-query {
-  craft {
-    entries(section: "articles", limit: 1, orderBy: "dateCreated DESC") {
-      title,
-      slug,
-      uid 
-    }
-  }
-}
-</static-query>
-
 
 <script>
 import AromaSearch from "~/components/Aroma-Search.vue";
