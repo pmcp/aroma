@@ -9,19 +9,7 @@ query {
   content: storyblokEntry(id: "story-4122641-default") {
     id
     content
-  },
-  partners: allStoryblokEntry(filter: { full_slug: { regex: "partners" },  lang: { regex: "default" }}) {
-      edges {
-        node {
-          lang
-          id
-          full_slug
-          name
-        content
-      }
-    }
   }
-  
 }
 </page-query>
 
