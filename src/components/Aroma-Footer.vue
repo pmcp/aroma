@@ -1,6 +1,6 @@
 <template>
   <footer class="footer-v5 aroma-footer ">
-    <div class="container max-width-xxxl padding-bottom-md">
+    <div class="container max-width-lg padding-bottom-md">
 
       <div class="footer-v5__body grid">
         <div class="col-8@lg">
@@ -91,7 +91,7 @@
       </div> -->
     </div>
     <div class="aroma-footer__bottom padding-y-md">
-      <p class="container max-width-xxxl ">{{ $static.index.content.footer_bottombar }}</p>
+      <p class="container max-width-lg ">{{ $static.index.content.footer_bottombar }}</p>
     </div>
   </footer>
 
