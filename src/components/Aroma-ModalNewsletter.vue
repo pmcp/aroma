@@ -15,8 +15,9 @@
         <h3 id="modalFormTitle1">Join our Newsletter</h3>
         <p id="modalFormDescription1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit asperiores molestiae ex.</p>
       </div>
+<iframe width="540" height="279" src="https://my.sendinblue.com/users/subscribe/js_id/3q1l8/id/1" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;"></iframe>
 
-      <form class="margin-bottom-sm">
+      <!-- <form class="margin-bottom-sm">
         <div class="flex flex-column flex-row@xs flex-gap-xxxs">
           <input
             aria-label="Email"
@@ -26,13 +27,13 @@
           >
           <button class="btn btn--primary">Subscribe</button>
         </div>
-      </form>
+      </form> -->
 
       <div class="text-component">
-        <p class="text-xs color-contrast-medium">Lorem ipsum dolor sit, amet <a
+        <!-- <p class="text-xs color-contrast-medium">Lorem ipsum dolor sit, amet <a
             href="#0"
             class="color-contrast-high"
-          >consectetur adipisicing</a> elit. Nisi molestias hic voluptatibus.</p>
+          >consectetur adipisicing</a> elit. Nisi molestias hic voluptatibus.</p> -->
       </div>
     </div>
 
