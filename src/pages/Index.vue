@@ -1,8 +1,7 @@
 <template>
-  <div>
-    {{ $page }}
+  <Layout>
     <aroma-launchpage :content="$page"></aroma-launchpage>
-  </div>
+  </Layout>
 </template>
 
 <page-query>

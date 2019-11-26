@@ -13,15 +13,15 @@
         style="align-items: center;"
       >
         <div
-          v-for="intro in content.intro_items"
+          v-for="intro in content.content.content.intro_items"
           v-bind:key="intro._uid"
           v-editable="intro"
           class="col-6@sm  align-middle"
         >
-          <p class="text-primary--lightest ">{{ intro.language }}<p>
-              <h2 class="text-primary">{{ intro.title }}</h2>
+          <p class="text-primary--lightest ">{{ intro.launch_language }}<p>
+              <h2 class="text-primary">{{ intro.launch_title }}</h2>
               <div class="aroma-arrow"></div>
-              <p class="text-primary">{{ intro.text }} </p>
+              <p class="text-primary">{{ intro.launch_text }} </p>
         </div>
 
       </div>

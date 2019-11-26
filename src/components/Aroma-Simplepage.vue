@@ -12,7 +12,7 @@
 
     <div class="container max-width-adaptive-sm">
       <div class="text-component line-height-lg v-space-md">
-        <richtext :text="content.content" v-editable="content"></richtext>
+        <richtext :text="content.content" v-editable="content.content"></richtext>
       </div>
     </div>
   </article>
