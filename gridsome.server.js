@@ -28,7 +28,7 @@ module.exports = function (api) {
     data.allStoryblokEntry.edges.forEach(({ node }) => {
       createPage({
         path: `/${node.full_slug}`,
-        component: './src/templates/StoryblokEntry.vue',
+        component: './src/templates/PageSimple.vue',
         context: {
           id: node.id
         }

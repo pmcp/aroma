@@ -8,6 +8,7 @@ import DefaultLayout from '~/layouts/Default.vue'
 // Main components Aroma
 import AromaRichtext from '~/components/Aroma-Richtext.vue'
 import AromaHero from '~/components/Aroma-Hero.vue'
+import AromaSimplepage from '~/components/Aroma-Simplepage.vue'
 
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component
@@ -15,6 +16,7 @@ export default function (Vue, { router, head, isClient }) {
 
   Vue.component('Richtext', AromaRichtext)
   Vue.component('aroma-hero', AromaHero)
+  Vue.component('aroma-simplepage', AromaSimplepage)
 
   // Add an external Javascript before the closing </body> tag
   head.script.push({
