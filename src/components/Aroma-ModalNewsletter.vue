@@ -13,7 +13,7 @@
     >
       <div class="text-component margin-bottom-md">
         <h3 id="modalFormTitle1">Join our Newsletter</h3>
-        <p id="modalFormDescription1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit asperiores molestiae ex.</p>
+        <!-- <p id="modalFormDescription1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit asperiores molestiae ex.</p> -->
       </div>
 <iframe width="540" height="279" src="https://my.sendinblue.com/users/subscribe/js_id/3q1l8/id/1" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;"></iframe>
 
