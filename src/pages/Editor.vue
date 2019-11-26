@@ -1,8 +1,8 @@
 <template>
   <Layout>
-    test
+    
     <aroma-simplepage v-if="story.content.component == 'page'" :content="story.content"></aroma-simplepage>
-    <aroma-launchpage v-else :content="story.content"></aroma-launchpage>
+    <aroma-launchpage v-if="story.content.component == 'page_launch'" :content="story.content"></aroma-launchpage>
   </Layout>
 </template>
 

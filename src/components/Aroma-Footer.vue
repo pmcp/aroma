@@ -10,7 +10,7 @@
 
               <richtext
                 :text="$static.index.content.footer_text"
-                v-editable="content"
+                
               ></richtext>
             </div>
           </div>

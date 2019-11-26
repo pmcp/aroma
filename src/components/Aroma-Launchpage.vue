@@ -13,7 +13,7 @@
         style="align-items: center;"
       >
         <div
-          v-for="intro in content.content.content.intro_items"
+          v-for="intro in content.intro_items"
           v-bind:key="intro._uid"
           v-editable="intro"
           class="col-6@sm  align-middle"
