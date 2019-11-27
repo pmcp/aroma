@@ -1,5 +1,6 @@
 <template>
   <Layout>
+    
     <aroma-launchpage :content="$page.content.content"></aroma-launchpage>
   </Layout>
 </template>

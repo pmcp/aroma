@@ -20,6 +20,7 @@
           style="align-items: center;"
         >
           <div class="col-6 text-center align-middle">
+            
             <g-image
               src="~/assets/img/AROMA-Interreg_opacity.png"
               alt="Aroma-Interreg logo"
@@ -35,6 +36,7 @@
           </div>
         </div>
       </div>
+      <h1>{{ title }}</h1>
     </section>
 </template>
 
@@ -47,6 +49,10 @@ export default {
       type: Boolean,
       default: true
     },
+    title: {
+      type: String,
+      default: 'Aroma'
+    },
   },
 }
 </script>
@@ -57,5 +63,9 @@ export default {
  height: unset;
  padding-top: 2rem;
  padding-bottom: 2rem;
+}
+
+h1 {
+  opacity: 0;
 }
 </style>

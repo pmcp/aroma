@@ -2,7 +2,6 @@
   <main class="margin-top-sm">
     
     <aroma-hero :expanded="true"></aroma-hero>
-  
     <!-- What is Aroma: goal -->
     <section
       class="container max-width-lg padding-bottom-md text-component"
@@ -16,9 +15,9 @@
           v-for="intro in content.intro_items"
           v-bind:key="intro._uid"
           v-editable="intro"
-          class="col-6@sm  align-middle"
+          class="col-6@sm  align-middle aroma-introcontent"
         >
-          <p class="text-primary--lightest ">{{ intro.launch_language }}<p>
+          <p>{{ intro.launch_language }}<p>
               <h2 class="text-primary">{{ intro.launch_title }}</h2>
               <div class="aroma-arrow"></div>
               <p class="text-primary">{{ intro.launch_text }} </p>
@@ -58,3 +57,10 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.aroma-introcontent p {
+  color: var(--color-primary-light);
+
+}
+</style>
