@@ -12,11 +12,11 @@
       aria-describedby="modalFormDescription1"
     >
       <div class="text-component margin-bottom-md">
-        <h3 id="modalFormTitle1">Join our Newsletter</h3>
-        <!-- <p id="modalFormDescription1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit asperiores molestiae ex.</p> -->
+        <h3 id="modalFormTitle1">{{ $static.index.content.newsletter_title }}</h3>
+        <p id="modalFormDescription1">{{ $static.index.content.newsletter_text }}</p>
       </div>
-<iframe width="540" height="279" src="https://my.sendinblue.com/users/subscribe/js_id/3q1l8/id/1" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;"></iframe>
-
+      
+      <iframe width="540" height="279" src="https://my.sendinblue.com/users/subscribe/js_id/3q1l8/id/1" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;"></iframe>
       <!-- <form class="margin-bottom-sm">
         <div class="flex flex-column flex-row@xs flex-gap-xxxs">
           <input
@@ -69,7 +69,10 @@
   </div>
 </template>
 
-
-<style>
-
-</style>
+<static-query>
+query {
+  index: storyblokEntry(id: "story-4122641-default") {
+    content 
+  }
+}
+</static-query>

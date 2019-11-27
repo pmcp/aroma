@@ -31,7 +31,7 @@
       class="container max-width-lg padding-bottom-xxl text-component"
       id="partners"
     >
-      <h2 class="text-primary align-center text-center">Partners</h2>
+      <h2 class="text-primary align-center text-center">{{ content.partners_title }}</h2>
 
       <div class="parent grid grid-gap-xs">
         <aroma-partners></aroma-partners>
