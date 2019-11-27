@@ -21,13 +21,15 @@
         >
           <div class="col-6 text-center align-middle">
             <g-image
-              src="~/assets/img/interreg.png"
+              src="~/assets/img/AROMA-Interreg_opacity.png"
+              alt="Aroma-Interreg logo"
               width="500"
             />
           </div>
           <div class="col-6 text-center align-middle">
             <g-image
               src="~/assets/svg/aroma-color.svg"
+              alt="Aroma logo"
               width="500"
             />
           </div>

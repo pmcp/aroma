@@ -2,11 +2,7 @@
   <div class="parent grid  padding-y-xl justify-center">
     
     <div  class="col-12" >
-       <g-image
-              src="~/assets/img/logos.jpg"
-              
-            />
-        
+       <g-image alt="logos partners" src="~/assets/img/logos.jpg"/>
     </div>
     <!-- <div v-for="partner in $static.partners.edges" v-bind:key="partner.id" class="col-2" >
       

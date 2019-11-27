@@ -16,7 +16,7 @@
         <p id="modalFormDescription1">{{ $static.index.content.newsletter_text }}</p>
       </div>
       
-      <iframe width="540" height="279" src="https://my.sendinblue.com/users/subscribe/js_id/3q1l8/id/1" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;"></iframe>
+      <iframe title="newsletter form" src="https://my.sendinblue.com/users/subscribe/js_id/3q1l8/id/1" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;"></iframe>
       <!-- <form class="margin-bottom-sm">
         <div class="flex flex-column flex-row@xs flex-gap-xxxs">
           <input
@@ -29,12 +29,12 @@
         </div>
       </form> -->
 
-      <div class="text-component">
-        <!-- <p class="text-xs color-contrast-medium">Lorem ipsum dolor sit, amet <a
+      <!-- <div class="text-component">
+        <p class="text-xs color-contrast-medium">Lorem ipsum dolor sit, amet <a
             href="#0"
             class="color-contrast-high"
-          >consectetur adipisicing</a> elit. Nisi molestias hic voluptatibus.</p> -->
-      </div>
+          >consectetur adipisicing</a> elit. Nisi molestias hic voluptatibus.</p>
+      </div> -->
     </div>
 
     <button class="reset modal__close-btn js-modal__close">
@@ -76,3 +76,15 @@ query {
   }
 }
 </static-query>
+
+
+<style scoped>
+.modal__content {
+  height: 100%
+
+}
+iframe {
+  width: 100%;
+  height: 100%;
+}
+</style>
