@@ -1,6 +1,5 @@
 <template>
   <main class="margin-top-sm">
-    
     <aroma-hero :expanded="true"></aroma-hero>
     <!-- What is Aroma: goal -->
     <section
