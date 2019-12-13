@@ -1,5 +1,5 @@
 <template>
-   <section class="video-bg margin-bottom-xl hero--full-screen" v-bind:class="{'aroma-hero--small': !expanded }">
+   <section class="video-bg margin-bottom-xl aroma-hero" v-bind:class="{'aroma-hero--small': !expanded }">
       <div
         class="video-bg__media"
         aria-hidden="true"
@@ -59,6 +59,10 @@ export default {
 
 
 <style scoped>
+
+.aroma-hero {
+  height: 70vh;
+}
 .aroma-hero--small {
  height: unset;
  padding-top: 2rem;
