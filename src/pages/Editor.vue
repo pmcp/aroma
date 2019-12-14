@@ -1,8 +1,13 @@
 <template>
   <Layout>
-    
-    <aroma-simplepage v-if="story.content.component == 'page'" :content="story.content"></aroma-simplepage>
-    <aroma-launchpage v-if="story.content.component == 'page_launch'" :content="story.content"></aroma-launchpage>
+
+    <!-- <ClientOnly> -->
+    <template v-if="story && story.content"> 
+      <aroma-simplepage v-if="story.content.component == 'page'" :content="story.content"></aroma-simplepage>
+      <aroma-launchpage v-else-if="story.content.component == 'page_launch'" :content="story.content"></aroma-launchpage>
+      <component  class="padding-y-xxl" v-else :is="`aroma-${story.content.component}`" :content="story.content"></component>
+    </template>
+    <!-- </ClientOnly> -->
   </Layout>
 </template>
 
@@ -11,10 +16,11 @@
 // import config from '../../gridsome.config'
 import aromaLaunchpage from '../components/Aroma-Launchpage'
 import aromaSimplepage from '../components/Aroma-Simplepage'
-
+import aromaTimeline from '../components/Aroma-Timeline'
+import aromaCarousel from '../components/Aroma-Carousel'
+import aromaUndefined from '../components/Aroma-Undefined'
 
 const loadStoryblokBridge = function(cb) {
-  
   let script = document.createElement('script')
   script.type = 'text/javascript'
   script.src = `//app.storyblok.com/f/storyblok-latest.js?t=hkENPzbQoYvpZeNPpK6pQgtt`
@@ -24,8 +30,11 @@ const loadStoryblokBridge = function(cb) {
 
 export default {
   components: {
+    aromaUndefined,
     aromaLaunchpage,
     aromaSimplepage,
+    aromaTimeline,
+    aromaCarousel,
   },
   data() {
     return {
@@ -34,6 +43,8 @@ export default {
   },
   mounted() {
     loadStoryblokBridge(() => { this.initStoryblokEvents() })
+    // window.cody = require("~/assets/js/cody-scripts-min.js");
+  
   },
   methods: {
     loadStory() {
@@ -45,15 +56,17 @@ export default {
       })
     },
     initStoryblokEvents() {
+      
       this.loadStory()
 
       let sb = window.storyblok
-
+  
       sb.on(['change', 'published'], (payload) => {
         this.loadStory()
       })
 
       sb.on('input', (payload) => {
+        
         if (this.story && payload.story.id === this.story.id) {
           payload.story.content = sb.addComments(payload.story.content, payload.story.id)
           this.story = payload.story

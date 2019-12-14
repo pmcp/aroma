@@ -20,6 +20,10 @@ export default [
     component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
   },
   {
+    path: "/fr_be/timeline/",
+    component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
+  },
+  {
     path: "/partners/centre-for-ecological-learning-luxembourg/",
     component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
   },
@@ -32,6 +36,10 @@ export default [
     component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
   },
   {
+    path: "/fr_be/goals/",
+    component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
+  },
+  {
     path: "/fr_be/b0130118-a2ad-4a25-84d5-4696e95aaa44/",
     component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
   },
@@ -40,8 +48,16 @@ export default [
     component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
   },
   {
+    path: "/timeline/",
+    component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
+  },
+  {
     path: "/index-after-launch/",
     component: () => import(/* webpackChunkName: "page--src--pages--index-after-launch-vue" */ "/Users/pmcp/dev/aroma/src/pages/Index_afterLaunch.vue")
+  },
+  {
+    path: "/goals/",
+    component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
   },
   {
     path: "/b0130118-a2ad-4a25-84d5-4696e95aaa44/",
