@@ -18,6 +18,12 @@ export default function (Vue, { router, head, isClient }) {
   Vue.component('aroma-hero', AromaHero)
   Vue.component('aroma-simplepage', AromaSimplepage)
 
+  head.link.push({
+    rel: 'stylesheet',
+    href: 'https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800&display=swap'
+  })
+  
+  
   // Add an external Javascript before the closing </body> tag
   head.script.push({
     innerHTML: 'document.getElementsByTagName("html")[0].className += " js";',
