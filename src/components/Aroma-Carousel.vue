@@ -1,18 +1,14 @@
 <template>
-
   <div class="loop-tabs js-loop-tabs container max-width-adaptive-lg">
-
-
-
-
-
     <div class="grid grid-gap-md">
       <div class="loop-tabs__content col-6@md flex flex-column flex-column-reverse@md justify-center@md text-center text-left@md">
         <ul class="loop-tabs__controls js-loop-tabs__controls margin-bottom-lg flex flex-center flex-wrap flex-column@md items-start@md">
           <li
             v-for="(i, index) in content.items"
             :key="`text-${index}`"
+            class="aroma-tab"
           >
+
             <a
               :href="`#tab${index}`"
               class="loop-tabs__control "
@@ -46,13 +42,13 @@
             class="loop-tabs__asset loop-tabs__asset--selected"
             :class="{'loop-tabs__asset--selected':(index === 0)}"
           >
-          <figure>
-            <g-image
-              :src="i.image"
-              width="500"
-            />
+            <figure>
+              <g-image
+                :src="i.image"
+                width="500"
+              />
               <figcaption>{{ i.caption }}</figcaption>
-          </figure>
+            </figure>
           </li>
         </ul>
       </div>
@@ -72,25 +68,21 @@ export default {
     }
   },
   mounted() {
-    // let frontEnd = document.createElement("script");
-    // frontEnd.setAttribute("src", "./cody-scripts-min.js"); // 👈 make sure to use the correct path
-    // document.body.appendChild(frontEnd);
     window.cody = require("~/assets/js/cody-scripts-min.js");
   }
 };
 </script>
 
-
-<style scoped>
-
+<style lang="scss" scoped>
 .loop-tabs {
   overflow: hidden;
-  color: var(--color-primary-lighter)
+  color: var(--color-primary-lighter);
 }
 
 .loop-tabs__content {
   position: relative;
   left: -40px;
+  width: 200%;
   background: var(--color-primary);
   transform: skew(10deg);
 }
@@ -99,10 +91,30 @@ export default {
   position: relative;
   left: 100px;
   transform: skew(-10deg);
+ 
 }
 
-.js .loop-tabs__control  {
-  color: inherit;
+.aroma-tab {
+  width: 70%;
+}
+  .aroma-tab::before {
+    display: inline-block;
+    content: '';
+    width: 100%;
+    position: relative;
+    left: -50%;
+    height: 0.2rem;
+    background: linear-gradient(90deg, transparent 0%, #fcbd33 100%) !important;
+    
 
+  }
+
+
+.js .loop-tabs__control {
+  color: var(--color-primary-lightest) !important;
+   &--selected {
+    background: linear-gradient(90deg, transparent 0%, var(--color-primary-light) 100%) !important;
+    width: 150%;
+  }
 }
 </style>

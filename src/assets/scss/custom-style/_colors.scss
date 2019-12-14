@@ -6,12 +6,12 @@
 
 :root, [data-theme="default"] {
   // main
-  @include defineColorHSL(--color-primary-darker, 220, 90%, 36%);
-  @include defineColorHSL(--color-primary-dark, 220, 90%, 46%);
-  @include defineColorHSL(--color-primary, 220, 90%, 56%);
-  @include defineColorHSL(--color-primary-light, 220, 90%, 66%);
-  @include defineColorHSL(--color-primary-lighter, 220, 90%, 76%);
-  @include defineColorHSL(--color-primary-lightest, 220, 90%, 90%);
+  @include defineColorHSL(--color-primary-darker, 212, 90%, 36%);
+  @include defineColorHSL(--color-primary-dark, 212, 90%, 46%);
+  @include defineColorHSL(--color-primary, 212, 90%, 56%);
+  @include defineColorHSL(--color-primary-light, 212, 90%, 66%);
+  @include defineColorHSL(--color-primary-lighter, 212, 90%, 76%);
+  @include defineColorHSL(--color-primary-lightest, 212, 68%, 85%);
 
   @include defineColorHSL(--color-accent-darker, 349, 75%, 31%);
   @include defineColorHSL(--color-accent-dark, 349, 75%, 41%);
