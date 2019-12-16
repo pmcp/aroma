@@ -3,20 +3,48 @@
 
 
 import '~/assets/scss/style.scss'
-import DefaultLayout from '~/layouts/Default.vue'
+
 
 // Main components Aroma
-import AromaRichtext from '~/components/Aroma-Richtext.vue'
+
+// LAYOUTS
+import DefaultLayout from '~/layouts/Default.vue'
+
+// PAGES
+import AromaPageDefault from '~/components/Aroma-PageDefault.vue'
+import AromaPageLaunch from '~/components/Aroma-PageLaunch.vue'
+import AromaPageProject from '~/components/Aroma-PageProject.vue'
+
+// COMPONENTS
 import AromaHero from '~/components/Aroma-Hero.vue'
-import AromaSimplepage from '~/components/Aroma-Simplepage.vue'
+import AromaTimeLine from '~/components/Aroma-Timeline'
+import AromaCarousel from '~/components/Aroma-Carousel'
+import AromaPreviewArticles from '~/components/Aroma-PreviewArticles'
+import AromaUndefined from '~/components/Aroma-Undefined'
+import AromaPartners from "~/components/Aroma-Partners";
+
+import AromaContentText from '~/components/Aroma-ContentText.vue'
+import AromaContentImages from '~/components/Aroma-ContentImages'
+import AromaContentVideo from '~/components/Aroma-ContentVideo'
+
+
 
 export default function (Vue, { router, head, isClient }) {
-  // Set default layout as a global component
   Vue.component('Layout', DefaultLayout),
-
-  Vue.component('Richtext', AromaRichtext)
+  Vue.component('aroma-page-default', AromaPageDefault)
+  Vue.component('aroma-page-launch', AromaPageLaunch)
+  Vue.component('aroma-page-project', AromaPageProject)
+  
   Vue.component('aroma-hero', AromaHero)
-  Vue.component('aroma-simplepage', AromaSimplepage)
+  Vue.component('aroma-timeline', AromaTimeLine)
+  Vue.component('aroma-carousel', AromaCarousel)
+  Vue.component('aroma-preview-articles', AromaPreviewArticles)
+  Vue.component('aroma-undefined', AromaUndefined)
+  Vue.component('aroma-partners', AromaPartners)
+
+  Vue.component('aroma-content-text', AromaContentText)
+  Vue.component('aroma-content-images', AromaContentImages)
+  Vue.component('aroma-content-video', AromaContentVideo)
 
   head.link.push({
     rel: 'stylesheet',

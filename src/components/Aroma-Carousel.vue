@@ -1,8 +1,8 @@
 <template>
-  <div class="loop-tabs js-loop-tabs container max-width-adaptive-lg">
-    <div class="grid grid-gap-md">
-      <div class="loop-tabs__content col-6@md flex flex-column flex-column-reverse@md justify-center@md text-center text-left@md">
-        <ul class="loop-tabs__controls js-loop-tabs__controls margin-bottom-lg flex flex-center flex-wrap flex-column@md items-start@md">
+  <div class="loop-tabs js-loop-tabs ">
+    <div class="grid ">
+      <div class="loop-tabs__content col-7@md flex flex-column justify-start@md text-center text-left@md">
+        <ul class="loop-tabs__controls js-loop-tabs__controls  flex flex-center flex-wrap flex-column@md items-start@md padding-xl">
           <li
             v-for="(i, index) in content.items"
             :key="`text-${index}`"
@@ -17,7 +17,7 @@
             </a>
           </li>
         </ul>
-        <div class="loop-tabs__panels js-loop-tabs__panels margin-bottom-md">
+        <div class="loop-tabs__panels js-loop-tabs__panels ">
           <section
             v-for="(i, index) in content.items"
             :key="`section-${index}`"
@@ -32,7 +32,7 @@
         </div>
       </div>
       <div
-        class="loop-tabs__media col-6@md"
+        class="loop-tabs__media col-5@md"
         aria-hidden="true"
       >
         <ul class="loop-tabs__assets js-loop-tabs__assets">
@@ -42,7 +42,7 @@
             class="loop-tabs__asset loop-tabs__asset--selected"
             :class="{'loop-tabs__asset--selected':(index === 0)}"
           >
-            <figure>
+            <figure class="padding-y-md">
               <g-image
                 :src="i.image"
                 width="500"
@@ -80,41 +80,56 @@ export default {
 }
 
 .loop-tabs__content {
-  position: relative;
-  left: -40px;
-  width: 200%;
   background: var(--color-primary);
-  transform: skew(10deg);
 }
 
 .loop-tabs__controls {
-  position: relative;
-  left: 100px;
-  transform: skew(-10deg);
- 
 }
 
 .aroma-tab {
   width: 70%;
 }
-  .aroma-tab::before {
-    display: inline-block;
-    content: '';
-    width: 100%;
-    position: relative;
-    left: -50%;
-    height: 0.2rem;
-    background: linear-gradient(90deg, transparent 0%, #fcbd33 100%) !important;
-    
-
-  }
-
+.aroma-tab::before {
+  display: block;
+  content: "";
+  width: 100%;
+  position: relative;
+  left: -50%;
+  height: 0.2rem;
+  background: linear-gradient(90deg, transparent 0%, #fcbd33 100%) !important;
+  
+}
 
 .js .loop-tabs__control {
   color: var(--color-primary-lightest) !important;
-   &--selected {
-    background: linear-gradient(90deg, transparent 0%, var(--color-primary-light) 100%) !important;
+  &::before {
+    
+    background-color: transparent !important;
+  }
+  &::after {
+    background-color: transparent !important;
+  }
+  &--selected {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--color-primary-light) 100%
+    ) !important;
     width: 150%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .loop-tabs__content {
+    clip-path: polygon(0 0, 80% 0, 100% 100%, 0% 100%);
+  }
+
+  .loop-tabs__assets {
+    min-width: 140%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 20.5% 100%);
+    figcaption {
+      text-indent: 20%;
+    }
   }
 }
 </style>

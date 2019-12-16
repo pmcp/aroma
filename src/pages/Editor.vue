@@ -1,24 +1,13 @@
 <template>
-  <Layout>
-
-    <!-- <ClientOnly> -->
-    <template v-if="story && story.content"> 
-      <aroma-simplepage v-if="story.content.component == 'page'" :content="story.content"></aroma-simplepage>
-      <aroma-launchpage v-else-if="story.content.component == 'page_launch'" :content="story.content"></aroma-launchpage>
-      <component  class="padding-y-xxl" v-else :is="`aroma-${story.content.component}`" :content="story.content"></component>
-    </template>
-    <!-- </ClientOnly> -->
+  <Layout class="padding-y-xl">
+    <component v-if="story && story.content" :is="`aroma-${story.content.component}`" :content="story.content"></component>
   </Layout>
 </template>
 
 <script>
 
-// import config from '../../gridsome.config'
-import aromaLaunchpage from '../components/Aroma-Launchpage'
-import aromaSimplepage from '../components/Aroma-Simplepage'
-import aromaTimeline from '../components/Aroma-Timeline'
-import aromaCarousel from '../components/Aroma-Carousel'
-import aromaUndefined from '../components/Aroma-Undefined'
+
+
 
 const loadStoryblokBridge = function(cb) {
   let script = document.createElement('script')
@@ -29,13 +18,6 @@ const loadStoryblokBridge = function(cb) {
 }
 
 export default {
-  components: {
-    aromaUndefined,
-    aromaLaunchpage,
-    aromaSimplepage,
-    aromaTimeline,
-    aromaCarousel,
-  },
   data() {
     return {
       story: {content: {}}
@@ -50,9 +32,12 @@ export default {
     loadStory() {
       window.storyblok.get({
         slug: window.storyblok.getParam('path'),
-        version: 'draft'
+        version: 'draft',
+        resolve_links: 'story',
+        resolve_relations: 'preview-articles.articles'
       }, (data) => {
         this.story = data.story
+        
       })
     },
     initStoryblokEvents() {
@@ -61,15 +46,17 @@ export default {
 
       let sb = window.storyblok
   
+  
       sb.on(['change', 'published'], (payload) => {
         this.loadStory()
       })
 
       sb.on('input', (payload) => {
-        
+        this.story = payload.story
         if (this.story && payload.story.id === this.story.id) {
           payload.story.content = sb.addComments(payload.story.content, payload.story.id)
-          this.story = payload.story
+          this.story = payload.story;
+          
         }
       })
 

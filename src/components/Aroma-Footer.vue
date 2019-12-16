@@ -7,11 +7,7 @@
           <div class="footer-v5__nav grid">
             <div class="footer-v5__nav-group col-10@md">
               <h2 class="footer-v5__nav-title">{{ $static.index.content.footer_title }}</h2>
-
-              <richtext
-                :text="$static.index.content.footer_text"
-                
-              ></richtext>
+              <aroma-content-text :content="$static.index.content.footer_text"></aroma-content-text>
             </div>
           </div>
         </div>
