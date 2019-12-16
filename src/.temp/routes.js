@@ -1,6 +1,18 @@
 export default [
   {
+    path: "/fr_be/projects/project-1/",
+    component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
+  },
+  {
+    path: "/fr_be/projects/project-2/",
+    component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
+  },
+  {
     path: "/fr_be/partners/moselle/",
+    component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
+  },
+  {
+    path: "/fr_be/elements/timeline/",
     component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
   },
   {
@@ -16,11 +28,23 @@ export default [
     component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
   },
   {
+    path: "/fr_be/elements/goals/",
+    component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
+  },
+  {
+    path: "/projects/project-1/",
+    component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
+  },
+  {
+    path: "/projects/project-2/",
+    component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
+  },
+  {
     path: "/partners/moselle/",
     component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
   },
   {
-    path: "/fr_be/timeline/",
+    path: "/elements/timeline/",
     component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
   },
   {
@@ -36,7 +60,11 @@ export default [
     component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
   },
   {
-    path: "/fr_be/goals/",
+    path: "/fr_be/home/",
+    component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
+  },
+  {
+    path: "/elements/goals/",
     component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
   },
   {
@@ -48,15 +76,11 @@ export default [
     component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
   },
   {
-    path: "/timeline/",
-    component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
-  },
-  {
     path: "/index-after-launch/",
     component: () => import(/* webpackChunkName: "page--src--pages--index-after-launch-vue" */ "/Users/pmcp/dev/aroma/src/pages/Index_afterLaunch.vue")
   },
   {
-    path: "/goals/",
+    path: "/home/",
     component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
   },
   {
