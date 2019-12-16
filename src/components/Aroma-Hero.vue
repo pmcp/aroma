@@ -16,7 +16,7 @@
         loop
         muted
         playsInline
-        src="/assets/video/1.mp4"
+        src="@/assets/video/1.mp4"
       ></video>
     </div>
     <!-- <div v-else class="video-bg__media" :style="{backgroundImage: 'url('+ cover +')'}">
