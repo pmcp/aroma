@@ -55,6 +55,11 @@ module.exports = {
       options: {
         client: {
           accessToken: 'hkENPzbQoYvpZeNPpK6pQgtt' // you must be replace with your token
+
+        },
+        params: {
+          resolve_links: 'story',
+          resolve_relations: 'preview-articles.articles'
         }
       }
     }

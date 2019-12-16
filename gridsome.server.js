@@ -18,12 +18,15 @@ module.exports = function (api) {
         edges {
           node {
             id
+            uuid
             full_slug
           }
         }
       }
     }`)
     // for each content found create a page
+
+    
     data.allStoryblokEntry.edges.forEach(({ node }) => {
       createPage({
         path: `/${node.full_slug}`,
@@ -34,4 +37,6 @@ module.exports = function (api) {
       })
     })
   })
+
+  
 }
