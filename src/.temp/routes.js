@@ -1,79 +1,79 @@
 export default [
   {
     path: "/fr_be/projects/project-1/",
-    component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
+    component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
   },
   {
     path: "/fr_be/projects/project-2/",
-    component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
+    component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
   },
   {
     path: "/fr_be/partners/moselle/",
-    component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
+    component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
   },
   {
     path: "/fr_be/elements/timeline/",
-    component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
+    component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
   },
   {
     path: "/fr_be/partners/centre-for-ecological-learning-luxembourg/",
-    component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
+    component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
   },
   {
     path: "/fr_be/partners/cartouche/",
-    component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
+    component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
   },
   {
     path: "/fr_be/partners/alterinnov/",
-    component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
+    component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
   },
   {
     path: "/fr_be/elements/goals/",
-    component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
+    component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
   },
   {
     path: "/projects/project-1/",
-    component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
+    component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
   },
   {
     path: "/projects/project-2/",
-    component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
+    component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
   },
   {
     path: "/partners/moselle/",
-    component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
+    component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
   },
   {
     path: "/elements/timeline/",
-    component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
+    component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
   },
   {
     path: "/partners/centre-for-ecological-learning-luxembourg/",
-    component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
+    component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
   },
   {
     path: "/partners/cartouche/",
-    component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
+    component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
   },
   {
     path: "/partners/alterinnov/",
-    component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
+    component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
   },
   {
     path: "/fr_be/home/",
-    component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
+    component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
   },
   {
     path: "/elements/goals/",
-    component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
+    component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
   },
   {
     path: "/fr_be/b0130118-a2ad-4a25-84d5-4696e95aaa44/",
-    component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
+    component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
   },
   {
     path: "/fr_be/disclaimer/",
-    component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
+    component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
   },
   {
     path: "/index-after-launch/",
@@ -81,11 +81,11 @@ export default [
   },
   {
     path: "/home/",
-    component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
+    component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
   },
   {
     path: "/b0130118-a2ad-4a25-84d5-4696e95aaa44/",
-    component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
+    component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
   },
   {
     path: "/editor/",
@@ -93,7 +93,7 @@ export default [
   },
   {
     path: "/disclaimer/",
-    component: () => import(/* webpackChunkName: "page--src--templates--page-simple-vue" */ "/Users/pmcp/dev/aroma/src/templates/PageSimple.vue")
+    component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
   },
   {
     path: "/about/",

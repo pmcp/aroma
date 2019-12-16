@@ -23,12 +23,11 @@ module.exports = function (api) {
         }
       }
     }`)
-
     // for each content found create a page
     data.allStoryblokEntry.edges.forEach(({ node }) => {
       createPage({
         path: `/${node.full_slug}`,
-        component: './src/templates/PageSimple.vue',
+        component: './src/templates/Page.vue',
         context: {
           id: node.id
         }

@@ -21,7 +21,7 @@
     <ul class="features-v3__cards grid grid-gap-lg">
       <li v-for="c in content.articles" :key="c.uuid" class="col-4@md">
         
-        <a :href="c.full_slug" class="card-v8">
+        <a :href="c.full_slug" class="card-v8" v-if="c.content">
           <figure>
             <img :src="c.content.cover" alt="Image description">
           </figure>
