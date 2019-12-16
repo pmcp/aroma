@@ -30,7 +30,7 @@
           <div class="col-6 text-center align-middle">
 
             <g-image
-              :src="cover"
+              src="~/assets/img/AROMA-Interreg_opacity.png"
               alt="Aroma-Interreg logo"
               width="500"
             />
