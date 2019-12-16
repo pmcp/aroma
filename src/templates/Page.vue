@@ -6,7 +6,17 @@
   </Layout>
 </template>
 
-
+<script>
+export default {
+  metaInfo: {
+    title: "Aroma"
+  },
+  mounted() {
+    //require the full cody library
+    window.cody = require("~/assets/js/cody-scripts.js");
+  }
+};
+</script>
 
 <page-query>
 query StoryblokEntry ($id: ID) {
