@@ -30,6 +30,7 @@ import AromaMap from "~/components/Aroma-Map";
 import AromaContentText from '~/components/Aroma-ContentText.vue'
 import AromaContentImages from '~/components/Aroma-ContentImages'
 import AromaContentVideo from '~/components/Aroma-ContentVideo'
+import AromaContentMap from '~/components/Aroma-ContentMap'
 
 
 
@@ -53,6 +54,7 @@ export default function (Vue, { router, head, isClient }) {
   Vue.component('aroma-content-text', AromaContentText)
   Vue.component('aroma-content-images', AromaContentImages)
   Vue.component('aroma-content-video', AromaContentVideo)
+  Vue.component('aroma-content-map', AromaContentMap)
 
   head.link.push({
     rel: 'stylesheet',

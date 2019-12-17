@@ -22,13 +22,21 @@
  */
 let mapRef = {} // <--- HERE
 
+import Mapbox from 'mapbox-gl-vue';
+
 export default {
-  components: { 
-    Mapbox: () =>
-        import ('mapbox-gl-vue')
-        .then(m => m.Mapbox)
-        .catch(),
-   },
+  components: {
+    Mapbox,
+  },
+  // components: { 
+  //   Mapbox: () =>
+  //       import ('mapbox-gl-vue')
+  //       .then(m => {
+  //         console.log(m)
+  //         m.Mapbox
+  //       })
+  //       .catch(),
+  //  },
   props: {
     lat: {
       type: String,
