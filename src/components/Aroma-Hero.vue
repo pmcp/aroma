@@ -1,46 +1,57 @@
 <template>
   <section
-    class="video-bg margin-bottom-xl aroma-hero"
+    class="video-bg aroma-hero"
     v-bind:class="{'aroma-hero--small': !expanded }"
-    :style="{backgroundImage: 'url('+ cover +')'}"
+    
   >
+  
+  
     <div
       v-if="video"
       class="video-bg__media"
       aria-hidden="true"
       style="opacity:20%;"
     >
+    
       <!-- <img src="~/assets/img/video-background-hero-img-1.jpg" alt="Video Preview"> -->
       <video
         autoplay
         loop
         muted
         playsInline
-        src="@/assets/video/1.mp4"
+        :src="video"
       ></video>
     </div>
-    <!-- <div v-else class="video-bg__media" :style="{backgroundImage: 'url('+ cover +')'}">
-      </div> -->
-    <div class="video-bg__content height-100% container max-width-lg">
-      <div
-        class="flex justify-center max-width-s parent grid grid-gap-xs align-middle"
-        style="align-items: center;height:70vh"
-      >
+    
+    <div v-else class="video-bg__media" :style="{backgroundImage: 'url('+ cover +')'}" style="opacity:20%;background-size:cover">
+    </div> 
+      
+    <div class="video-bg__content container max-width-lg grid justify-center" style="height:100%">
+  
         <template v-if="logos">
-          <div class="col-6 text-center align-middle">
-
-            <g-image
-              src="~/assets/img/AROMA-Interreg_opacity.png"
-              alt="Aroma-Interreg logo"
-              width="500"
-            />
-          </div>
+          <div class="grid col-12 grid justify-center items-center">
+            <div class="col-6 text-center align-middle" >
+              <g-image
+                src="~/assets/img/AROMA-Interreg_opacity.png"
+                alt="Aroma-Interreg logo"
+                width="500"
+              />
+            </div>
           <div class="col-6 text-center align-middle">
             <g-image
               src="~/assets/svg/aroma-color.svg"
               alt="Aroma logo"
               width="500"
             />
+          </div>
+          </div>
+          <div v-if="expanded" class=" items-center text-component text-center max-width-md" style="flex-wrap:nowrap">
+            <h1 class="text-center padding-y-sm padding-x-xl">
+              <slot name="title"></slot>
+            </h1>
+            <p class="text-center padding-x-xxxl">
+              <slot name="subtext"></slot>
+            </p>
           </div>
         </template>
         <template v-else>
@@ -53,7 +64,7 @@
             </p>
           </div>
         </template>
-      </div>
+      
     </div>
 
   </section>
@@ -77,7 +88,7 @@ export default {
       default: "~/assets/img/AROMA-Interreg_opacity.png"
     },
     video: {
-      type: Boolean,
+      type: String,
       default: false
     }
   }
@@ -93,7 +104,8 @@ export default {
 
 }
 .aroma-hero--small {
-  height: unset;
+  height: 40vh;
+  min-height: 400px;
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
