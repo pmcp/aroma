@@ -1,5 +1,5 @@
 <template>
-        <!-- <ClientOnly> -->
+        <ClientOnly>
   <div id="app">
     <mapbox
       access-token="pk.eyJ1IjoicG1jcCIsImEiOiJjazQ5bGNiMzMwNXljM21yb3ZtMzN4cG9sIn0.E9PfoikaHtDRNTE_a18_vg"
@@ -11,10 +11,10 @@
     />
   </div>
   
-        <!-- </ClientOnly> -->
+        </ClientOnly>
 </template>
 <script>
-import Mapbox from 'mapbox-gl-vue'
+
 
 /**
  *  We have to keep the map reference outside vue 'data' object
@@ -22,9 +22,13 @@ import Mapbox from 'mapbox-gl-vue'
  */
 let mapRef = {} // <--- HERE
 
-
 export default {
-  components: { Mapbox },
+  components: { 
+    Mapbox: () =>
+        import ('mapbox-gl-vue')
+        .then(m => m.Mapbox)
+        .catch(),
+   },
   props: {
     lat: {
       type: String,

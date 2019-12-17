@@ -8,6 +8,14 @@ export default [
     component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
   },
   {
+    path: "/fr_be/organisations/organisation-1/",
+    component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
+  },
+  {
+    path: "/fr_be/organisations/organisation-2/",
+    component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
+  },
+  {
     path: "/fr_be/partners/moselle/",
     component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
   },
@@ -41,6 +49,14 @@ export default [
   },
   {
     path: "/projects/project-2/",
+    component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
+  },
+  {
+    path: "/organisations/organisation-1/",
+    component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
+  },
+  {
+    path: "/organisations/organisation-2/",
     component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
   },
   {
@@ -84,6 +100,10 @@ export default [
     component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
   },
   {
+    path: "/fr_be/carte-interactive/",
+    component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
+  },
+  {
     path: "/index-after-launch/",
     component: () => import(/* webpackChunkName: "page--src--pages--index-after-launch-vue" */ "/Users/pmcp/dev/aroma/src/pages/Index_afterLaunch.vue")
   },
@@ -101,6 +121,10 @@ export default [
   },
   {
     path: "/disclaimer/",
+    component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
+  },
+  {
+    path: "/carte-interactive/",
     component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
   },
   {
