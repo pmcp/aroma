@@ -1,6 +1,7 @@
 <template>
   <Layout class="padding-y-xl">
     <component v-if="story && story.content" :is="`aroma-${story.content.component}`" :content="story.content"></component>
+    {{ story }}
   </Layout>
 </template>
 
@@ -25,7 +26,7 @@ export default {
   },
   mounted() {
     loadStoryblokBridge(() => { this.initStoryblokEvents() })
-    // window.cody = require("~/assets/js/cody-scripts-min.js");
+    window.cody = require("~/assets/js/cody-scripts-min.js");
   
   },
   methods: {
