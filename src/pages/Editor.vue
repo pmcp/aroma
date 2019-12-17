@@ -1,7 +1,6 @@
 <template>
   <Layout class="padding-y-xl">
     <component v-if="story && story.content" :is="`aroma-${story.content.component}`" :content="story.content"></component>
-    {{ story }}
   </Layout>
 </template>
 
@@ -35,7 +34,7 @@ export default {
         slug: window.storyblok.getParam('path'),
         version: 'draft',
         resolve_links: 'story',
-        resolve_relations: 'preview-articles.articles'
+        resolve_relations: ['preview-articles.articles', 'page-map.organisations']
       }, (data) => {
         this.story = data.story
         
