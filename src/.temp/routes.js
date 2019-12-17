@@ -24,6 +24,10 @@ export default [
     component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
   },
   {
+    path: "/fr_be/elements/map/",
+    component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
+  },
+  {
     path: "/fr_be/partners/alterinnov/",
     component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
   },
@@ -53,6 +57,10 @@ export default [
   },
   {
     path: "/partners/cartouche/",
+    component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
+  },
+  {
+    path: "/elements/map/",
     component: () => import(/* webpackChunkName: "page--src--templates--page-vue" */ "/Users/pmcp/dev/aroma/src/templates/Page.vue")
   },
   {

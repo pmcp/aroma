@@ -1,3 +1,5 @@
+// Added this only because of mapboxgl (look down at "configureWebpack")
+const webpack = require('webpack');
 // This is where project configuration and plugin options are located. 
 // Learn more: https://gridsome.org/docs/config
 
@@ -47,6 +49,13 @@ module.exports = {
     types.forEach(type => {
       addStyleResource(config.module.rule('scss').oneOf(type))
     })
+  },
+  configureWebpack: {
+    plugins: [
+      new webpack.ProvidePlugin({
+        mapboxgl: 'mapbox-gl',
+      }),
+    ]
   },
   siteName: 'Gridsome',
   plugins: [

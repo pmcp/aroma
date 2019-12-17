@@ -11,10 +11,13 @@
     "@gridsome/source-graphql": "^0.1.0",
     "global": "^4.4.0",
     "gridsome": "^0.7.0",
-    "gridsome-source-storyblok": "^0.1.5"
+    "gridsome-source-storyblok": "^0.1.5",
+    "mapbox-gl": "^1.6.0",
+    "mapbox-gl-vue": "^2.0.3"
   },
   "devDependencies": {
     "codyhouse-framework": "^2.1.11",
+    "file-loader": "^5.0.2",
     "node-sass": "^4.13.0",
     "sass-loader": "^8.0.0",
     "stack-trace": "^0.0.10",
