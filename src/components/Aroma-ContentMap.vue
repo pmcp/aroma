@@ -2,8 +2,7 @@
   
     <aroma-map
       :locations="locations"
-      :lat="content.lat"
-      :long="content.long"
+      :center="center"
       :zoom="zoomMap"
     ></aroma-map>
   
@@ -18,6 +17,9 @@ export default {
     }
   },
   computed: {
+    center() {
+      return [this.content.lat, this.content.long]
+    },
     zoomMap() {
       return this.content.zoom * 1;
     },

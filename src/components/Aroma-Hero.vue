@@ -55,7 +55,7 @@
           </div>
         </template>
         <template v-else>
-          <div class="align-middle text-center">
+          <div class="text-center flex flex-column justify-center text-component">
             <h1>
               <slot name="title"></slot>
             </h1>
@@ -89,7 +89,7 @@ export default {
     },
     video: {
       type: String,
-      default: false
+      default: ''
     }
   }
 };

@@ -1,11 +1,8 @@
 <template>
-  <div class="map-container">
     <div
       id="map"
       class="map"
     ></div>
-    
-  </div>
 </template>
  
 <script>
