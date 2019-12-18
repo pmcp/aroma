@@ -1,6 +1,7 @@
 <template>
   <Layout class="padding-y-lg">
     <component v-if="story && story.content" :is="`aroma-${story.content.component}`" :content="story.content"></component>
+
   </Layout>
 </template>
 
@@ -17,7 +18,12 @@ const loadStoryblokBridge = function(cb) {
   document.getElementsByTagName('head')[0].appendChild(script)
 }
 
-const resolveRelations = {'preview-articles': 'articles', 'page-map':'organisations'}
+const resolveRelations = {
+  'preview-articles': 'articles',
+  'page-map':'organisations',
+  'existing_element':'existing_element',
+  'partners':['partners', 'poweredby']
+  }
 
 export default {
   data() {

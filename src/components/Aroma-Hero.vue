@@ -26,10 +26,10 @@
     <div v-else class="video-bg__media" :style="{backgroundImage: 'url('+ cover +')'}" style="opacity:20%;background-size:cover">
     </div> 
       
-    <div class="video-bg__content container max-width-lg grid justify-center" style="height:100%">
+    <div class="video-bg__content container max-width-lg flex flex-column justify-center" style="height:100%">
   
         <template v-if="logos">
-          <div class="grid col-12 grid justify-center items-center">
+          <div class="flex  justify-center items-center">
             <div class="col-6 text-center align-middle" >
               <g-image
                 src="~/assets/img/AROMA-Interreg_opacity.png"
@@ -45,11 +45,16 @@
             />
           </div>
           </div>
-          <div v-if="expanded" class=" items-center text-component text-center max-width-md" style="flex-wrap:nowrap">
-            <h1 class="text-center padding-y-sm padding-x-xl">
+          <div v-if="expanded" class=" text-component text-center ">
+            <h1 v-if="showtitle" class="text-center padding-y-sm padding-x-xl">
               <slot name="title"></slot>
             </h1>
-            <p class="text-center padding-x-xxxl">
+
+              <h2 class="text-center padding-y-sm padding-x-xl">
+              <slot name="subtitle"></slot>
+            </h2>
+
+            <p class="text-center padding-x-lg">
               <slot name="subtext"></slot>
             </p>
           </div>
@@ -90,6 +95,10 @@ export default {
     video: {
       type: String,
       default: ''
+    },
+    showtitle: {
+      type: Boolean,
+      default: true
     }
   }
 };
@@ -100,7 +109,7 @@ export default {
 .aroma-hero {
   background-size: cover;
   height: 70vh;
-  min-height: 400px;
+  min-height:600px;
 
 }
 .aroma-hero--small {

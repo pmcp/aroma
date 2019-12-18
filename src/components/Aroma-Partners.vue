@@ -1,36 +1,28 @@
 <template>
-  <div class="parent grid  padding-y-xl justify-center">
-    
-    <div  class="col-12" >
-       <g-image alt="logos partners" src="~/assets/img/logos.jpg"/>
+  <section class="text-component text-center">  
+    <h2>{{ content.title}}</h2>
+    <div class="parent grid padding-y-md justify-center">
+      <aroma-partner class="col-2" v-for="partner in content.partners" :key="partner.uuid" :content="partner"></aroma-partner>
     </div>
-    <!-- <div v-for="partner in $static.partners.edges" v-bind:key="partner.id" class="col-2" >
-      
-      
-      <a v-if="partner.node.content.url" :href="partner.node.content.url.url" target="_blank" :title="partner.node.name">
-        <g-image :src="partner.node.content.logo" :alt="partner.node.name" width="500"/>
-      </a>
-      <g-image v-else :src="partner.node.content.logo" :alt="partner.node.name" width="500"/>
-    </div> -->
-  </div>
+    <h3>{{ content.title_poweredby}}</h3>
+    <div class="parent grid padding-y-md justify-center">
+      <aroma-partner class="col-2" v-for="partner in content.poweredby" :key="partner.uuid" :content="partner"></aroma-partner>
+    </div>
+    
+  </section>
 </template>
 
-<static-query>
-query {
-  partners: allStoryblokEntry(filter: { full_slug: { regex: "partners" },  lang: { regex: "default" }}) {
-      edges {
-        node {
-          lang
-          id
-          full_slug
-          name
-        content
-      }
+<script>
+export default {
+  props: {
+    content: {
+      type: Object,
+      default: () => ({})
     }
   }
-}
-</static-query>
-
-<script>
-
+};
 </script>
+
+<style lang="scss" scoped>
+
+</style>

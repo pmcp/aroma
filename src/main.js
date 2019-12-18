@@ -23,6 +23,7 @@ import AromaCarousel from '~/components/Aroma-Carousel'
 import AromaPreviewArticles from '~/components/Aroma-PreviewArticles'
 import AromaUndefined from '~/components/Aroma-Undefined'
 import AromaPartners from "~/components/Aroma-Partners";
+import AromaPartner from "~/components/Aroma-Partner";
 import AromaOrganisation from "~/components/Aroma-Organisation";
 import AromaOrganisationDetail from "~/components/Aroma-OrganisationDetail";
 import AromaMap from "~/components/Aroma-Map";
@@ -46,6 +47,7 @@ export default function (Vue, { router, head, isClient }) {
   Vue.component('aroma-preview-articles', AromaPreviewArticles)
   Vue.component('aroma-undefined', AromaUndefined)
   Vue.component('aroma-partners', AromaPartners)
+  Vue.component('aroma-partner', AromaPartner)
   Vue.component('aroma-organisation', AromaOrganisation)
   Vue.component('aroma-organisation-detail', AromaOrganisationDetail)
   Vue.component('aroma-map', AromaMap)

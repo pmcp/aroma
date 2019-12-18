@@ -1,7 +1,7 @@
 <template>
   <article class=" " >
     
-    <aroma-hero :expanded="content.header_expanded" :cover="content.cover_image" :video="content.cover_video">
+    <aroma-hero :expanded="content.header_expanded" :cover="content.cover_image" :video="content.cover_video" :showtitle="content.show_title">
       <template v-slot:title>{{ content.title }}</template>
       <template v-slot:subtitle>{{ content.subtitle }}</template>
       <template v-slot:subtext>{{ content.subtext }}</template>
@@ -27,11 +27,7 @@
       </div>
     </template>
 
-    <div class="container max-width-adaptive-sm">
-      <div class="text-component line-height-lg v-space-md">
-        <aroma-content-text :content="content.content" v-editable="content.content"></aroma-content-text>
-      </div>
-    </div>
+   
   </article>
 
 </template>
