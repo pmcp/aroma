@@ -17,6 +17,8 @@ const loadStoryblokBridge = function(cb) {
   document.getElementsByTagName('head')[0].appendChild(script)
 }
 
+const resolveRelations = {'preview-articles': 'articles', 'page-map':'organisations'}
+
 export default {
   data() {
     return {
@@ -29,12 +31,19 @@ export default {
   
   },
   methods: {
-    loadStory() {
+    loadStory(resolveRelations) {
+      let resolveRelationsArray = []
+      if(resolveRelations) {
+        Object.keys( resolveRelations ).forEach( key => {
+          resolveRelationsArray = [...resolveRelationsArray, `${key}.${resolveRelations[key]}`]
+        });
+      }
+
       window.storyblok.get({
         slug: window.storyblok.getParam('path'),
         version: 'draft',
         resolve_links: 'story',
-        resolve_relations: ['preview-articles.articles', 'page-map.organisations']
+        resolve_relations: [resolveRelationsArray]
       }, (data) => {
         this.story = data.story
         
@@ -42,21 +51,29 @@ export default {
     },
     initStoryblokEvents() {
       
-      this.loadStory()
+      
+      this.loadStory(resolveRelations)
 
       let sb = window.storyblok
   
-  
       sb.on(['change', 'published'], (payload) => {
-        this.loadStory()
+        
+        this.loadStory(resolveRelations)
       })
 
       sb.on('input', (payload) => {
-        this.story = payload.story
         if (this.story && payload.story.id === this.story.id) {
           payload.story.content = sb.addComments(payload.story.content, payload.story.id)
+          // Check for resolve_relations
+          if(resolveRelations) {
+            Object.keys( resolveRelations ).forEach( key => {
+              if(payload.story.content.component === key) payload.story.content[resolveRelations[key]] = this.story.content[resolveRelations[key]]
+            });
+          }
           this.story = payload.story;
-          
+      
+
+
         }
       })
 
