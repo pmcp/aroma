@@ -1,19 +1,18 @@
 <template>
-  <article class="padding-y-lg margin-top-sm" >
-  <aroma-hero :expanded="false" :video="true"></aroma-hero>
-  <header class="container max-width-xs margin-bottom-lg">
-    <div class="text-component text-center line-height-lg v-space-md margin-bottom-md">
-      <h1>{{ content.title }}</h1>
-      <p class="color-contrast-medium text-md">{{ content.subtitle }}</p>
-    </div>
-  </header>
+  <article class=" " >
+    
+    <aroma-hero :expanded="content.header_expanded" :cover="content.cover_image" :video="content.cover_video">
+      <template v-slot:title>{{ content.title }}</template>
+      <template v-slot:subtitle>{{ content.subtitle }}</template>
+      <template v-slot:subtext>{{ content.subtext }}</template>
+    </aroma-hero>
+  
 
   
 
     
     <template v-if="content.sections">
       <div v-for="section in content.sections" :key="section._uid">
-        
         <template v-if="section.element || section.element != undefined">
           <template v-if="section.element.story || section.element.story != undefined">
             
@@ -23,6 +22,7 @@
         <template v-else>
           
           <component class="padding-y-xxl" :is="`aroma-${section.component}`" :content="section"></component>
+          
         </template>
       </div>
     </template>

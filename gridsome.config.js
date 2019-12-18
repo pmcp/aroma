@@ -1,3 +1,5 @@
+// Added this only because of mapboxgl (look down at "configureWebpack")
+// const webpack = require('webpack');
 // This is where project configuration and plugin options are located. 
 // Learn more: https://gridsome.org/docs/config
 
@@ -59,7 +61,7 @@ module.exports = {
         },
         params: {
           resolve_links: 'story',
-          resolve_relations: 'preview-articles.articles'
+          resolve_relations: ['preview-articles.articles', 'page-map.organisations']
         }
       }
     }

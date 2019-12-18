@@ -2,7 +2,6 @@
 <template>
   <Layout>
     <component v-if="$page.page && $page.page.content" :is="`aroma-${$page.page.content.component}`" :content="$page.page.content"></component>
-
   </Layout>
 </template>
 

@@ -14,6 +14,7 @@ import DefaultLayout from '~/layouts/Default.vue'
 import AromaPageDefault from '~/components/Aroma-PageDefault.vue'
 import AromaPageLaunch from '~/components/Aroma-PageLaunch.vue'
 import AromaPageProject from '~/components/Aroma-PageProject.vue'
+import AromaPageMap from '~/components/Aroma-PageMap.vue'
 
 // COMPONENTS
 import AromaHero from '~/components/Aroma-Hero.vue'
@@ -22,18 +23,22 @@ import AromaCarousel from '~/components/Aroma-Carousel'
 import AromaPreviewArticles from '~/components/Aroma-PreviewArticles'
 import AromaUndefined from '~/components/Aroma-Undefined'
 import AromaPartners from "~/components/Aroma-Partners";
+import AromaOrganisation from "~/components/Aroma-Organisation";
+import AromaOrganisationDetail from "~/components/Aroma-OrganisationDetail";
+import AromaMap from "~/components/Aroma-Map";
+import AromaForm from "~/components/Aroma-Form";
 
 import AromaContentText from '~/components/Aroma-ContentText.vue'
 import AromaContentImages from '~/components/Aroma-ContentImages'
 import AromaContentVideo from '~/components/Aroma-ContentVideo'
-
-
+import AromaContentMap from '~/components/Aroma-ContentMap'
 
 export default function (Vue, { router, head, isClient }) {
   Vue.component('Layout', DefaultLayout),
   Vue.component('aroma-page-default', AromaPageDefault)
   Vue.component('aroma-page-launch', AromaPageLaunch)
   Vue.component('aroma-page-project', AromaPageProject)
+  Vue.component('aroma-page-map', AromaPageMap)
   
   Vue.component('aroma-hero', AromaHero)
   Vue.component('aroma-timeline', AromaTimeLine)
@@ -41,16 +46,29 @@ export default function (Vue, { router, head, isClient }) {
   Vue.component('aroma-preview-articles', AromaPreviewArticles)
   Vue.component('aroma-undefined', AromaUndefined)
   Vue.component('aroma-partners', AromaPartners)
+  Vue.component('aroma-organisation', AromaOrganisation)
+  Vue.component('aroma-organisation-detail', AromaOrganisationDetail)
+  Vue.component('aroma-map', AromaMap)
+  Vue.component('aroma-form', AromaForm)
 
   Vue.component('aroma-content-text', AromaContentText)
   Vue.component('aroma-content-images', AromaContentImages)
   Vue.component('aroma-content-video', AromaContentVideo)
+  Vue.component('aroma-content-map', AromaContentMap)
+
+  
+  
+  // Vue.prototype.mapboxgl = mapboxgl;
 
   head.link.push({
     rel: 'stylesheet',
     href: 'https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800&display=swap'
   })
-  
+
+  head.link.push({
+    rel: 'stylesheet',
+    href: 'https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css'
+  })
   
   // Add an external Javascript before the closing </body> tag
   head.script.push({
