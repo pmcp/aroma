@@ -9,11 +9,11 @@
   "dependencies": {
     "@gridsome/cli": "^0.3.1",
     "@gridsome/source-graphql": "^0.1.0",
+    "@mapbox/mapbox-gl-geocoder": "^4.5.0",
     "global": "^4.4.0",
-    "gridsome": "^0.7.0",
+    "gridsome": "^0.7.12",
     "gridsome-source-storyblok": "^0.1.5",
-    "mapbox-gl": "^1.6.0",
-    "mapbox-gl-vue": "^2.0.3"
+    "mapbox-gl": "^1.6.0"
   },
   "devDependencies": {
     "codyhouse-framework": "^2.1.11",

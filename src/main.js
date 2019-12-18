@@ -33,8 +33,6 @@ import AromaContentImages from '~/components/Aroma-ContentImages'
 import AromaContentVideo from '~/components/Aroma-ContentVideo'
 import AromaContentMap from '~/components/Aroma-ContentMap'
 
-
-
 export default function (Vue, { router, head, isClient }) {
   Vue.component('Layout', DefaultLayout),
   Vue.component('aroma-page-default', AromaPageDefault)
@@ -57,7 +55,10 @@ export default function (Vue, { router, head, isClient }) {
   Vue.component('aroma-content-images', AromaContentImages)
   Vue.component('aroma-content-video', AromaContentVideo)
   Vue.component('aroma-content-map', AromaContentMap)
+
   
+  
+  // Vue.prototype.mapboxgl = mapboxgl;
 
   head.link.push({
     rel: 'stylesheet',

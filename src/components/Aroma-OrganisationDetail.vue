@@ -4,7 +4,7 @@
       <!-- <img src="../../../app/assets/img/author-img-1.jpg" alt="Author picture"> -->
     </a>
   
-    <div class="author__content text-component">
+    <div v-if="org.content" class="author__content text-component">
       <h2>{{ org.content.name }}</h2>
       <p>{{ org.content.street }} {{ org.content.number }}
       <br>{{ org.content.number }} {{ org.content.city }}
