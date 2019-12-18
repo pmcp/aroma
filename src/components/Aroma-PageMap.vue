@@ -2,17 +2,19 @@
   <div>
     <aroma-map
       :locations="locations"
-      :lat="lat"
-      :long="long"
+      :center="center"
       :zoom="zoomMap"
     ></aroma-map>
+    
     <div class="parent grid grid-gap-xs">
-      <aroma-organisation-detail v-for="org in content.organisations" :key="org.uuid" :org="org" @click.native="setCoordinates(org.content.address_lat, org.content.address_long)">
+      <aroma-organisation-detail v-for="org in content.organisations" :key="org.uuid" :org="org" @click.native="flyTo(org.content.address_lat, org.content.address_long)">
       </aroma-organisation-detail>
     </div>
   </div>
 </template>
 <script>
+
+
 export default {
   props: {
     content: {
@@ -20,19 +22,15 @@ export default {
       default: () => ({})
     }
   },
-  data() {
-    return {
-      lat: '',
-      long: ''
-    }
-  },
   computed: {
+    center() {
+      return [this.content.long*1, this.content.lat*1]
+    },
     zoomMap() {
       return this.content.zoom * 1;
     },
     locations() {
       let locations = [];
-      
       this.content.organisations.forEach(el => {
         if (el.content) {
           locations.push({
@@ -48,22 +46,22 @@ export default {
           });
         }
       });
-      console.log(locations)
       return locations;
     },
     
   },
   methods: {
-    setCoordinates(lat, long) {
-      this.lat = lat;
-      this.long = long
+    flyTo(lat, long) {
+      this.content.lat = long;
+      this.content.long = lat
     }
   },
   created () {
-    if (this.content.organisations[0].content) {
-      this.lat = this.content.organisations[0].content.address_lat;
-      this.long = this.content.organisations[0].content.address_long;
-    };
+    // if (this.content.organisations[0].content) {
+    //   this.lat = this.content.organisations[0].content.address_lat;
+    //   this.long = this.content.organisations[0].content.address_long;
+    // };
   },
 };
 </script>
+

@@ -65,10 +65,10 @@ export default function (Vue, { router, head, isClient }) {
     href: 'https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800&display=swap'
   })
 
-  // head.link.push({
-  //   rel: 'stylesheet',
-  //   href: 'https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css'
-  // })
+  head.link.push({
+    rel: 'stylesheet',
+    href: 'https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css'
+  })
   
   // Add an external Javascript before the closing </body> tag
   head.script.push({

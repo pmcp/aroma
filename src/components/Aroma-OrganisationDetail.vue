@@ -1,10 +1,9 @@
 <template>
   <div class="author author--featured col-4@sm">
-    <a href="#0" class="author__img-wrapper">
+    <!-- <a href="#0" class="author__img-wrapper"> -->
       <!-- <img src="../../../app/assets/img/author-img-1.jpg" alt="Author picture"> -->
-    </a>
-  
-    <div v-if="org.content" class="author__content text-component">
+    <!-- </a> -->
+    <div v-if="org.content" class="author__content text-component aroma-organisation__link">
       <h2>{{ org.content.name }}</h2>
       <p>{{ org.content.street }} {{ org.content.number }}
       <br>{{ org.content.number }} {{ org.content.city }}
@@ -43,3 +42,10 @@ export default {
   }
 };
 </script>
+
+
+<style scoped>
+.aroma-organisation__link {
+  cursor: pointer;
+}
+</style>
