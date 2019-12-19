@@ -61,7 +61,7 @@ module.exports = {
         },
         params: {
           resolve_links: 'story',
-          resolve_relations: ['preview-articles.articles', 'page-map.organisations', 'partners.partners', 'partners.poweredby']
+          resolve_relations: ['preview-articles.articles', 'page-map.organisations', 'partners.partners', 'partners.poweredby', 'existing_element.element',]
         }
       }
     }
