@@ -1,7 +1,6 @@
 <template>
   <Layout class="padding-y-lg">
     <component v-if="story && story.content" :is="`aroma-${story.content.component}`" :content="story.content"></component>
-
   </Layout>
 </template>
 
@@ -21,7 +20,7 @@ const loadStoryblokBridge = function(cb) {
 const resolveRelations = {
   'preview-articles': 'articles',
   'page-map':'organisations',
-  'existing_element':'existing_element',
+  'existing_element':'element',
   'partners':['partners', 'poweredby']
   }
 
@@ -33,7 +32,7 @@ export default {
   },
   mounted() {
     loadStoryblokBridge(() => { this.initStoryblokEvents() })
-    window.cody = require("~/assets/js/cody-scripts-min.js");
+    // window.cody = require("~/assets/js/cody-scripts-min.js");
   
   },
   methods: {
@@ -51,6 +50,7 @@ export default {
         resolve_links: 'story',
         resolve_relations: [resolveRelationsArray]
       }, (data) => {
+
         this.story = data.story
         
       })
@@ -63,7 +63,6 @@ export default {
       let sb = window.storyblok
   
       sb.on(['change', 'published'], (payload) => {
-        
         this.loadStory(resolveRelations)
       })
 
@@ -72,11 +71,22 @@ export default {
           payload.story.content = sb.addComments(payload.story.content, payload.story.id)
           // Check for resolve_relations
           if(resolveRelations) {
-            Object.keys( resolveRelations ).forEach( key => {
-              if(payload.story.content.component === key) payload.story.content[resolveRelations[key]] = this.story.content[resolveRelations[key]]
+            Object.keys( resolveRelations ).forEach( (key, idx, array) => {
+
+              if(payload.story.content.component === key) {
+                payload.story.content[resolveRelations[key]] = this.story.content[resolveRelations[key]]
+              }
+               if (idx === Object.keys( resolveRelations ).length - 1){ 
+                this.story = payload.story;
+                window.cody = require("~/assets/js/cody-scripts-min.js");
+               }  
             });
+          } else {
+            this.story = payload.story;
+            window.cody = require("~/assets/js/cody-scripts-min.js");
           }
-          this.story = payload.story;
+
+          
       
 
 

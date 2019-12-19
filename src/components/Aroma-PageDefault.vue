@@ -13,19 +13,24 @@
     
     <template v-if="content.sections">
       <div v-for="section in content.sections" :key="section._uid">
-        <template v-if="section.element || section.element != undefined">
+        <template v-if="section.component === 'existing_element'">
+          <template v-if="section.element">
+            <template v-if="section.element.content">
+            <component class="padding-y-xxl" :is="`aroma-${section.element.content.component}`" :content="section.element.content"></component>
+            </template>
+          </template>
+        </template>
+        <template v-else-if="section.element || section.element != undefined">
           <template v-if="section.element.story || section.element.story != undefined">
-            
             <component class="padding-y-xxl" :is="`aroma-${section.element.story.content.component}`" :content="section.element.story.content"></component>
           </template>
         </template>
         <template v-else>
-          
           <component class="padding-y-xxl" :is="`aroma-${section.component}`" :content="section"></component>
-          
         </template>
       </div>
     </template>
+
 
    
   </article>
