@@ -9,7 +9,7 @@
 
 // SCSS Mixins & Variables Part 1
 const path = require('path')
-function addStyleResource (rule) {
+function addStyleResource(rule) {
   rule.use('style-resource')
     .loader('style-resources-loader')
     .options({
@@ -39,10 +39,9 @@ function addStyleResource (rule) {
 //   ]
 // }
 
-
 module.exports = {
   // SCSS Mixins & Variables Part 2
-  chainWebpack (config) {
+  chainWebpack(config) {
     config.resolve.symlinks(false)
     // Load variables for all vue-files
     const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
@@ -57,11 +56,10 @@ module.exports = {
       options: {
         client: {
           accessToken: 'hkENPzbQoYvpZeNPpK6pQgtt' // you must be replace with your token
-
         },
         params: {
           resolve_links: 'story',
-          resolve_relations: ['preview-articles.articles', 'page-map.organisations', 'partners.partners', 'partners.poweredby', 'existing_element.element',]
+          resolve_relations: 'preview-articles.articles, page-map.organisations,partners.partners,partners.poweredby,existing_element.element'
         }
       }
     }

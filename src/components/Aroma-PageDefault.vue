@@ -1,17 +1,11 @@
 <template>
-  <article class=" " >
-    
+  <article>
     <aroma-hero :expanded="content.header_expanded" :cover="content.cover_image" :video="content.cover_video" :showtitle="content.show_title">
       <template v-slot:title>{{ content.title }}</template>
       <template v-slot:subtitle>{{ content.subtitle }}</template>
       <template v-slot:subtext>{{ content.subtext }}</template>
     </aroma-hero>
-  
-
-  
-
-    
-    <template v-if="content.sections">
+    <template v-if="content.sections">    
       <div v-for="section in content.sections" :key="section._uid">
         <template v-if="section.component === 'existing_element'">
           <template v-if="section.element">
@@ -30,13 +24,8 @@
         </template>
       </div>
     </template>
-
-
-   
   </article>
-
 </template>
-
 <script>
 
 export default {
