@@ -1,6 +1,6 @@
 <template>
-  <section class="text-component text-center">
-    <h2>{{ content.title}}</h2>
+  <section class="text-component text-center padding-y-xl">
+    <h2 class="text-lg">{{ content.title}}</h2>
     <div class="parent grid padding-y-md justify-center">
       <aroma-partner
         class="col-2"
@@ -9,7 +9,7 @@
         :content="partner"
       ></aroma-partner>
     </div>
-    <h3>{{ content.title_poweredby}}</h3>
+    <h3 class="text-md">{{ content.title_poweredby}}</h3>
     <div class="parent grid padding-y-md justify-center">
       <aroma-partner
         class="col-2"

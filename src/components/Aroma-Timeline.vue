@@ -1,6 +1,6 @@
 <template>
   <div class="container max-width-lg cd-timeline__container">
-    <aroma-timeline-event v-for="event in content.events" :key="event._uid">
+    <aroma-timeline-event v-for="event in content.events" :key="event._uid" :milestone="event.milestone">
         <template v-slot:time>
           {{ event.time }}
         </template>

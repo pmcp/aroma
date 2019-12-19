@@ -7,7 +7,7 @@
     <div class="container max-width-adaptive-lg">
       <div class="grid grid-gap-md justify-between@md">
         <div class="text-component col-6@md" v-if="content.title">
-          <h1>{{ content.title }}</h1>
+          <h2 class="text-xl">{{ content.title }}</h2>
         </div>
   
         <div class="text-component col-5@md" v-if="content.description">
@@ -54,16 +54,19 @@ export default {
 };
 </script>
 
-
-<style scoped>
+<style scoped >
 .features-v3__text {
   padding-top: var(--space-xl);
   padding-bottom: calc(var(--space-xl) * 2);
-  background-color: var(--color-primary-lightest); 
+  background-color: var(--color-contrast-lower); 
+
+ 
 }
 
+ h2 {
+    color: var(--color-primary);
+  }
 .card-v8 {
   border-radius: 0;
-  clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
 }
 </style>

@@ -1,14 +1,13 @@
 <template>
-  <div class="loop-tabs js-loop-tabs ">
+  <section class="loop-tabs js-loop-tabs ">
     <div class="grid ">
       <div class="loop-tabs__content col-7@md flex flex-column justify-start@md text-center text-left@md">
-        <ul class="loop-tabs__controls js-loop-tabs__controls  flex flex-center flex-wrap flex-column@md items-start@md padding-xl">
+        <ul class="loop-tabs__controls js-loop-tabs__controls  flex flex-center flex-wrap flex-column@md items-start@md padding-md">
           <li
             v-for="(i, index) in content.items"
             :key="`text-${index}`"
             class="aroma-tab"
           >
-
             <a
               :href="`#tab${index}`"
               class="loop-tabs__control "
@@ -39,21 +38,20 @@
           <li
             v-for="(i, index) in content.items"
             :key="`images-${index}`"
-            class="loop-tabs__asset loop-tabs__asset--selected"
+            class="loop-tabs__asset loop-tabs__asset--selected padding-y-xl"
             :class="{'loop-tabs__asset--selected':(index === 0)}"
+            style=""
           >
-            <figure class="padding-y-md">
-              <g-image
-                :src="i.image"
-                width="500"
-              />
-              <figcaption>{{ i.caption }}</figcaption>
-            </figure>
+          <div class="aroma-loop__image" :style="{'backgroundImage':'url('+ i.image  +')'}">
+            
+
+          </div>
+          <div class="aroma-loop__caption ">{{ i.caption }}</div>
           </li>
         </ul>
       </div>
     </div>
-  </div>
+  </section>
 
 </template>
 
@@ -83,6 +81,7 @@ export default {
 .loop-tabs {
   overflow: hidden;
   color: var(--color-primary-lighter);
+  
 }
 
 .loop-tabs__content {
@@ -90,6 +89,13 @@ export default {
 }
 
 .loop-tabs__controls {
+}
+
+.aroma-loop__caption {
+  
+  position: relative;
+  top: 1rem;
+  left: 19%;
 }
 
 .aroma-tab {
@@ -106,7 +112,15 @@ export default {
   
 }
 
+figure {
+  height: 100%;
+  width: 100%;
+  img {
+    object-fit: cover;
+  }
+}
 .js .loop-tabs__control {
+  width: 150%;
   color: var(--color-primary-lightest) !important;
   &::before {
     
@@ -121,11 +135,25 @@ export default {
       transparent 0%,
       var(--color-primary-light) 100%
     ) !important;
-    width: 150%;
   }
 }
 
+.loop-tabs__asset {
+  height: 100%;
+  width: 100%;
+  }
+
+.aroma-loop__image {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
+
 @media (min-width: 1024px) {
+  .loop-tabs {
+    position: relative;
+  top: -34px;
+  }
   .loop-tabs__content {
     clip-path: polygon(0 0, 80% 0, 100% 100%, 0% 100%);
   }
