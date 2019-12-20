@@ -37,7 +37,7 @@ module.exports = function (api) {
       // })
       if(node.full_slug === 'home') {
         createPage({
-          path: '/test',
+          path: '/',
           component: './src/templates/Page.vue',
           context: {
             id: node.id
