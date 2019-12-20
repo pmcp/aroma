@@ -1,6 +1,5 @@
 <template>
   <div class="padding-sm">
-    
     <template v-if="fetchedContent">
     <a v-if="fetchedContent.content.url" :href="fetchedContent.content.url.url" target="blank">
       <g-image :src="fetchedContent.content.logo"></g-image>
@@ -10,6 +9,24 @@
   </div>
 </template>
 
+<static-query>
+  query {
+    allStoryblokEntry(filter: { full_slug: { regex: "partners" },  lang: { regex: "default" }}) {
+        edges {
+          node {
+            lang
+            id
+            uuid
+            full_slug
+            name
+            content
+          }
+        }
+      }
+  }
+</static-query>
+
+
 <script>
 export default {
   props: {
@@ -18,27 +35,47 @@ export default {
       default: () => ({})
     }
   },
-  data() {
-    return {
-      fetchedContent: null
-    }
-  },
-  mounted () {
-     if(typeof this.content === Object ) {
+  computed: {
+    fetchedContent() {
+         if(typeof this.content === Object ) {
         this.fetchedContent = content;
       } else {
-        this.fetchPartner(this.content)
+          return this.$static.allStoryblokEntry.edges.find(element => {
+            return element.node.uuid == this.content
+          }).node
       }
+      return this.data 
+    }
   },
+  // data() {
+  //   return {
+  //     fetchedContent: null
+  //   }
+  // },
+  
+  // mounted () {
+  //    if(typeof this.content === Object ) {
+  //       this.fetchedContent = content;
+  //     } else {
+  //       console.log('here')
+  //       // this.fetchPartner(this.content)
+  //         return this.$static.allStoryblokEntry.edges.find(element => {
+  //        console.log(element.node)
+  //           return element.node.uuid == this.content
+  //         }).node
+  //     }
+  // },
   methods: {
     fetchPartner(id) {
-     window.storyblok.get({
-        by_uuids: id,
-        slug: "/",  // adding slug "/" will make queries work again
-        version: 'draft',
-      }, (data) => {
-        this.fetchedContent = data.stories[0]
-      })
+      if(window.storyblok) {
+        window.storyblok.get({
+          by_uuids: id,
+          slug: "/",  // adding slug "/" will make queries work again
+          version: 'draft',
+        }, (data) => {
+          this.fetchedContent = data.stories[0]
+        })
+      }
     },
   },
 };

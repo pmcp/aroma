@@ -31,6 +31,7 @@
               :key="l.uuid"
               class="f-header__item padding-x-xs"
             >
+            {{ fetchNav(l) }}
               <a :href="'/' + l.url.cached_url">
                 {{ l.name }}
               </a>
@@ -66,6 +67,20 @@
 </template>
 
 
+<static-query>
+  query {
+    allStoryblokEntry {
+        edges {
+          node {
+            uuid
+            id
+            full_slug
+          }
+        }
+      }
+  }
+</static-query>
+
 
 <script>
 import AromaSearch from "~/components/Aroma-Search.vue";
@@ -83,7 +98,16 @@ export default {
     AromaSearch,
     AromaModalNewsletter,
     AromaModalSearch
-  }
+  },
+  methods: {
+    fetchNav(l) {
+        return this.$static.allStoryblokEntry.edges.find(element => {
+         
+            return element.node.uuid == this.nav
+          })
+      
+    }
+  },
 };
 </script>
 

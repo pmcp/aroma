@@ -1,7 +1,6 @@
 
 <template>
-  <Layout>
-    {{ $page.page.content.component }}
+  <Layout class="padding-y-lg" :nav="$page.page.content.navigation"> 
     <component v-if="$page.page && $page.page.content" :is="`aroma-${$page.page.content.component}`" :content="$page.page.content"></component>
   </Layout>
 </template>

@@ -22,6 +22,7 @@ import AromaTimeLine from '~/components/Aroma-Timeline'
 import AromaTimeLineEvent from '~/components/Aroma-TimelineEvent'
 import AromaCarousel from '~/components/Aroma-Carousel'
 import AromaPreviewArticles from '~/components/Aroma-PreviewArticles'
+import AromaPreviewArticle from '~/components/Aroma-PreviewArticle'
 import AromaUndefined from '~/components/Aroma-Undefined'
 import AromaPartners from "~/components/Aroma-Partners";
 import AromaPartner from "~/components/Aroma-Partner";
@@ -48,6 +49,7 @@ export default function (Vue, { router, head, isClient }) {
   Vue.component('aroma-timeline-event', AromaTimeLineEvent)
   Vue.component('aroma-carousel', AromaCarousel)
   Vue.component('aroma-preview-articles', AromaPreviewArticles)
+  Vue.component('aroma-preview-article', AromaPreviewArticle)
   Vue.component('aroma-undefined', AromaUndefined)
   Vue.component('aroma-partners', AromaPartners)
   Vue.component('aroma-partner', AromaPartner)
