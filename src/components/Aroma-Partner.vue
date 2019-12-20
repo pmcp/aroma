@@ -37,14 +37,19 @@ export default {
   },
   computed: {
     fetchedContent() {
-         if(typeof this.content === Object ) {
+      if(typeof this.content === Object ) {
         this.fetchedContent = content;
       } else {
-          return this.$static.allStoryblokEntry.edges.find(element => {
+        let partner = this.$static.allStoryblokEntry.edges.find(element => {
             return element.node.uuid == this.content
-          }).node
+          })
+          console.log(partner)
+          if(partner) {
+            return partner.node
+          }
+          
       }
-      return this.data 
+      // return this.data 
     }
   },
   // data() {

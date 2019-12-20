@@ -36,23 +36,23 @@ module.exports = function (api) {
         }
       })
       
-      // if(node.full_slug === 'home') {
-      //   createPage({
-      //     path: '/',
-      //     component: './src/templates/Page.vue',
-      //     context: {
-      //       id: node.id
-      //     }
-      //   })
-      // } else {
-      //   createPage({
-      //     path: `/${node.full_slug}`,
-      //     component: './src/templates/Page.vue',
-      //     context: {
-      //       id: node.id
-      //     }
-      //   })
-      // }
+      if(node.full_slug === 'home') {
+        createPage({
+          path: '/',
+          component: './src/templates/Page.vue',
+          context: {
+            id: node.id
+          }
+        })
+      } else {
+        createPage({
+          path: `/${node.full_slug}`,
+          component: './src/templates/Page.vue',
+          context: {
+            id: node.id
+          }
+        })
+      }
     })
   })
 
