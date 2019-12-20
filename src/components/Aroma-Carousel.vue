@@ -66,11 +66,11 @@ export default {
     }
   },
   mounted() {
-    window.cody = require("~/assets/js/cody-scripts-min.js");
+    // window.cody = require("~/assets/js/cody-scripts-min.js");
   },
   content: {
     data(newValue, oldValue) {
-      window.cody = require("~/assets/js/cody-scripts-min.js");
+      // window.cody = require("~/assets/js/cody-scripts-min.js");
     }
   },
 
