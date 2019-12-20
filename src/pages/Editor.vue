@@ -1,5 +1,5 @@
 <template>
-  <Layout class="padding-y-xxl" :nav="story.content.navigation">
+  <Layout class="padding-y-lg" :nav="story.content.navigation"> 
     <component v-if="story && story.content" :is="`aroma-${story.content.component}`" :content="story.content"></component>
   </Layout>
 </template>
@@ -19,7 +19,7 @@ const resolveRelations = {
   'page-map':'organisations',
   'existing_element':'element',
   'partners':['partners', 'poweredby'],
-  'page-default': 'navigation',
+  '': 'navigation',
   }
 
 export default {
@@ -38,7 +38,12 @@ export default {
       let resolveRelationsArray = []
       if(resolveRelations) {
         Object.keys( resolveRelations ).forEach( key => {
-          resolveRelationsArray = [...resolveRelationsArray, `${key}.${resolveRelations[key]}`]
+          if(key !== '') {
+            resolveRelationsArray = [...resolveRelationsArray, `${key}.${resolveRelations[key]}`]
+          } else {
+            resolveRelationsArray = [...resolveRelationsArray, resolveRelations[key]]
+          }
+          
         });
       }
 
