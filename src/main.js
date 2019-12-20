@@ -85,10 +85,9 @@ export default function (Vue, { router, head, isClient }) {
     body: false
   }),
   head.script.push({
-
-    innerHTML: '~/static/cody-scripts-min.js',
-    type: 'text/javascript', charset: 'utf-8',
-    body: false
+    src: '/cody-scripts-min.js',
+    body: true
   })
+
 
 }

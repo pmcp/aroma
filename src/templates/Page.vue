@@ -12,7 +12,7 @@ export default {
   },
   mounted() {
     //require the full cody library
-    window.cody = require("~/assets/js/cody-scripts.js");
+    // window.cody = require("~/assets/js/cody-scripts.js");
   }
 };
 </script>
