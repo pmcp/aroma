@@ -1,5 +1,5 @@
 <template>
-  <Layout class="padding-y-xxl">
+  <Layout class="padding-y-xxl" :nav="story.content.navigation">
     <component v-if="story && story.content" :is="`aroma-${story.content.component}`" :content="story.content"></component>
   </Layout>
 </template>
@@ -18,7 +18,8 @@ const resolveRelations = {
   'preview-articles': 'articles',
   'page-map':'organisations',
   'existing_element':'element',
-  'partners':['partners', 'poweredby']
+  'partners':['partners', 'poweredby'],
+  'page-default': 'navigation',
   }
 
 export default {

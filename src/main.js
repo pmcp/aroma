@@ -19,6 +19,7 @@ import AromaPageMap from '~/components/Aroma-PageMap.vue'
 // COMPONENTS
 import AromaHero from '~/components/Aroma-Hero.vue'
 import AromaTimeLine from '~/components/Aroma-Timeline'
+import AromaTimeLineEvent from '~/components/Aroma-TimelineEvent'
 import AromaCarousel from '~/components/Aroma-Carousel'
 import AromaPreviewArticles from '~/components/Aroma-PreviewArticles'
 import AromaUndefined from '~/components/Aroma-Undefined'
@@ -28,6 +29,7 @@ import AromaOrganisation from "~/components/Aroma-Organisation";
 import AromaOrganisationDetail from "~/components/Aroma-OrganisationDetail";
 import AromaMap from "~/components/Aroma-Map";
 import AromaForm from "~/components/Aroma-Form";
+import AromaNavigation from "~/components/Aroma-Navigation";
 
 import AromaContentText from '~/components/Aroma-ContentText.vue'
 import AromaContentImages from '~/components/Aroma-ContentImages'
@@ -43,6 +45,7 @@ export default function (Vue, { router, head, isClient }) {
   
   Vue.component('aroma-hero', AromaHero)
   Vue.component('aroma-timeline', AromaTimeLine)
+  Vue.component('aroma-timeline-event', AromaTimeLineEvent)
   Vue.component('aroma-carousel', AromaCarousel)
   Vue.component('aroma-preview-articles', AromaPreviewArticles)
   Vue.component('aroma-undefined', AromaUndefined)
@@ -52,6 +55,7 @@ export default function (Vue, { router, head, isClient }) {
   Vue.component('aroma-organisation-detail', AromaOrganisationDetail)
   Vue.component('aroma-map', AromaMap)
   Vue.component('aroma-form', AromaForm)
+  Vue.component('aroma-navigation', AromaNavigation)
 
   Vue.component('aroma-content-text', AromaContentText)
   Vue.component('aroma-content-images', AromaContentImages)

@@ -1,6 +1,7 @@
 <template>
   <div class="layout">
-    <aroma-header></aroma-header>
+    <!-- TODO: slots -->
+    <aroma-header :nav="nav" ></aroma-header>
     
     <transition
       name="fade"
@@ -20,6 +21,12 @@ import AromaHeader from "~/components/Aroma-Header.vue";
 import AromaFooter from "~/components/Aroma-Footer.vue";
 
 export default {
+  props: {
+    nav: {
+      type: Object,
+      default: () => ({})
+    }
+  },
   components: {
     AromaHeader,
     AromaFooter

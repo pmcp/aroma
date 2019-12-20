@@ -1,5 +1,6 @@
 <template>
   <div>
+    
 
     <header
       class="f-header js-f-header hide-nav hide-nav--fixed js-hide-nav js-hide-nav--main aroma-nav"
@@ -24,18 +25,24 @@
       >
         <div class="f-header__nav-grid justify-end@md container max-width-lg">
 
-          <!-- <ul class="f-header__list flex-grow flex-basis-0 justify-center@md">
-            <li
-              v-for="l in $static.craft.entries"
-              :key="l.uid"
-              class="f-header__item"
-            >
-              <a :href="'/article/' + l.slug">
-                {{ l.title }}
+          <ul v-if="nav.content" class="f-header__list flex-grow flex-basis-0 justify-center@md">
+            <li class="f-header__item padding-x-xs">
+            
+              <a href="/">
+                Home
               </a>
             </li>
-
-          </ul> -->
+            <li
+              v-for="l in nav.content.items"
+              :key="l.uuid"
+              class="f-header__item padding-x-xs"
+            >
+            
+              <a :href="'/article/' + l.url">
+                {{ l.name }}
+              </a>
+            </li>
+          </ul>
 
           <ul class="f-header__list  flex-basis-0 justify-end@md">
 
@@ -57,7 +64,6 @@
           </ul>
         </div>
       </div>
-
     </header>
 
     <aroma-modal-newsletter></aroma-modal-newsletter>
@@ -74,6 +80,12 @@ import AromaModalNewsletter from "~/components/Aroma-ModalNewsletter.vue";
 import AromaModalSearch from "~/components/Aroma-ModalSearch.vue";
 
 export default {
+  props: {
+    nav: {
+      type: Object,
+      default: () => ({})
+    }
+  },
   components: {
     AromaSearch,
     AromaModalNewsletter,
@@ -82,12 +94,12 @@ export default {
 };
 </script>
 
-<style >
+<style scoped>
+
 .aroma-nav {
   z-index: 3;
   background-color: var(--color-primary-darker);
   color: var(--color-primary-lightest);
-  
 }
 
 .f-header__nav {
@@ -101,9 +113,13 @@ export default {
   border-bottom: none;
   text-align: center;
 }
+  
+.f-header__item a {
+    text-decoration: none;
+  }
+
 
 .anim-menu-btn {
   color: var(--color-primary-lightest);
 }
-
 </style>

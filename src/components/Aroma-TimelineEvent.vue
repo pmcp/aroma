@@ -28,6 +28,7 @@
 export default {
   props: {
     milestone: {
+      
       type: Boolean,
       default: false
     }

@@ -24,11 +24,7 @@
 </template>
 
 <script>
-import aromaTimelineEvent from "../components/Aroma-Timeline__Event";
 export default {
-  components: {
-    aromaTimelineEvent,
-  },
   props: {
     content: {
       type: Object,
@@ -38,7 +34,6 @@ export default {
       type: String,
       default: null
     },
-    
   }
 };
 </script>
