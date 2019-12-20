@@ -83,6 +83,12 @@ export default function (Vue, { router, head, isClient }) {
     innerHTML: 'document.getElementsByTagName("html")[0].className += " js";',
     type: 'text/javascript', charset: 'utf-8',
     body: false
-  },
- ) 
+  }),
+  head.script.push({
+
+    innerHTML: '~/static/cody-scripts-min.js',
+    type: 'text/javascript', charset: 'utf-8',
+    body: false
+  })
+
 }
