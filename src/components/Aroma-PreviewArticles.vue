@@ -1,7 +1,5 @@
 <template>
-  
-
-
+    
 <section class="features-v3 padding-bottom-xxl">
   <div class="features-v3__text">
     <div class="container max-width-adaptive-lg">

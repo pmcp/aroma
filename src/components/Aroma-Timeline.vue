@@ -1,5 +1,13 @@
 <template>
-  <div class="container max-width-lg cd-timeline__container">
+  <div class="container max-width-lg  margin-bottom-xxl">
+    <div v-if="title" class="text-component padding-y-md" >
+          <h2 class="text-xl color-primary text-center">{{ title }}</h2>
+    </div>
+     <div v-else-if="content.title" class="text-component padding-bottom-md" >
+          <h2 class="text-xl color-primary">{{ title }}</h2>
+    </div>
+
+    <div class="cd-timeline__container">
     <aroma-timeline-event v-for="event in content.events" :key="event._uid" :milestone="event.milestone">
         <template v-slot:time>
           {{ event.time }}
@@ -11,6 +19,7 @@
           {{ event.text }}
         </template>
     </aroma-timeline-event>
+    </div>
   </div>
 </template>
 
@@ -24,7 +33,12 @@ export default {
     content: {
       type: Object,
       default: () => ({})
-    }
+    },
+    title: {
+      type: String,
+      default: null
+    },
+    
   }
 };
 </script>

@@ -54,7 +54,6 @@ export default {
     },
     initStoryblokEvents() {
       
-      
       this.loadStory(resolveRelations)
 
       let sb = window.storyblok

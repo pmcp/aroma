@@ -10,7 +10,7 @@
         <template v-if="section.component === 'existing_element'">
           <template v-if="section.element">
             <template v-if="section.element.content">
-            <component :is="`aroma-${section.element.content.component}`" :content="section.element.content"></component>
+            <component :is="`aroma-${section.element.content.component}`" :title="section.title" :content="section.element.content"></component>
             </template>
           </template>
         </template>

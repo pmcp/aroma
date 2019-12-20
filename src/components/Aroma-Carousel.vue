@@ -1,5 +1,5 @@
 <template>
-  <section class="loop-tabs js-loop-tabs ">
+  <section class="loop-tabs js-loop-tabs">
     <div class="grid ">
       <div class="loop-tabs__content col-7@md flex flex-column justify-start@md text-center text-left@md">
         <ul class="loop-tabs__controls js-loop-tabs__controls  flex flex-center flex-wrap flex-column@md items-start@md padding-md">
