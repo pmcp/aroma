@@ -1,20 +1,20 @@
 <template>
   <a
-    :href="'/' + article.full_slug"
+    :href="'/' + fetchedArticle.full_slug"
     class="card-v8"
-    v-if="article.content"
+    v-if="fetchedArticle.content"
   >
     <figure>
       <img
-        :src="article.content.cover"
+        :src="fetchedArticle.content.cover"
         alt="Image description"
       >
     </figure>
 
     <footer class="padding-sm">
-      <p class="text-sm color-contrast-medium margin-bottom-sm">{{article.content.label }}</p>
+      <p class="text-sm color-contrast-medium margin-bottom-sm">{{fetchedArticle.content.label }}</p>
       <div class="text-component">
-        <h4><span class="card-v8__title">{{ article.content.title }}</span></h4>
+        <h4><span class="card-v8__title">{{ fetchedArticle.content.title }}</span></h4>
       </div>
     </footer>
   </a>
@@ -40,18 +40,25 @@
 <script>
 export default {
   props: {
-    uuid: {
-      type: String
+    article: {
+      type: [Object, String],
+      default: () => ({})
     }
   },
   computed: {
-    article() {
-      return this.$static.allStoryblokEntry.edges.find(element => {
-        return element.node.uuid == this.uuid;
+    fetchedArticle() {
+      
+       if(typeof this.article == 'object' ) {
+         console.log()
+        return this.article;
+      } else {
+        return this.$static.allStoryblokEntry.edges.find(element => {
+          return element.node.uuid == this.article;
       }).node;
     }
   }
-};
+  }
+  };
 </script>
 
 <style scoped >

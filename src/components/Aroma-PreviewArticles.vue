@@ -19,7 +19,7 @@
     <div class="container max-width-adaptive-lg">
       <ul class="features-v3__cards grid grid-gap-lg">
         <li v-for="c in content.articles" :key="c.uuid" class="col-4@md">
-          <aroma-preview-article :uuid="c">
+          <aroma-preview-article :article="c">
           </aroma-preview-article>
         </li>
 
