@@ -7,11 +7,30 @@
     ></aroma-map>
     
     <div class="parent grid grid-gap-xs">
-      <aroma-organisation-detail v-for="org in content.organisations" :key="org.uuid" :org="org" @click.native="flyTo(org.content.address_lat, org.content.address_long)">
+      <aroma-organisation-detail v-for="org in $static.allStoryblokEntry.edges" :key="org.node.uuid" :org="org.node" @click.native="flyTo(org.node.content.address_lat, org.node.content.address_long)">
       </aroma-organisation-detail>
     </div>
   </div>
 </template>
+
+
+<static-query>
+  query {
+    allStoryblokEntry(filter: { full_slug: { regex: "organisations" },  lang: { regex: "default" }}) {
+        edges {
+          node {
+            lang
+            id
+            uuid
+            full_slug
+            name
+            content
+          }
+        }
+      }
+  }
+</static-query>
+
 <script>
 
 
@@ -31,7 +50,8 @@ export default {
     },
     locations() {
       let locations = [];
-      this.content.organisations.forEach(el => {
+      this.$static.allStoryblokEntry.edges.forEach(el => {
+        el = el.node;
         if (el.content) {
           locations.push({
             type: "Feature",

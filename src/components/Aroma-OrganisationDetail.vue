@@ -1,5 +1,5 @@
 <template>
-  <div class="author author--featured col-4@sm">
+  <div class="author author--featured col-4@sm padding-xl">
     <!-- <a href="#0" class="author__img-wrapper"> -->
       <!-- <img src="../../../app/assets/img/author-img-1.jpg" alt="Author picture"> -->
     <!-- </a> -->
@@ -32,15 +32,34 @@
   </div>
 </template>
 
+
+<static-query>
+  query {
+    allStoryblokEntry(filter: { full_slug: { regex: "organisations" },  lang: { regex: "default" }}) {
+        edges {
+          node {
+            lang
+            id
+            uuid
+            full_slug
+            name
+            content
+          }
+        }
+      }
+  }
+</static-query>
+
+
 <script>
 export default {
   props: {
-    org: {
-      type: Object,
+ org: {
+      type: [Object, String],
       default: () => ({})
     }
-  }
-};
+  },
+}
 </script>
 
 
