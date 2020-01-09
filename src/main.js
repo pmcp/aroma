@@ -15,6 +15,7 @@ import AromaPageDefault from '~/components/Aroma-PageDefault.vue'
 import AromaPageLaunch from '~/components/Aroma-PageLaunch.vue'
 import AromaPageProject from '~/components/Aroma-PageProject.vue'
 import AromaPageMap from '~/components/Aroma-PageMap.vue'
+import AromaPageArticles from '~/components/Aroma-PageArticles.vue'
 
 // COMPONENTS
 import AromaHero from '~/components/Aroma-Hero.vue'
@@ -43,6 +44,7 @@ export default function (Vue, { router, head, isClient }) {
   Vue.component('aroma-page-launch', AromaPageLaunch)
   Vue.component('aroma-page-project', AromaPageProject)
   Vue.component('aroma-page-map', AromaPageMap)
+  Vue.component('aroma-page-articles', AromaPageArticles)
   
   Vue.component('aroma-hero', AromaHero)
   Vue.component('aroma-timeline', AromaTimeLine)

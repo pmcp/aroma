@@ -55,14 +55,15 @@ module.exports = {
       use: 'gridsome-source-storyblok',
       options: {
         client: {
-          accessToken: 'hkENPzbQoYvpZeNPpK6pQgtt' // you must be replace with your token
+          accessToken: 'hkENPzbQoYvpZeNPpK6pQgtt' // must be replace with your token
         },
+        downloadImages: true,
+        imageDirectory: 'storyblok_images',
         params: {
           resolve_links: 'story',
-          resolve_relations: 'navigation, preview-articles.articles, page-map.organisations,partners.partners,partners.poweredby,existing_element.element'
+          resolve_relations: 'navigation, preview-articles.articles, page-map.organisations,partners.partners,partners.poweredby,existing_element.element,articles'
         },
-        // downloadImages: true,
-        // imageDirectory: 'storyblok_images'
+
       }
     }
   ],

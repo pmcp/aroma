@@ -19,7 +19,7 @@ const resolveRelations = {
   'page-map':'organisations',
   'existing_element':'element',
   'partners':['partners', 'poweredby'],
-  '': 'navigation',
+  '': ['articles', 'navigation'],
   }
 
 export default {
