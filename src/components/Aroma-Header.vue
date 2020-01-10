@@ -23,7 +23,7 @@
         class="f-header__nav"
         role="navigation"
       >
-        <div class="f-header__nav-grid justify-end@md container max-width-lg">
+        <div class="f-header__nav-grid justify-end@md container max-width-lg" v-if="nav">
 
           <ul v-if="nav.content" class="f-header__list flex-grow flex-basis-0 justify-center@md">
             <li
@@ -31,10 +31,9 @@
               :key="l.uuid"
               class="f-header__item padding-x-xs"
             >
-            {{ fetchNav(l) }}
-              <a :href="'/' + l.url.cached_url">
-                {{ l.name }}
-              </a>
+            
+            <g-link :to="'/' + l.url.cached_url">  {{ l.name }}</g-link>
+              
             </li>
           </ul>
 
