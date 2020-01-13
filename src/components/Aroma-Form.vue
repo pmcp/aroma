@@ -4,7 +4,7 @@
     class="hero hero--boxed padding-y-xxl"
     :style="{ backgroundImage: 'url('+ content.background +')'}"
   >
-    <div class="container max-width-adaptive-lg">
+    <div class="container max-width-adaptive-md">
       <div class="hero__content max-width-xs">
 
         <form

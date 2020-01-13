@@ -1,8 +1,8 @@
 <template>
-  <section>
+  <section class="loop-tabs js-loop-tabs" >
     <div class="grid ">
       <div class="loop-tabs__content col-7@md flex flex-column justify-start@md text-center text-left@md">
-        <ul class="loop-tabs__controls  flex flex-center flex-wrap flex-column@md items-start@md padding-md">
+        <ul class="loop-tabs__controls js-loop-tabs__controls  flex flex-center flex-wrap flex-column@md items-start@md padding-md">
           <li
             v-for="(i, index) in content.items"
             :key="`text-${index}`"
@@ -17,12 +17,12 @@
             </a>
           </li>
         </ul>
-        <div class="loop-tabs__panels ">
+        <div class="loop-tabs__panels js-loop-tabs__panels ">
           <section
             v-for="(i, index) in content.items"
             :key="`section-${index}`"
             :id="`tab${index}`"
-            class="loop-tabs__panel text-component"
+            class="loop-tabs__panel js-loop-tabs__panel text-component"
             :class="{'loop-tabs__panel--selected':(index === 0)}"
           >
             <!-- <h1>Panel 1</h1> -->
@@ -35,7 +35,7 @@
         class="loop-tabs__media col-5@md"
         aria-hidden="true"
       >
-        <ul class="loop-tabs__assets ">
+        <ul class="loop-tabs__assets js-loop-tabs__assets">
           <li
             v-for="(i, index) in content.items"
             :key="`images-${index}`"
@@ -43,7 +43,8 @@
             :class="{'loop-tabs__asset--selected':(index === 0)}"
             style=""
           >
-          <div class="aroma-loop__image" :style="{backgroundImage:`url(${i.image})`} | transformImage('600x0')">
+          <div class="aroma-loop__image" :style="{'backgroundImage':'url('+ i.image  +')'}">
+            
 
           </div>
           <div class="aroma-loop__caption ">{{ i.caption }}</div>
@@ -51,16 +52,13 @@
         </ul>
       </div>
     </div>
-
   </section>
- 
+
 </template>
 
 
 
-
 <script>
-
 export default {
   props: {
     content: {
@@ -69,17 +67,16 @@ export default {
     }
   },
   mounted() {
-    window.cody = require("~/assets/js/cody-scripts-min.js");
+    // window.cody = require("~/assets/js/cody-scripts-min.js");
   },
   content: {
     data(newValue, oldValue) {
-      window.cody = require("~/assets/js/cody-scripts-min.js");
+      // window.cody = require("~/assets/js/cody-scripts-min.js");
     }
   },
 
 };
 </script>
-
 
 <style lang="scss" scoped>
 .loop-tabs {

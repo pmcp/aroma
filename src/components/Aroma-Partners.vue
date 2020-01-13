@@ -1,7 +1,7 @@
 <template>
-  <section class="text-component text-center padding-y-xl">
+  <section class="text-component text-center padding-y-xl ">
     <h2 class="text-lg">{{ content.title}}</h2>
-    <div class="parent grid padding-y-md justify-center">
+    <div class="parent grid padding-y-md justify-center ">
       <aroma-partner
         class="col-2"
         v-for="(partner, key) in content.partners"

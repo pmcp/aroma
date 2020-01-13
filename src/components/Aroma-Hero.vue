@@ -3,9 +3,7 @@
     class="video-bg aroma-hero"
     v-bind:class="{'aroma-hero--small': !expanded }"
     
-  >
-  
-  
+  >  
     <div
       v-if="video"
       class="video-bg__media"
@@ -26,7 +24,7 @@
     <div v-else class="video-bg__media" :style="{background: 'url('+ cover +') no-repeat center center fixed'}" style="opacity:20%;background-size:cover;">
     </div> 
       
-    <div class="video-bg__content container max-width-lg flex flex-column justify-center" style="height:100%">
+    <div class="video-bg__content container max-width-md flex flex-column justify-center" style="height:100%">
   
         <template v-if="logos">
           <div class="flex  justify-center items-center">

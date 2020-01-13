@@ -1,5 +1,5 @@
 <template>
-  <div class="container max-width-lg  margin-bottom-xxl">
+  <div class="container max-width-md  margin-top-xxl margin-bottom-xxl">
     <div v-if="title" class="text-component padding-y-md" >
           <h2 class="text-xl color-primary text-center">{{ title }}</h2>
     </div>

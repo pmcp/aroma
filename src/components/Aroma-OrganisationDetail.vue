@@ -1,9 +1,10 @@
 <template>
-  <div class="author author--featured col-4@sm padding-xl">
-    {{ org }}
-    <!-- <a href="#0" class="author__img-wrapper"> -->
-      <!-- <img src="../../../app/assets/img/author-img-1.jpg" alt="Author picture"> -->
-    <!-- </a> -->
+
+  <div class="author author--featured col-4@sm ">
+    
+  <a href="#0" class="author__img-wrapper">
+    <img :src="org.content.photo | transformImage('100x0')" alt="Author picture">
+  </a>
     <div v-if="org.content" class="author__content text-component aroma-organisation__link">
       <h2>{{ org.content.name }}</h2>
       <p>{{ org.content.street }} {{ org.content.number }}
@@ -13,7 +14,6 @@
 
     <ul class="flex flex-gap-xs flex-wrap justify-center">
       <li v-if="org.content.email">
-        
         <a :href="'mailto:' + org.content.email" target="_blank" class="author__social">
           <svg class="icon" viewBox="0 0 32 32"><title></title><g><path d="M28,3H4A3.957,3.957,0,0,0,0,7V25a3.957,3.957,0,0,0,4,4H28a3.957,3.957,0,0,0,4-4V7A3.957,3.957,0,0,0,28,3Zm.6,6.8-12,9a1,1,0,0,1-1.2,0l-12-9A1,1,0,0,1,4.6,8.2L16,16.75,27.4,8.2a1,1,0,1,1,1.2,1.6Z"></path></g></svg>        </a>
       </li>
@@ -31,6 +31,7 @@
       </li>
     </ul>
   </div>
+  
 </template>
 
 

@@ -6,7 +6,13 @@
   >
     <figure>
       <img
-        :src="fetchedArticle.content.cover"
+      v-if="typeof fetchedArticle.content.cover === 'string'"
+        :src="fetchedArticle.content.cover | transformImage('00x0')"
+        alt="Image description"
+      >
+      <img
+      v-else-if="typeof fetchedArticle.content.cover === 'object'"
+        :src="fetchedArticle.content.cover.url | transformImage('400x0')"
         alt="Image description"
       >
     </figure>

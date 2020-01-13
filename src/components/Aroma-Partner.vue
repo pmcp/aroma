@@ -1,10 +1,16 @@
 <template>
   <div class="padding-sm">
     <template v-if="fetchedContent">
-    <a v-if="fetchedContent.content.url" :href="fetchedContent.content.url.url" target="blank">
-      <g-image :src="fetchedContent.content.logo"></g-image>
-    </a>
-      <g-image v-else :src="fetchedContent.content.logo"></g-image>
+      
+      <a v-if="fetchedContent.content.url" :href="fetchedContent.content.url.url" target="blank">
+        
+        
+        <g-image :src="fetchedContent.content.logo | transformImage('400x0')" width="500"></g-image>
+      </a>
+      
+      <g-image v-else :src="fetchedContent.content.logo.url | transformImage('400x0')" width="500"></g-image>
+      
+      
     </template>
   </div>
 </template>

@@ -5,11 +5,13 @@
       :center="center"
       :zoom="zoomMap"
     ></aroma-map>
-    
-    <div class="parent grid grid-gap-xs">
+      <div class="container max-width-md  margin-top-xxl margin-bottom-xxl">
+
+    <div class="parent grid grid-gap-xs  ">
       <aroma-organisation-detail v-for="org in $static.allStoryblokEntry.edges" :key="org.node.uuid" :org="org.node" @click.native="flyTo(org.node.content.address_lat, org.node.content.address_long)">
       </aroma-organisation-detail>
     </div>
+      </div>
   </div>
 </template>
 
