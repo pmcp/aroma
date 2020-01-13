@@ -3,7 +3,8 @@
     <template v-if="content.style === 'grid'">
      <div class="grid grid-gap-xs">
         <figure v-for="(image, key) in content.images" :key="'images-full-'+ key" class="col">
-          <img :src="image.filename" :alt="image.name">
+          
+          <g-image :src="image.filename" :alt="image.name" width="500"/>
           <figcaption>{{ image.name }}</figcaption>
         </figure>
       </div>
@@ -11,7 +12,8 @@
 
     <template v-else>
       <figure v-for="(image, key) in content.images" :key="'images-full-'+ key" class="text-component__block  padding-y-md">
-        <img :src="image.filename" :alt="image.name">
+        <g-image :src="image.filename" :alt="image.name" width="500"/>
+        <!-- <img :src="image.filename" :alt="image.name"> -->
         <figcaption>{{ image.name }}</figcaption>
       </figure>
 

@@ -1,7 +1,5 @@
 <template>
   <div>
-    
-
     <header
       class="f-header js-f-header hide-nav hide-nav--fixed js-hide-nav js-hide-nav--main aroma-nav"
       data-mobile-trigger='js-anim-menu-btn'
