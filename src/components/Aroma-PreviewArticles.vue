@@ -33,27 +33,27 @@ export default {
       default: () => ({})
     }
   },
-  methods: {
-    getItems(id) {
-      // console.log(this.$static.allStoryblokEntry.edges)
+  // methods: {
+  //   getItems(id) {
+  //     // console.log(this.$static.allStoryblokEntry.edges)
       
-this.$static.allStoryblokEntry.edges.map((item, index)=>{
+  //     this.$static.allStoryblokEntry.edges.map((item, index)=>{
    
-   if(item.node.uuid === id) {
-          return item.node
-        }
-   
-});
-      // this.$static.allStoryblokEntry.edges.filter(edge => {
+  //       if(item.node.uuid === id) {
+  //               return item.node
+  //             }
         
-      //   if(edge.node.uuid === id) {
-      //     console.log(edge.node)
-      //     return 'TEST'
-      //   }
+  //     });
+  //     // this.$static.allStoryblokEntry.edges.filter(edge => {
         
-      // })
-    }
-  }
+  //     //   if(edge.node.uuid === id) {
+  //     //     console.log(edge.node)
+  //     //     return 'TEST'
+  //     //   }
+        
+  //     // })
+  //   }
+  // }
 };
 </script>
 
