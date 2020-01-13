@@ -53,7 +53,9 @@ export default {
       this.$static.allStoryblokEntry.edges.forEach(el => {
         el = el.node;
         if (el.content) {
+          
           locations.push({
+            content: el.content,
             type: "Feature",
             geometry: {
               type: "Point",
@@ -61,7 +63,8 @@ export default {
             },
             properties: {
               title: el.content.name,
-              icon: "monument"
+              icon: el.content.type,
+              description: `<strong>${el.content.name}</strong><p>${el.content.street} ${el.content.number}<br>${el.content.zip} ${el.content.city}</p>`
             }
           });
         }
