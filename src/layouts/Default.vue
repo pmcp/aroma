@@ -1,16 +1,11 @@
 <template>
   <div class="layout">
-    <!-- TODO: slots -->
+
     <aroma-header :nav="nav" ></aroma-header>
-    
-    <transition
-      name="fade"
-      appear
-    >
-    <main>
+        <main>
       <slot />
     </main>
-    </transition>
+
 
     <aroma-footer></aroma-footer>
   </div>
@@ -33,13 +28,3 @@ export default {
   }
 };
 </script>
-
-<style>
-.fade-enter-active {
-  transition: opacity .5s;
-}
-
-.fade-enter {
-  opacity: 0;
-}
-</style>
