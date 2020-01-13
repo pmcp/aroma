@@ -1,7 +1,7 @@
 <template> 
-  <section class="features-v3 padding-bottom-xxl">
+  <section class="features-v3 padding-bottom-xxl ">
     <div class="features-v3__text">
-      <div class="container max-width-adaptive-lg">
+      <div class="container max-width-adaptive-md">
         <div class="grid grid-gap-md justify-between@md">
 
           <div class="text-component col-6@md" v-if="content.title">
@@ -14,7 +14,7 @@
         </div>
       </div>
     </div>
-    <div class="container max-width-adaptive-lg">
+    <div class="container max-width-adaptive-md">
       <ul class="features-v3__cards grid grid-gap-lg">
         <li v-for="c in content.articles" :key="c.uuid" class="col-4@md">
           <aroma-preview-article :article="c">
@@ -33,27 +33,27 @@ export default {
       default: () => ({})
     }
   },
-  methods: {
-    getItems(id) {
-      // console.log(this.$static.allStoryblokEntry.edges)
+  // methods: {
+  //   getItems(id) {
+  //     // console.log(this.$static.allStoryblokEntry.edges)
       
-this.$static.allStoryblokEntry.edges.map((item, index)=>{
+  //     this.$static.allStoryblokEntry.edges.map((item, index)=>{
    
-   if(item.node.uuid === id) {
-          return item.node
-        }
-   
-});
-      // this.$static.allStoryblokEntry.edges.filter(edge => {
+  //       if(item.node.uuid === id) {
+  //               return item.node
+  //             }
         
-      //   if(edge.node.uuid === id) {
-      //     console.log(edge.node)
-      //     return 'TEST'
-      //   }
+  //     });
+  //     // this.$static.allStoryblokEntry.edges.filter(edge => {
         
-      // })
-    }
-  }
+  //     //   if(edge.node.uuid === id) {
+  //     //     console.log(edge.node)
+  //     //     return 'TEST'
+  //     //   }
+        
+  //     // })
+  //   }
+  // }
 };
 </script>
 

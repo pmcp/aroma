@@ -65,10 +65,28 @@ export default function (Vue, { router, head, isClient }) {
   Vue.component('aroma-content-images', AromaContentImages)
   Vue.component('aroma-content-video', AromaContentVideo)
   Vue.component('aroma-content-map', AromaContentMap)
-
   
+  // Filter to use the storyblok image service
+  Vue.filter('transformImage', function (image, option) {
+    
+    if (!image) return ''
+    if (!option) return ''
+    let imageService = '//img2.storyblok.com/'
+    if(typeof image === 'string')
+    if(image.includes('https')) {
+      let path = image.replace('https://a.storyblok.com', '')
+      return imageService + option + path
+    }
+    if(image.backgroundImage) {
+      let path = image.backgroundImage.replace('url(//a.storyblok.com', '')
+      return { backgroundImage: `url(${imageService}${option}${path}`}
+    } 
+    let path = image.replace('//a.storyblok.com', '')
+    return imageService + option + path
+    
+    
+  })
   
-  // Vue.prototype.mapboxgl = mapboxgl;
 
   head.link.push({
     rel: 'stylesheet',
