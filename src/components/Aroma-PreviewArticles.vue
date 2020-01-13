@@ -1,5 +1,4 @@
-<template>
-      
+<template> 
   <section class="features-v3 padding-bottom-xxl">
     <div class="features-v3__text">
       <div class="container max-width-adaptive-lg">
@@ -15,18 +14,15 @@
         </div>
       </div>
     </div>
-
     <div class="container max-width-adaptive-lg">
       <ul class="features-v3__cards grid grid-gap-lg">
         <li v-for="c in content.articles" :key="c.uuid" class="col-4@md">
           <aroma-preview-article :article="c">
           </aroma-preview-article>
         </li>
-
       </ul>
     </div>
   </section>
-
 </template>
 
 <script>
@@ -44,7 +40,6 @@ export default {
 this.$static.allStoryblokEntry.edges.map((item, index)=>{
    
    if(item.node.uuid === id) {
-          console.log(item)
           return item.node
         }
    
