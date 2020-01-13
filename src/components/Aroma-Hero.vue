@@ -23,7 +23,7 @@
       ></video>
     </div>
     
-    <div v-else class="video-bg__media" :style="{backgroundImage: 'url('+ cover +')'}" style="opacity:20%;background-size:cover">
+    <div v-else class="video-bg__media" :style="{background: 'url('+ cover +') no-repeat center center fixed'}" style="opacity:20%;background-size:cover;">
     </div> 
       
     <div class="video-bg__content container max-width-lg flex flex-column justify-center" style="height:100%">
