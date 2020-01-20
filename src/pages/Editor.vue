@@ -1,5 +1,5 @@
 <template>
-  <Layout class="padding-y-lg" :nav="story.content.navigation"> 
+  <Layout class="padding-y-lg" :nav="story.content.navigation" :editor="true"> 
     <component v-if="story && story.content" :is="`aroma-${story.content.component}`" :content="story.content"></component>
   </Layout>
 </template>

@@ -4,6 +4,7 @@
     v-bind:class="{'aroma-hero--small': !expanded }"
     
   >  
+  
     <div
       v-if="video"
       class="video-bg__media"
@@ -21,6 +22,9 @@
       ></video>
     </div>
     
+    <div v-else-if="typeof cover === 'object'" class="video-bg__media" :style="{background: 'url('+ cover.url +') no-repeat center center fixed'}" style="opacity:20%;background-size:cover;">
+    </div> 
+
     <div v-else class="video-bg__media" :style="{background: 'url('+ cover +') no-repeat center center fixed'}" style="opacity:20%;background-size:cover;">
     </div> 
       
@@ -87,8 +91,7 @@ export default {
       default: true
     },
     cover: {
-      type: String,
-      default: "~/assets/img/AROMA-Interreg_opacity.png"
+      type: [Object, String]
     },
     video: {
       type: String,

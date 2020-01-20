@@ -2,7 +2,7 @@
 
 
 <section class="bg-primary ">
-<div class="loop-tabs container max-width-adaptive-lg">
+<div class="loop-tabs container max-width-adaptive-lg ">
   <div class="grid grid-gap-md">
     <div class="loop-tabs__content col-7@md flex flex-column flex-column-reverse@md justify-center@md text-center text-left@md">
       <ul class="loop-tabs__controls  flex flex-center flex-wrap flex-column@md items-start@md">

@@ -49,7 +49,6 @@ export default {
         let partner = this.$static.allStoryblokEntry.edges.find(element => {
             return element.node.uuid == this.content
           })
-          console.log(partner)
           if(partner) {
             return partner.node
           }

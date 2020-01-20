@@ -1,12 +1,9 @@
 <template>
   <div class="layout">
-
-    <aroma-header :nav="nav" ></aroma-header>
-        <main>
+    <aroma-header v-if="!editor":nav="nav" :lang="lang" :current="current"></aroma-header>
+    <main>
       <slot />
     </main>
-
-
     <aroma-footer></aroma-footer>
   </div>
 </template>
@@ -20,7 +17,19 @@ export default {
     nav: {
       type: Object,
       default: () => ({})
-    }
+    },
+    lang: {
+      type: String,
+      default: 'default'
+    },
+    editor: {
+      type: Boolean,
+      default: false
+    },
+    current: {
+      type: Object,
+      default: () => ({})
+    },
   },
   components: {
     AromaHeader,

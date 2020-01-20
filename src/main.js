@@ -38,6 +38,7 @@ import AromaContentImages from '~/components/Aroma-ContentImages'
 import AromaContentVideo from '~/components/Aroma-ContentVideo'
 import AromaContentMap from '~/components/Aroma-ContentMap'
 
+
 export default function (Vue, { router, head, isClient }) {
   Vue.component('Layout', DefaultLayout),
   Vue.component('aroma-page-default', AromaPageDefault)
@@ -66,6 +67,7 @@ export default function (Vue, { router, head, isClient }) {
   Vue.component('aroma-content-video', AromaContentVideo)
   Vue.component('aroma-content-map', AromaContentMap)
   
+  
   // Filter to use the storyblok image service
   Vue.filter('transformImage', function (image, option) {
     
@@ -83,8 +85,6 @@ export default function (Vue, { router, head, isClient }) {
     } 
     let path = image.replace('//a.storyblok.com', '')
     return imageService + option + path
-    
-    
   })
   
 

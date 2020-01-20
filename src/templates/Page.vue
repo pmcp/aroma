@@ -1,6 +1,6 @@
 
 <template>
-  <Layout class="padding-y-lg" :nav="$page.page.content.navigation"> 
+  <Layout class="padding-y-lg" :nav="$page.page.content.navigation" :lang="$page.page.lang" :current="$page.page"> 
     <component v-if="$page.page && $page.page.content" :is="`aroma-${$page.page.content.component}`" :content="$page.page.content"></component>
   </Layout>
 </template>
@@ -23,6 +23,7 @@ query StoryblokEntry ($id: ID) {
     id
     slug
     content
+    lang
   }
 }
 </page-query>

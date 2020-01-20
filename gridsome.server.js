@@ -18,8 +18,11 @@ module.exports = function (api) {
         edges {
           node {
             id
+            slug
             uuid
             full_slug
+            content
+            lang
           }
         }
       }
@@ -28,31 +31,55 @@ module.exports = function (api) {
 
     
     data.allStoryblokEntry.edges.forEach(({ node }) => {
+
+      let slug = '';
+      if(node.slug === 'home') {
+        slug = '/'
+      } else {
+        slug = '/' + node.slug
+      }
+      
+      if(node.lang !== 'default') slug = `/${node.lang}${slug}`;
+
+      // If there is a slug chosen by the editor, use that one.
+      
+      if(node.lang === 'de' && node.content.slug_de !== undefined ) slug = `/${node.lang}/${node.content.slug_de}`;
+      
+      if(node.lang === 'default' && node.content.slug_fr !== undefined) slug = `/${node.content.slug_fr}`;
+  
+      
+      console.log(slug)
+      
       createPage({
-        path: `/${node.full_slug}`,
+        path: slug,
         component: './src/templates/Page.vue',
         context: {
           id: node.id
         }
       })
+
+
       
-      if(node.full_slug === 'home') {
-        createPage({
-          path: '/',
-          component: './src/templates/Page.vue',
-          context: {
-            id: node.id
-          }
-        })
-      } else {
-        createPage({
-          path: `/${node.full_slug}`,
-          component: './src/templates/Page.vue',
-          context: {
-            id: node.id
-          }
-        })
-      }
+      
+
+
+      // if(node.slug === 'home') {
+      //   createPage({
+      //     path: '/',
+      //     component: './src/templates/Page.vue',
+      //     context: {
+      //       id: node.id
+      //     }
+      //   })
+      // } else {
+      //   createPage({
+      //     path: `/${node.slug}`,
+      //     component: './src/templates/Page.vue',
+      //     context: {
+      //       id: node.id
+      //     }
+      //   })
+      // }
     })
   })
 

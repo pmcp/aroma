@@ -21,8 +21,9 @@
         class="f-header__nav"
         role="navigation"
       >
-        <div class="f-header__nav-grid justify-end@md container max-width-lg" v-if="nav">
 
+      
+        <div class="f-header__nav-grid justify-end@md container max-width-lg" v-if="nav">
           <ul v-if="nav.content" class="f-header__list flex-grow flex-basis-0 justify-center@md">
             <li
               v-for="l in nav.content.items"
@@ -30,20 +31,29 @@
               class="f-header__item padding-x-xs"
             >
             
-            <g-link :to="'/' + l.url.cached_url">  {{ l.name }}</g-link>
+            <g-link :to="createUrl(l).link">  {{ l.name }}</g-link>
               
             </li>
           </ul>
 
           <ul class="f-header__list  flex-basis-0 justify-end@md">
 
+            <li v-if="lang === 'default'" class="f-header__item">
+              <g-link v-if="current.content.slug_de" :to="'/de/' + current.content.slug_de">DE</g-link>
+              <g-link v-else-if="current.slug === 'home'" :to="'/de/'">DE</g-link>
+              <g-link v-else :to="'/de/' + current.slug">DE</g-link>
+            </li>
+            <li v-else class="f-header__item">
+              <g-link v-if="current.content.slug_fr" :to="current.content.slug_fr">FR</g-link>
+              <g-link v-else-if="current.slug === 'home'" :to="'/'">FR</g-link>
+              <g-link v-else :to="'/' + current.slug">FR</g-link>
+            </li>
             <li class="f-header__item">
 
               <button
                 class="btn btn--primary"
                 aria-controls="modalForm1"
               >Newsletter</button>
-
             </li>
 
             <!-- <li class="f-header__item"><a
@@ -72,6 +82,9 @@
             uuid
             id
             full_slug
+            content
+            lang
+            slug
           }
         }
       }
@@ -89,7 +102,15 @@ export default {
     nav: {
       type: Object,
       default: () => ({})
-    }
+    },
+    lang: {
+      type: String,
+      default: 'default'
+    },
+    current: {
+      type: Object,
+      default: () => ({})
+    },
   },
   components: {
     AromaSearch,
@@ -97,12 +118,42 @@ export default {
     AromaModalSearch
   },
   methods: {
-    fetchNav(l) {
-        return this.$static.allStoryblokEntry.edges.find(element => {
-         
-            return element.node.uuid == this.nav
-          })
-      
+    createUrl(l) {
+      let slug = '/';
+      return this.$static.allStoryblokEntry.edges.find(element => {
+        if(element.node.uuid == l.url.id) {
+          if(element.node.slug === 'home') {
+            if(this.lang !== 'default') {    
+              slug = `/${this.lang}`;
+            }
+        } else {
+          slug = '/' + element.node.slug
+          if(this.lang !== 'default') slug = `/de${slug}`;
+          // If there is a slug chosen by the editor, use that one.
+          if(this.lang === 'default' && element.node.content.slug_fr) slug = `/${element.node.content.slug_fr}`;
+          if(this.lang !== 'default' && element.node.content.slug_de) slug = `/de/${element.node.content.slug_de}`;
+          
+        }
+        element.link = slug;
+        return element;
+        
+        }
+      })
+
+            
+            
+            
+          
+          
+            
+          
+
+
+      // if(l.url.cached_url.substr(0, 4) === '/de/') {
+      //   return l.url.cached_url.replace('/de/','');
+      // } else {
+      //   return l.url.cached_url
+      // }
     }
   },
 };
