@@ -31,6 +31,7 @@ module.exports = function (api) {
 
     
     data.allStoryblokEntry.edges.forEach(({ node }) => {
+      
       let slug = '';
       if(node.slug === 'home') {
         slug = '/'
@@ -38,12 +39,10 @@ module.exports = function (api) {
         slug = '/' + node.slug
       }
       if(node.lang !== 'default') slug = `/${node.lang}${slug}`;
-
-      // If there is a slug chosen by the editor, use that one.
+            // If there is a slug chosen by the editor, use that one.
+      if(node.lang === 'de' && node.content.slug_de !== undefined && node.content.slug_de !== '' ) slug = `/${node.lang}/${node.content.slug_de}`;
       
-      if(node.lang === 'de' && node.content.slug_de !== undefined ) slug = `/${node.lang}/${node.content.slug_de}`;
-      
-      if(node.lang === 'default' && node.content.slug_fr !== undefined) slug = `/${node.content.slug_fr}`;
+      if(node.lang === 'default' && node.content.slug_fr !== undefined && node.content.slug_fr !== '') slug = `/${node.content.slug_fr}`;
   
       
       

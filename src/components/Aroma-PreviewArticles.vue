@@ -1,5 +1,6 @@
 <template> 
   <section class="features-v3 padding-bottom-xxl ">
+    
     <div class="features-v3__text">
       <div class="container max-width-adaptive-md">
         <div class="grid grid-gap-md justify-between@md">
@@ -15,9 +16,11 @@
       </div>
     </div>
     <div class="container max-width-adaptive-md">
+      
       <ul class="features-v3__cards grid grid-gap-lg">
+        
         <li v-for="c in content.articles" :key="c.uuid" class="col-4@md">
-          <aroma-preview-article :article="c">
+          <aroma-preview-article :article="c" :lang="lang">
           </aroma-preview-article>
         </li>
       </ul>
@@ -31,6 +34,10 @@ export default {
     content: {
       type: Object,
       default: () => ({})
+    },
+    lang: {
+      type: String,
+      default: 'default'
     }
   },
   // methods: {

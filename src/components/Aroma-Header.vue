@@ -130,8 +130,8 @@ export default {
           slug = '/' + element.node.slug
           if(this.lang !== 'default') slug = `/de${slug}`;
           // If there is a slug chosen by the editor, use that one.
-          if(this.lang === 'default' && element.node.content.slug_fr) slug = `/${element.node.content.slug_fr}`;
-          if(this.lang !== 'default' && element.node.content.slug_de) slug = `/de/${element.node.content.slug_de}`;
+          if(this.lang === 'default' && element.node.content.slug_fr && element.node.content.slug_fr !== '') slug = `/${element.node.content.slug_fr}`;
+          if(this.lang !== 'default' && element.node.content.slug_de && element.node.content.slug_de !== '') slug = `/de/${element.node.content.slug_de}`;
           
         }
         element.link = slug;
