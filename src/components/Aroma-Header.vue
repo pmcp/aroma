@@ -24,7 +24,7 @@
 
       
         <div class="f-header__nav-grid justify-end@md container max-width-lg" v-if="nav">
-          <ul v-if="nav.content" class="f-header__list flex-grow flex-basis-0 justify-center@md">
+          <ul v-if="nav.content" class="f-header__list flex-grow flex-basis-0 ">
             <li
               v-for="l in nav.content.items"
               :key="l.uuid"
