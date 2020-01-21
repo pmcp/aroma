@@ -1,7 +1,7 @@
 <template>
 
   <div class="author author--featured col-4@sm ">
-    
+    {{ org }}
   <a href="#0" class="author__img-wrapper">
     <img :src="org.content.photo | transformImage('100x0')" alt="Author picture">
   </a>

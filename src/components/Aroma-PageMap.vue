@@ -4,21 +4,20 @@
       :locations="locations"
       :center="center"
       :zoom="zoomMap"
-    ></aroma-map>
-      <div class="container max-width-md  margin-top-xxl margin-bottom-xxl">
-
-    <div class="parent grid grid-gap-xs  ">
-      <aroma-organisation-detail v-for="org in $static.allStoryblokEntry.edges" :key="org.node.uuid" :org="org.node" @click.native="flyTo(org.node.content.address_lat, org.node.content.address_long)">
-      </aroma-organisation-detail>
-    </div>
+    ></aroma-map>  
+    <div class="container max-width-md  margin-top-xxl margin-bottom-xxl">
+      <div class="parent grid grid-gap-xs  ">
+        <aroma-organisation-detail v-for="org in orgs" :key="org.node.uuid" :org="org.node" @click.native="flyTo(org.node.content.address_lat, org.node.content.address_long)">
+        </aroma-organisation-detail>
       </div>
+    </div>
   </div>
 </template>
 
 
 <static-query>
   query {
-    allStoryblokEntry(filter: { full_slug: { regex: "organisations" },  lang: { regex: "default" }}) {
+    allStoryblokEntry(filter: { full_slug: { regex: "organisations" }}) {
         edges {
           node {
             lang
@@ -41,9 +40,17 @@ export default {
     content: {
       type: Object,
       default: () => ({})
-    }
+    },
+    lang: {
+      type: String,
+      default: 'default'
+    },
   },
   computed: {
+    orgs() {
+      console.log(this.$static.allStoryblokEntry.edges)
+      return this.$static.allStoryblokEntry.edges.filter(story => story.node.lang === this.lang)
+    },
     center() {
       return [this.content.long*1, this.content.lat*1]
     },
@@ -52,7 +59,8 @@ export default {
     },
     locations() {
       let locations = [];
-      this.$static.allStoryblokEntry.edges.forEach(el => {
+      const filteredLocations = this.$static.allStoryblokEntry.edges.filter(story => story.node.lang === this.lang)
+      filteredLocations.forEach(el => {
         el = el.node;
         if (el.content) {
           
