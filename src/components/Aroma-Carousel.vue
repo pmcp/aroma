@@ -2,9 +2,10 @@
 
 
 <section class="bg-primary ">
-<div class="loop-tabs container max-width-adaptive-lg ">
-  <div class="grid grid-gap-md">
-    <div class="loop-tabs__content col-7@md flex flex-column flex-column-reverse@md justify-center@md text-center text-left@md">
+<div class="loop-tabs  container max-width-adaptive-xl ">
+  <div class="grid grid-gap-md padding-md padding-y-lg">
+    <!-- <div class="col-2@md"></div> -->
+    <div class="loop-tabs__content col-7@md col-12@sm flex flex-column flex-column-reverse@md justify-center@md text-center text-left@md">
       <ul class="loop-tabs__controls  flex flex-center flex-wrap flex-column@md items-start@md">
         <li 
           v-for="(i, index) in content.items"
@@ -16,8 +17,8 @@
         </li>
       </ul>
     </div>
-    <div class="loop-tabs__media col-5@md" aria-hidden="true">
-      <ul class="loop-tabs__assets ">
+    <div class="loop-tabs__media col-12 col-5@md col-12@sm " aria-hidden="true">
+      <ul class="loop-tabs__assets width-100%">
         <li v-for="(i, index) in content.items"
             :key="`images-${index}`" class="loop-tabs__asset " :class="{'loop-tabs__asset--selected': index === active}">
           
@@ -90,10 +91,10 @@ export default {
 }
 
 .aroma-loop__caption {
-  
-  position: relative;
-  top: .2rem;
-  left: 19%;
+  color: var(--color-primary-lighter);
+  // position: relative;
+  // top: .2rem;
+  // left: 19%;
 }
 
 .aroma-tab {
@@ -118,8 +119,8 @@ figure {
   }
 }
 .loop-tabs__control {
-  width: 150%;
-  color: var(--color-primary-lightest) !important;
+  width: 112%;
+  color: var(--color-primary-lightest ) !important;
   &::before {
     
     background-color: transparent !important;
@@ -145,21 +146,27 @@ figure {
   height: 100%;
   width: 100%;
   background-size: cover;
+
 }
 
-@media (min-width: 1024px) {
-  .loop-tabs {
-    position: relative;
-  
+@media (max-width: 1024px) {
+.loop-tabs__control {
+  text-align: center;
+
+    &--selected {
+    background: linear-gradient(
+      -90deg,
+      transparent 0%,
+      var(--color-primary-light) 100%
+    ) !important;
   }
+
+}
 
 
   .loop-tabs__assets {
-    min-width: 140%;
-    // clip-path: polygon(0 0, 100% 0, 100% 100%, 20.5% 100%);
-    figcaption {
-      text-indent: 20%;
-    }
+    width: 100%;
+    height: 20rem;
   }
 }
 </style>
