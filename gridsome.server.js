@@ -31,14 +31,12 @@ module.exports = function (api) {
 
     
     data.allStoryblokEntry.edges.forEach(({ node }) => {
-
       let slug = '';
       if(node.slug === 'home') {
         slug = '/'
       } else {
         slug = '/' + node.slug
       }
-      
       if(node.lang !== 'default') slug = `/${node.lang}${slug}`;
 
       // If there is a slug chosen by the editor, use that one.
@@ -48,7 +46,7 @@ module.exports = function (api) {
       if(node.lang === 'default' && node.content.slug_fr !== undefined) slug = `/${node.content.slug_fr}`;
   
       
-      console.log(slug)
+      
       
       createPage({
         path: slug,
