@@ -60,8 +60,8 @@ export default {
     },
     loopTabs(){
       if(this.touched) return;
-      this.active++
-      setTimeout(this.loopTabs, 4000)
+      (this.active === this.content.items.length-1) ? this.active = 0 : this.active++;
+      setTimeout(this.loopTabs,4000)
     }
   },
   mounted () {
