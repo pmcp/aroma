@@ -21,18 +21,20 @@ export default {
       
       if (this.content) {
         // Fix  for captions in carousel
-        console.log('true 1', typeof this.content.caption)
-        if(typeof this.content.caption === 'string') {
-          return;
-        } else if(this.content.caption && this.content.caption.content) {
-          console.log(this.content.caption)
-          return this.$storyapi.richTextResolver.render(this.content.caption);
+        if(this.content.caption) {
+          if (typeof this.content.caption === 'string') {
+            return;
+          } else {
+            return this.$storyapi.richTextResolver.render(this.content.caption);
+          }
+          
         }
-        
-        if (this.content.type === "doc") text = this.content;
-        else {
+
+        if (this.content.type === "doc") {
+          text = this.content;
+          if (text) return text ? this.$storyapi.richTextResolver.render(text) : "";
+        } else {
           text = this.content.text;
-          console.log(this.content)
           if (text) return text ? this.$storyapi.richTextResolver.render(text) : "";
         }
         
