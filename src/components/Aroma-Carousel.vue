@@ -23,7 +23,10 @@
             :key="`images-${index}`" class="loop-tabs__asset " :class="{'loop-tabs__asset--selected': index === active}">
           
             <div class="aroma-loop__image" :style="{'backgroundImage':'url('+ i.image  +')'}"></div>
-            <div class="aroma-loop__caption ">{{ i.caption }}</div>
+            <div class="aroma-loop__caption ">
+              <aroma-content-text  :content="i"></aroma-content-text>
+            </div>
+            
         </li>
 
        
