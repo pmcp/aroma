@@ -18,22 +18,24 @@ export default {
   computed: {
     richtext() {
       let text = {};
+      
       if (this.content) {
         // Fix  for captions in carousel
-        if(this.content.caption) {
-          this.caption = true;
-          return text ? this.$storyapi.richTextResolver.render(this.content.caption) : "";
+        console.log('true 1', typeof this.content.caption)
+        if(typeof this.content.caption === 'string') {
+          return;
+        } else if(this.content.caption && this.content.caption.content) {
+          console.log(this.content.caption)
+          return this.$storyapi.richTextResolver.render(this.content.caption);
         }
         
         if (this.content.type === "doc") text = this.content;
         else {
-          console.log(this.content.text)
           text = this.content.text;
+          console.log(this.content)
+          if (text) return text ? this.$storyapi.richTextResolver.render(text) : "";
         }
-        if (text)
         
-      
-          return text ? this.$storyapi.richTextResolver.render(text) : "";
       }
     }
   }
