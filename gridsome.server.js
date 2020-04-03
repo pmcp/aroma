@@ -33,7 +33,7 @@ module.exports = function (api) {
     data.allStoryblokEntry.edges.forEach(({ node }) => {
       
       let slug = '';
-      if(node.slug === 'home') {
+      if(node.slug === 'Accueil') {
         slug = '/'
       } else {
         slug = '/' + node.slug
@@ -44,9 +44,6 @@ module.exports = function (api) {
       
       if(node.lang === 'default' && node.content.slug_fr !== undefined && node.content.slug_fr !== '') slug = `/${node.content.slug_fr}`;
   
-      
-      
-      
       createPage({
         path: slug,
         component: './src/templates/Page.vue',
@@ -54,10 +51,6 @@ module.exports = function (api) {
           id: node.id
         }
       })
-
-
-      
-      
 
 
       // if(node.slug === 'home') {

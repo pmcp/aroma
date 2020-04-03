@@ -17,15 +17,16 @@ export default {
   props: ["content"],
   computed: {
     richtext() {
-      let text = {};
+      let text = null;
       
       if (this.content) {
         // Fix  for captions in carousel
+        console.log('test', this.content)
         if(this.content.caption) {
           if (typeof this.content.caption === 'string') {
-            return;
+            text = "";
           } else {
-            return this.$storyapi.richTextResolver.render(this.content.caption);
+            text = this.$storyapi.richTextResolver.render(this.content.caption);
           }
           
         }
