@@ -20,8 +20,8 @@ export default {
       let text = null;
       
       if (this.content) {
+        console.log(this.content)
         // Fix  for captions in carousel
-        console.log('test', this.content)
         if(this.content.caption) {
           if (typeof this.content.caption === 'string') {
             text = "";
@@ -36,7 +36,13 @@ export default {
           if (text) return text ? this.$storyapi.richTextResolver.render(text) : "";
         } else {
           text = this.content.text;
-          if (text) return text ? this.$storyapi.richTextResolver.render(text) : "";
+          if (text) {
+            if(typeof text === 'string') {
+              return text;
+            } else {
+              return text ? this.$storyapi.richTextResolver.render(text) : "";
+            }
+          }
         }
         
       }
