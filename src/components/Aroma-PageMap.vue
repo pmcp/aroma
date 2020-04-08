@@ -1,10 +1,12 @@
 <template>
   <div>
+    
     <aroma-map
       :locations="locations"
       :center="center"
       :zoom="zoomMap"
     ></aroma-map>  
+    
     <div class="container max-width-md  margin-top-xxl margin-bottom-xxl">
       <div class="parent grid grid-gap-xs  ">
         <aroma-organisation-detail v-for="org in orgs" :key="org.node.uuid" :org="org.node" @click.native="flyTo(org.node.content.address_lat, org.node.content.address_long)">
@@ -48,7 +50,7 @@ export default {
   },
   computed: {
     orgs() {
-      console.log(this.$static.allStoryblokEntry.edges)
+      // console.log(this.$static.allStoryblokEntry.edges)
       return this.$static.allStoryblokEntry.edges.filter(story => story.node.lang === this.lang)
     },
     center() {
@@ -63,8 +65,10 @@ export default {
       filteredLocations.forEach(el => {
         el = el.node;
         if (el.content) {
-          console.log(el.content)
+          // console.log(el.content)
           
+          
+          const photo = this.$options.filters.transformImage(el.content.photo, '100x0')
           locations.push({
             content: el.content,
             type: "Feature",
@@ -72,10 +76,18 @@ export default {
               type: "Point",
               coordinates: [el.content.address_lat, el.content.address_long]
             },
+            
             properties: {
               title: el.content.name,
               icon: el.content.type,
-              description: `<strong>${el.content.name}</strong><p>${el.content.street} ${el.content.number}<br>${el.content.zip} ${el.content.city}</p>`
+              
+              description: `<div class="author author--featured">
+                              <div class="author__img-wrapper"><img src="${photo}"></div>
+                              <strong>${el.content.organisation}</strong>
+                              <p>${el.content.name}
+                              <br>${el.content.city} ${el.content.country}
+                            </div>
+                              `
             }
           });
         }
@@ -88,7 +100,9 @@ export default {
   methods: {
     flyTo(lat, long) {
       this.content.lat = long;
-      this.content.long = lat
+      this.content.long = lat;
+
+      
     }
   },
   created () {

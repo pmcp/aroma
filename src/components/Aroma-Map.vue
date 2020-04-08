@@ -40,11 +40,13 @@ export default {
     createMap() {
       const mapboxgl = require("mapbox-gl/dist/mapbox-gl");
       mapboxgl.accessToken = process.env.GRIDSOME_MAPBOX_API;
+      console.log(this.center)
       const mapOptions = {
         container: "map",
         style: this.currentStyle,
-        center: this.center,
-        zoom: this.zoom,
+        // center: [ 49.5018055, 5.9505773 ],
+        center: [5.943450, 49.500450],
+        zoom: 6,
         pitch: 0
       };
       const map = (this.map = new mapboxgl.Map(mapOptions));
@@ -169,6 +171,24 @@ export default {
           // Make the icon available to the mao
           this.addMarkerIcon(this.locations);
         }
+      });
+
+      map.on("click", "partenairs", function(e) {
+        
+        var coordinates = e.features[0].geometry.coordinates.slice();
+        var description = e.features[0].properties.description;
+
+        // Ensure that if the map is zoomed out such that multiple
+        // copies of the feature are visible, the popup appears
+        // over the copy being pointed to.
+        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+          coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+        }
+
+        new mapboxgl.Popup()
+          .setLngLat(coordinates)
+          .setHTML(description)
+          .addTo(map);
       });
 
       map.on("click", "acheteurs", function(e) {
