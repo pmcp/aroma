@@ -99,10 +99,13 @@ export default {
   },
   methods: {
     flyTo(lat, long) {
+      this.content.zoom = 10;
       this.content.lat = long;
       this.content.long = lat;
-
       
+      
+
+
     }
   },
   created () {
