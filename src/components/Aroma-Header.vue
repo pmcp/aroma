@@ -152,7 +152,7 @@ export default {
       return this.$static.allStoryblokEntry.edges.find(element => {
         
         if (element.node.uuid == l.url.id) {
-          console.log(element.node.uuid, element.node.slug)
+          // console.log(element.node.uuid, element.node.slug)
           
           if (element.node.uuid === "96f406c6-8403-4ac6-8708-1a165495af79") {
             

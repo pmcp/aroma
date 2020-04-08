@@ -136,7 +136,7 @@ export default {
         )
           slug = `/de/${l.content.slug_de}`;
       }
-      console.log(slug)
+      // console.log(slug)
       return slug;
     }
   }

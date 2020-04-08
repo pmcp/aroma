@@ -3156,7 +3156,6 @@ function initContactMap(wrapper) {
   //initialize the Tab objects
 	var loopTabs = document.getElementsByClassName('js-loop-tabs');
 	if( loopTabs.length > 0 ) {
-    console.log('test')
 		var reducedMotion = Util.osHasReducedMotion(),
 			cssVariableSupport = ('CSS' in window) && Util.cssSupports('color', 'var(--var)');
 		for( var i = 0; i < loopTabs.length; i++) {
