@@ -17,24 +17,34 @@ export default {
   props: ["content"],
   computed: {
     richtext() {
+      
       let text = null;
       
       if (this.content) {
-        console.log(this.content)
+        
         // Fix  for captions in carousel
-        if(this.content.caption) {
-          if (typeof this.content.caption === 'string') {
-            text = "";
+        
+        if(this.content.caption !== undefined) {
+          if (typeof this.content.caption === 'string') {  
+            return this.content.caption
           } else {
             text = this.$storyapi.richTextResolver.render(this.content.caption);
+            return text;
           }
           
         }
 
         if (this.content.type === "doc") {
+          
           text = this.content;
+          if(text.type === "doc") {
+            
+            
+            return this.$storyapi.richTextResolver.render(text);
+          }
           if (text) return text ? this.$storyapi.richTextResolver.render(text) : "";
         } else {
+          
           text = this.content.text;
           if (text) {
             if(typeof text === 'string') {
@@ -52,8 +62,8 @@ export default {
 </script>
 <style>
 
-.caption p a {
+.aroma-loop__caption a {
   
-  color: var(--color-primary-lighter) !important;
+  color: var(--color-white) !important;
 }
 </style>

@@ -24,7 +24,7 @@
           
             <div class="aroma-loop__image" :style="{'backgroundImage':'url('+ i.image  +')'}"></div>
             <div class="aroma-loop__caption ">
-              <aroma-content-text  :content="i.caption"></aroma-content-text>
+              <aroma-content-text  :content="i"></aroma-content-text>
             </div>
             
         </li>
