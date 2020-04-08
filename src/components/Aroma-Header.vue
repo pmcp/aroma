@@ -22,31 +22,60 @@
         role="navigation"
       >
 
-      
-        <div class="f-header__nav-grid justify-end@md container max-width-lg" v-if="nav">
-          <ul v-if="nav.content" class="f-header__list flex-grow flex-basis-0 ">
+        <div
+          class="f-header__nav-grid justify-end@md container max-width-lg"
+          v-if="nav"
+        >
+          <ul
+            v-if="nav.content"
+            class="f-header__list flex-grow flex-basis-0 "
+          >
             <li
               v-for="l in nav.content.items"
               :key="l.uuid"
               class="f-header__item padding-x-xs"
             >
-            
-            <g-link :to="createUrl(l).link">  {{ l.name }}</g-link>
-              
+              <!-- {{ l }} -->
+              <g-link :to="createUrl(l).link"> {{ l.name }}</g-link>
+
             </li>
           </ul>
 
           <ul class="f-header__list  flex-basis-0 justify-end@md">
 
-            <li v-if="lang === 'default'" class="f-header__item">
-              <g-link v-if="current.content.slug_de" :to="'/de/' + current.content.slug_de">DE</g-link>
-              <g-link v-else-if="current.slug === 'home'" :to="'/de/'">DE</g-link>
-              <g-link v-else :to="'/de/' + current.slug">DE</g-link>
+            <li
+              v-if="lang === 'default'"
+              class="f-header__item"
+            >
+              <g-link
+                v-if="current.content.slug_de"
+                :to="'/de/' + current.content.slug_de"
+              >DE</g-link>
+              <g-link
+                v-else-if="current.slug === 'home'"
+                :to="'/de/'"
+              >DE</g-link>
+              <g-link
+                v-else
+                :to="'/de/' + current.slug"
+              >DE</g-link>
             </li>
-            <li v-else class="f-header__item">
-              <g-link v-if="current.content.slug_fr" :to="current.content.slug_fr">FR</g-link>
-              <g-link v-else-if="current.slug === 'home'" :to="'/'">FR</g-link>
-              <g-link v-else :to="'/' + current.slug">FR</g-link>
+            <li
+              v-else
+              class="f-header__item"
+            >
+              <g-link
+                v-if="current.content.slug_fr"
+                :to="current.content.slug_fr"
+              >FR</g-link>
+              <g-link
+                v-else-if="current.slug === 'home'"
+                :to="'/'"
+              >FR</g-link>
+              <g-link
+                v-else
+                :to="'/' + current.slug"
+              >FR</g-link>
             </li>
             <li class="f-header__item">
 
@@ -105,12 +134,12 @@ export default {
     },
     lang: {
       type: String,
-      default: 'default'
+      default: "default"
     },
     current: {
       type: Object,
       default: () => ({})
-    },
+    }
   },
   components: {
     AromaSearch,
@@ -119,35 +148,40 @@ export default {
   },
   methods: {
     createUrl(l) {
-      let slug = '/';
+      let slug = "/";
       return this.$static.allStoryblokEntry.edges.find(element => {
-        if(element.node.uuid == l.url.id) {
-          if(element.node.slug === 'home') {
-            if(this.lang !== 'default') {    
-              slug = `/${this.lang}`;
-            }
-        } else {
-          slug = '/' + element.node.slug
-          if(this.lang !== 'default') slug = `/de${slug}`;
-          // If there is a slug chosen by the editor, use that one.
-          if(this.lang === 'default' && element.node.content.slug_fr && element.node.content.slug_fr !== '') slug = `/${element.node.content.slug_fr}`;
-          if(this.lang !== 'default' && element.node.content.slug_de && element.node.content.slug_de !== '') slug = `/de/${element.node.content.slug_de}`;
-          
-        }
-        element.link = slug;
-        return element;
         
+        if (element.node.uuid == l.url.id) {
+          console.log(element.node.uuid, element.node.slug)
+          
+          if (element.node.uuid === "96f406c6-8403-4ac6-8708-1a165495af79") {
+            
+            slug = `/`;
+            if (this.lang !== "default") {
+              slug = `/${this.lang}`;
+              // console.log(slug);
+            }
+          } else {
+            slug = "/" + element.node.slug;
+            if (this.lang !== "default") slug = `/de${slug}`;
+            // If there is a slug chosen by the editor, use that one.
+            if (
+              this.lang === "default" &&
+              element.node.content.slug_fr &&
+              element.node.content.slug_fr !== ""
+            )
+              slug = `/${element.node.content.slug_fr}`;
+            if (
+              this.lang !== "default" &&
+              element.node.content.slug_de &&
+              element.node.content.slug_de !== ""
+            )
+              slug = `/de/${element.node.content.slug_de}`;
+          }
+          element.link = slug;
+          return element;
         }
-      })
-
-            
-            
-            
-          
-          
-            
-          
-
+      });
 
       // if(l.url.cached_url.substr(0, 4) === '/de/') {
       //   return l.url.cached_url.replace('/de/','');
@@ -155,12 +189,11 @@ export default {
       //   return l.url.cached_url
       // }
     }
-  },
+  }
 };
 </script>
 
 <style scoped>
-
 .aroma-nav {
   z-index: 3;
   background-color: var(--color-primary-darker);
@@ -178,11 +211,10 @@ export default {
   border-bottom: none;
   text-align: center;
 }
-  
-.f-header__item a {
-    text-decoration: none;
-  }
 
+.f-header__item a {
+  text-decoration: none;
+}
 
 .anim-menu-btn {
   color: var(--color-primary-lightest);
