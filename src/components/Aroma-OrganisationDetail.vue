@@ -1,10 +1,16 @@
 <template>
 
   <div class="author author--featured col-4@sm ">
-    
-  <a href="#0" class="author__img-wrapper">
-    <img :src="org.content.photo | transformImage('100x0')" alt="Author picture">
-  </a>
+
+    <a
+      href="#0"
+      class="author__img-wrapper"
+    >
+      <img
+        :src="org.content.photo | transformImage('100x0')"
+        alt="Author picture"
+      >
+    </a>
     <!-- <div v-if="org.content" class="author__content text-component aroma-organisation__link">
       <h2>{{ org.content.name }}</h2>
       <p>{{ org.content.street }} {{ org.content.number }}
@@ -12,12 +18,13 @@
       </p>
     </div> -->
 
-    <div v-if="org.content" class="author__content text-component aroma-organisation__link">
-      <h2>{{ org.content.organisation }}</h2>
-      <p>{{ org.content.name }}
-      <p>{{ org.content.city }}, {{ org.content.country }}</p>
-      
-      
+    <div
+      v-if="org.content"
+      class="author__content text-component aroma-organisation__link"
+    >
+      <h2 style="font-weight:800">{{ org.content.organisation }}</h2>
+      <div>{{ org.content.name }}</div>
+        <div>{{ org.content.city }}, {{ org.content.country }}</div>
     </div>
 
     <ul class="flex flex-gap-xs flex-wrap justify-center">
@@ -43,7 +50,7 @@
       </li> -->
     </ul>
   </div>
-  
+
 </template>
 
 
@@ -68,12 +75,12 @@
 <script>
 export default {
   props: {
- org: {
+    org: {
       type: [Object, String],
       default: () => ({})
     }
-  },
-}
+  }
+};
 </script>
 
 
