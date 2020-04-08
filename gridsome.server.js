@@ -33,7 +33,9 @@ module.exports = function (api) {
     data.allStoryblokEntry.edges.forEach(({ node }) => {
       
       let slug = '';
-      if(node.slug === 'Accueil') {
+      // console.log(node.uuid === '96f406c6-8403-4ac6-8708-1a165495af79')
+
+      if(node.uuid === '96f406c6-8403-4ac6-8708-1a165495af79') {
         slug = '/'
       } else {
         slug = '/' + node.slug
