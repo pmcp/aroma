@@ -165,6 +165,7 @@ export default {
         map.addImage("pulsing-dot-one", pulsingDotOne, { pixelRatio: 2 });
         map.addImage("pulsing-dot-two", pulsingDotTwo, { pixelRatio: 2 });
         if (this.locations.length > 0) {
+        
           // Make the icon available to the mao
           this.addMarkerIcon(this.locations);
         }
@@ -218,15 +219,15 @@ export default {
           }
         }
       });
-      
+    
       this.map.addLayer({
-        id: "producteurs",
+        id: "partenairs",
         type: "symbol",
         source: {
           type: "geojson",
           data: {
             type: "FeatureCollection",
-            features: groupedLocations.producteur
+            features: groupedLocations.partenairs
           }
         },
         layout: {
@@ -234,20 +235,35 @@ export default {
         }
       });
 
-      this.map.addLayer({
-        id: "acheteurs",
-        type: "symbol",
-        source: {
-          type: "geojson",
-          data: {
-            type: "FeatureCollection",
-            features: groupedLocations.acheteur
-          }
-        },
-        layout: {
-          "icon-image": "pulsing-dot-two"
-        }
-      });
+      // this.map.addLayer({
+      //   id: "producteurs",
+      //   type: "symbol",
+      //   source: {
+      //     type: "geojson",
+      //     data: {
+      //       type: "FeatureCollection",
+      //       features: groupedLocations.producteur
+      //     }
+      //   },
+      //   layout: {
+      //     "icon-image": "pulsing-dot-one"
+      //   }
+      // });
+
+      // this.map.addLayer({
+      //   id: "acheteurs",
+      //   type: "symbol",
+      //   source: {
+      //     type: "geojson",
+      //     data: {
+      //       type: "FeatureCollection",
+      //       features: groupedLocations.acheteur
+      //     }
+      //   },
+      //   layout: {
+      //     "icon-image": "pulsing-dot-two"
+      //   }
+      // });
     },
     flyTo(coordinates) {
       this.map.flyTo({ center: coordinates });

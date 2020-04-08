@@ -63,6 +63,7 @@ export default {
       filteredLocations.forEach(el => {
         el = el.node;
         if (el.content) {
+          console.log(el.content)
           
           locations.push({
             content: el.content,
@@ -79,6 +80,7 @@ export default {
           });
         }
       });
+      
       return locations;
     },
     
