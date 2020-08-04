@@ -38,6 +38,7 @@ import AromaContentText from '~/components/Aroma-ContentText.vue'
 import AromaContentImages from '~/components/Aroma-ContentImages'
 import AromaContentVideo from '~/components/Aroma-ContentVideo'
 import AromaContentMap from '~/components/Aroma-ContentMap'
+import AromaContentSelectedContacts from '~/components/Aroma-ContentSelectedContacts'
 
 
 export default function (Vue, { router, head, isClient }) {
@@ -68,6 +69,7 @@ export default function (Vue, { router, head, isClient }) {
   Vue.component('aroma-content-images', AromaContentImages)
   Vue.component('aroma-content-video', AromaContentVideo)
   Vue.component('aroma-content-map', AromaContentMap)
+  Vue.component('aroma-content-selected-contacts', AromaContentSelectedContacts)
   
   
   // Filter to use the storyblok image service

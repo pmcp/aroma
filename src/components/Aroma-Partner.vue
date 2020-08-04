@@ -1,16 +1,25 @@
 <template>
   <div class="padding-sm">
     <template v-if="fetchedContent">
-      
-      <a v-if="fetchedContent.content.url" :href="fetchedContent.content.url.url" target="blank">
-        
-        
-        <g-image :src="fetchedContent.content.logo | transformImage('400x0')" width="500"></g-image>
+
+      <a
+        v-if="fetchedContent.content.url"
+        :href="fetchedContent.content.url.url"
+        target="blank"
+      >
+
+        <g-image
+          :src="fetchedContent.content.logo | transformImage('400x0')"
+          width="500"
+        ></g-image>
       </a>
-      
-      <g-image v-else :src="fetchedContent.content.logo.url | transformImage('400x0')" width="500"></g-image>
-      
-      
+
+      <g-image
+        v-else
+        :src="fetchedContent.content.logo.url | transformImage('400x0')"
+        width="500"
+      ></g-image>
+
     </template>
   </div>
 </template>
@@ -43,18 +52,17 @@ export default {
   },
   computed: {
     fetchedContent() {
-      if(typeof this.content === Object ) {
+      if (typeof this.content === Object) {
         this.fetchedContent = content;
       } else {
         let partner = this.$static.allStoryblokEntry.edges.find(element => {
-            return element.node.uuid == this.content
-          })
-          if(partner) {
-            return partner.node
-          }
-          
+          return element.node.uuid == this.content;
+        });
+        if (partner) {
+          return partner.node;
+        }
       }
-      // return this.data 
+      // return this.data
     }
   },
   // data() {
@@ -62,7 +70,7 @@ export default {
   //     fetchedContent: null
   //   }
   // },
-  
+
   // mounted () {
   //    if(typeof this.content === Object ) {
   //       this.fetchedContent = content;
@@ -77,20 +85,22 @@ export default {
   // },
   methods: {
     fetchPartner(id) {
-      if(window.storyblok) {
-        window.storyblok.get({
-          by_uuids: id,
-          slug: "/",  // adding slug "/" will make queries work again
-          version: 'draft',
-        }, (data) => {
-          this.fetchedContent = data.stories[0]
-        })
+      if (window.storyblok) {
+        window.storyblok.get(
+          {
+            by_uuids: id,
+            slug: "/", // adding slug "/" will make queries work again
+            version: "draft"
+          },
+          data => {
+            this.fetchedContent = data.stories[0];
+          }
+        );
       }
-    },
-  },
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-
 </style>

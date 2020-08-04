@@ -52,7 +52,7 @@
                 :to="'/de/' + current.content.slug_de"
               >DE</g-link>
               <g-link
-                v-else-if="current.slug === 'home'"
+                v-else-if="current.slug === 'Accueil'"
                 :to="'/de/'"
               >DE</g-link>
               <g-link
@@ -69,7 +69,7 @@
                 :to="current.content.slug_fr"
               >FR</g-link>
               <g-link
-                v-else-if="current.slug === 'home'"
+                v-else-if="current.slug === 'Accueil'"
                 :to="'/'"
               >FR</g-link>
               <g-link

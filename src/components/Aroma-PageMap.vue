@@ -50,7 +50,7 @@ export default {
   },
   computed: {
     orgs() {
-      // console.log(this.$static.allStoryblokEntry.edges)
+      console.log(this.$static.allStoryblokEntry.edges)
       return this.$static.allStoryblokEntry.edges.filter(story => story.node.lang === this.lang)
     },
     center() {

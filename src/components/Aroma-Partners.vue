@@ -20,7 +20,7 @@
         :key="'poweredbypartner-' + key"
         :content="partner"
       ></aroma-partner> -->
-    </div>
+    <!-- </div> -->
 
   </section>
 </template>

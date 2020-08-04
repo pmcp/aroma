@@ -109,8 +109,8 @@ export default {
 <style scoped>
 .aroma-hero {
   background-size: cover;
-  height: 70vh;
-  min-height:600px;
+  height: 40vh;
+  min-height: 500px;
 
 }
 .aroma-hero--small {

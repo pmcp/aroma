@@ -10,8 +10,9 @@
         <li 
           v-for="(i, index) in content.items"
           @click="setActive(index)"
-          :key="`text-${index}`">
-            <a :href="`#tab${index}`" class="loop-tabs__control " :class="{'loop-tabs__control--selected': index === active}">
+          :key="`text-${index}`"
+          >
+            <a :href="`#tab${index}`" class="loop-tabs__control " style="width:100%;" :class="{'loop-tabs__control--selected': index === active}">
              {{ i.text}}
             </a>
         </li>
@@ -23,7 +24,7 @@
             :key="`images-${index}`" class="loop-tabs__asset " :class="{'loop-tabs__asset--selected': index === active}">
           
             <div class="aroma-loop__image" :style="{'backgroundImage':'url('+ i.image  +')'}"></div>
-            <div class="aroma-loop__caption ">
+            <div class="aroma-loop__caption text-sm">
               <aroma-content-text  :content="i"></aroma-content-text>
             </div>
             

@@ -61,7 +61,7 @@ module.exports = {
         imageDirectory: 'storyblok_images',
         params: {
           resolve_links: 'story',
-          resolve_relations: 'navigation, preview-articles.articles, page-map.organisations,partners.partners,partners.poweredby,existing_element.element,articles'
+          resolve_relations: 'navigation, preview-articles.articles, page-map.organisations, partners.partners, partners.poweredby, existing_element.element, articles, contacts.contacts'
         },
 
       }

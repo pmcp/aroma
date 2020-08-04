@@ -1,6 +1,7 @@
 <template>
   <div class="articles margin-bottom-xxl">
     <aroma-hero
+      :logos="!content.hide_logos"
       :expanded="content.header_expanded"
       :cover="content.cover_image"
       :video="content.cover_video"

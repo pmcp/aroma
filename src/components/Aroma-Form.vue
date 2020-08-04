@@ -103,6 +103,16 @@
   </section>
 
 </template>
+
+<static-query>
+query {
+  allPage(filter: { path: { eq: "/"}}) {
+    path,
+    context
+  }
+}
+</static-query>
+
 <script>
 export default {
   props: {
