@@ -10,8 +10,7 @@
       <template v-if="content.subtext" v-slot:subtext>{{ content.subtext }}</template>
     </aroma-hero>
     <section class="container max-width-adaptive-sm margin-bottom-xl"> 
-      
-      <component class="padding-y-md text-component" :class="{'text-component__block--outset': c.component == 'images' ||  c.component == 'video'}" v-for="c in content.content" :key="c._uid" :is="`aroma-content-${c.component}`" :content="c">
+      <component class="padding-y-md text-component" :class="{'text-component__block--outset': c.component == 'images' ||  c.component == 'video'}" v-for="c in content.content" :key="c._uid" :is="`aroma-content-${c.component}`" :content="c" :lang="lang">
       </component>
     </section>
   </div>
@@ -25,6 +24,10 @@ export default {
     content: {
       type: Object,
       default: () => ({})
+    },
+    lang: {
+      type: String,
+      default: 'default'
     },
   },
   computed: {
