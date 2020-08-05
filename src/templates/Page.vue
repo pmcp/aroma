@@ -3,7 +3,6 @@
   <Layout class="padding-y-lg" :nav="$page.page.content.navigation" :lang="$page.page.lang" :current="$page.page"> 
     <!-- {{ $page.page.content.component }} -->
     <component v-if="$page.page && $page.page.content" :is="`aroma-${$page.page.content.component}`" :content="$page.page.content" :lang="$page.page.lang"></component>
-    
   </Layout>
 </template>
 
