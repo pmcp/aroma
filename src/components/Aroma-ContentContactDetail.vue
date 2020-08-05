@@ -1,6 +1,6 @@
 <template>
 
-  <div class="  ">
+  <div class="author author--featured  ">
 
     <div
       href="#0"
@@ -22,7 +22,7 @@
 
     <div
       v-if="org.content"
-      class="author__content text-component aroma-organisation__link"
+      class="author__content text-component "
     >
       <h2 style="font-weight:800">{{ org.content.organisation }}</h2>
       <div>{{ org.content.name }}</div>
