@@ -1,10 +1,10 @@
 <template>
   <div class="text-component__block grid">
-    <div class="col">
-      <h2 v-if="content.title" class="text-center">{{ content.title }}</h2>
-      <p v-if="content.description" class="text-center">{{ content.description }}</p>
+    <div class="col-3">
+      <h2 v-if="content.title" class=" padding-right-md">{{ content.title }}:</h2>
+      <p v-if="content.description" class=" padding-right-md">{{ content.description }}</p>
     </div>
-    <aroma-content-contact-detail class="col" :org="org[0].node">
+    <aroma-content-contact-detail class="col-9" :org="org[0].node">
     </aroma-content-contact-detail>
   </div>
 </template>
