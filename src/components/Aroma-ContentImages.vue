@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- {{ content.credit.content }} -->
     
     <template v-if="content.style === 'grid'">
       
@@ -11,6 +12,8 @@
           <figcaption>{{ image.name }}</figcaption>
         </figure>
       </div>
+      <span class="text-component aroma-credit"><aroma-content-text v-if="content.credit" :content="content.credit"></aroma-content-text></span>
+      
     </template>
 
     <template v-else>
@@ -41,5 +44,9 @@ export default {
 .col {
   min-width: 22%;
   flex-grow: 1;
+}
+.arom-credit {
+  font-size: var(--text-sm);
+  color: var(--color-contrast-medium);
 }
 </style>

@@ -71,16 +71,20 @@
             </p>
           </div>
         </template>
-      
+      <aroma-arrow ></aroma-arrow>
     </div>
-
+  
   </section>
 </template>
 
 
 
 <script>
+import AromaArrow from "~/components/Aroma-Arrow.vue";
 export default {
+  components: {
+    AromaArrow,
+  },
   props: {
     expanded: {
       type: Boolean,

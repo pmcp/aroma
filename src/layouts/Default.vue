@@ -11,6 +11,7 @@
 
 <script>
 import AromaHeader from "~/components/Aroma-Header.vue";
+
 import AromaFooter from "~/components/Aroma-Footer.vue";
 
 export default {
