@@ -143,7 +143,7 @@ export default {
           ...this.formData
         })
       })
-        .then(() => this.$router.push("/home"))
+        .then(() => this.$router.push("/"))
         .catch(error => alert(error));
     }
   }
