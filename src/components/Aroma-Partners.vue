@@ -2,7 +2,7 @@
   <section class="text-component text-center padding-y-xl ">
     <h2 class="text-lg">{{ content.title}}</h2>
     <div class=" container max-width-adaptive-xl">
-      <g-image class="width-100%" src="~/assets/img/bandeaupartenaires2.png" width="1000" alt="Image description here"/>
+      <g-image class="width-100%" src="~/assets/img/bandeaupartenaires2.jpg" width="1000" alt="Image description here"/>
     </div>
     <!-- <div class="parent grid padding-y-md justify-center ">
       <aroma-partner
