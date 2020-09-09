@@ -23,7 +23,7 @@
     <div
       v-if="org.content"
       class="author__content text-component aroma-organisation__link"
-    >x    
+    > 
       <h2 style="font-weight:800">{{ org.content.organisation }}</h2>
       <div>{{ org.content.name }}</div>   
       <div>{{ org.content.city }}<span v-if="org.content.country && org.content.city">,</span> {{ org.content.country }}</div>
