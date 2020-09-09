@@ -1,8 +1,26 @@
 <template>
   <div class="text-component__block ">
-    <figure class="media-wrapper">
-      <iframe width="560" height="315" :src="`https://www.youtube.com/embed/${content.id}`" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <figure
+      v-if="content.id"
+      class="media-wrapper"
+    >
+      <iframe
+        width="560"
+        height="315"
+        :src="`https://www.youtube.com/embed/${content.id}`"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
     </figure>
+    <video controls>
+      <source
+        :src="content.upload.filename"
+        type="video/mp4"
+      >
+
+    </video>
   </div>
 </template>
 
@@ -12,8 +30,8 @@ export default {
   props: {
     content: {
       type: Object,
-      default: () => ({})
-    }
+      default: () => ({}),
+    },
   },
 };
 </script>
