@@ -14,7 +14,7 @@
         allowfullscreen
       ></iframe>
     </figure>
-    <video controls>
+    <video controls v-if="content.upload">
       <source
         :src="content.upload.filename"
         type="video/mp4"
