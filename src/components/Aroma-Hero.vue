@@ -71,7 +71,8 @@
             </p>
           </div>
         </template>
-      <aroma-arrow ></aroma-arrow>
+        
+      <aroma-arrow v-if="home"></aroma-arrow>
     </div>
   
   </section>
@@ -89,6 +90,10 @@ export default {
     expanded: {
       type: Boolean,
       default: true
+    },
+    home: {
+      type: Boolean,
+      default: false
     },
     logos: {
       type: Boolean,
