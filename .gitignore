@@ -6,5 +6,3 @@ node_modules
 dist/**/*
 src/.temp/**/*
 
-src/.temp/
-src/.temp/now.js
