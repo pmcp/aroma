@@ -113,7 +113,11 @@ export default function (Vue, { router, head, isClient }) {
   head.script.push({
     src: '/cody-scripts-min.js',
     body: true
+  }),
+  head.script.push({
+    innerHTML: '!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/77ae044c98ea8d16123a5c018/05002afb33e4517b27d463dfd.js");',
+    type: 'text/javascript', charset: 'utf-8',
+    body: false
   })
-
 
 }
