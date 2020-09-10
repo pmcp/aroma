@@ -47,6 +47,7 @@
             id
             uuid
             full_slug
+            slug
             name
             content
           }
