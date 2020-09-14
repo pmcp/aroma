@@ -22,8 +22,8 @@
       <ul class="loop-tabs__assets width-100%">
         <li v-for="(i, index) in content.items"
             :key="`images-${index}`" class="loop-tabs__asset " :class="{'loop-tabs__asset--selected': index === active}">
-          
-            <div class="aroma-loop__image" :style="{'backgroundImage':'url('+ i.image  +')'}"></div>
+            <g-image class="aroma-loop__image" :src="i.image"  width="700"/>
+            <!-- <div class="aroma-loop__image" :style="{'backgroundImage':'url('+ i.image  +')'}"></div> -->
             <div class="aroma-loop__caption text-sm">
               <aroma-content-text  :content="i"></aroma-content-text>
             </div>
@@ -150,6 +150,7 @@ figure {
   height: 100%;
   width: 100%;
   background-size: cover;
+  object-fit: cover;
 
 }
 
