@@ -49,7 +49,7 @@ module.exports = {
       addStyleResource(config.module.rule('scss').oneOf(type))
     })
   },
-  siteName: 'Gridsome',
+  siteName: 'Aroma',
   plugins: [
     {
       use: 'gridsome-source-storyblok',
