@@ -1,13 +1,12 @@
 <template>
   <footer class="footer-v5 aroma-footer ">
     <div class="container max-width-lg padding-bottom-md">
-
+<!-- {{ $static.index.content}} -->
       <div class="footer-v5__body grid">
         <div class="col-8@lg">
           <div class="footer-v5__nav grid">
-            <div class="footer-v5__nav-group col-10@md">
-              <h2 class="footer-v5__nav-title">{{ $static.index.content.footer_title }}</h2>
-              <aroma-content-text :content="$static.index.content.footer_text"></aroma-content-text>
+            <div class="aroma-footer__top footer-v5__nav-group col-10@md">
+              <aroma-content-text :content="content.content.footer_1"></aroma-content-text>
             </div>
           </div>
         </div>
@@ -86,8 +85,10 @@
         </p>
       </div> -->
     </div>
-    <div class="aroma-footer__bottom padding-y-md">
-      <p class="container max-width-lg ">{{ $static.index.content.footer_bottombar }}</p>
+    <div class="aroma-footer__bottom padding-y-md ">
+      <div class="container max-width-lg padding-bottom-md">
+      <aroma-content-text :content="content.content.footer_2"></aroma-content-text>
+      </div>
     </div>
   </footer>
 
@@ -96,50 +97,65 @@
 
 <static-query>
 query {
-  index: storyblokEntry(id: "story-4122641-default") {
+  index: storyblokEntry(id: "story-27508905-default") {
     content 
   }
 }
 </static-query>
 
-<script>
+// <script>
+
 export default {
   props: {
-    footer: {
+    content: {
       type: Object,
       default: () => ({})
     }
   }
 };
 </script>
-
-
-<style scoped>
+<style>
 .aroma-footer {
   background-color: var(--color-primary-darker);
-  color: var(--color-primary-lightest);
-}
-h2 {
   color: var(--color-primary-lightest);
 }
 
 .aroma-footer__bottom {
   background-color: var(--color-primary-dark);
-}
-/* 
-.f-header__nav {
-  background-color: var(--color-primary-darker);
-}
-.f-header__nav::before {
-  border-bottom: none;
-}
-
-.f-header__item {
-  border-bottom: none;
-  text-align: center;
-}
-
-.anim-menu-btn {
   color: var(--color-primary-lightest);
-} */
+}
+
+.aroma-footer__bottom .text-component h2 {
+  
+    color: var(--color-primary-lightest);
+}
+
+.aroma-footer__bottom .text-component p {
+  
+    color: var(--color-primary-lightest);
+}
+
+.aroma-footer__bottom .text-component a {
+  
+    color: var(--color-primary-lightest);
+}
+
+
+
+.aroma-footer__top .text-component h2 {
+  
+    color: var(--color-primary-lightest);
+}
+
+.aroma-footer__top .text-component p {
+  
+    color: var(--color-primary-lightest);
+}
+
+.aroma-footer__top .text-component a {
+  
+    color: var(--color-primary-lightest);
+}
+
+
 </style>

@@ -4,7 +4,7 @@
     <main>
       <slot />
     </main>
-    <aroma-footer></aroma-footer>
+    <aroma-footer v-if="!editor" :lang="lang" :content="current.content.footer"></aroma-footer>
   </div>
 </template>
 
