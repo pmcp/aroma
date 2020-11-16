@@ -1,6 +1,6 @@
 <template>
   <footer class="footer-v5 aroma-footer ">
-    <div class="container max-width-lg padding-bottom-md">
+    <div class="container max-width-lg padding-bottom-md" v-if="content">
 <!-- {{ $static.index.content}} -->
       <div class="footer-v5__body grid">
         <div class="col-8@lg">
@@ -85,7 +85,7 @@
         </p>
       </div> -->
     </div>
-    <div class="aroma-footer__bottom padding-y-md ">
+    <div class="aroma-footer__bottom padding-y-md " v-if="content">
       <div class="container max-width-lg padding-bottom-md">
       <aroma-content-text v-if="content.content && content.content.footer_2" :content="content.content.footer_2"></aroma-content-text>
       </div>
