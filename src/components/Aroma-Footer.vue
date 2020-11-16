@@ -6,7 +6,7 @@
         <div class="col-8@lg">
           <div class="footer-v5__nav grid">
             <div class="aroma-footer__top footer-v5__nav-group col-10@md">
-              <aroma-content-text :content="content.content.footer_1"></aroma-content-text>
+              <aroma-content-text v-if="content.content && content.content.footer_1" :content="content.content.footer_1"></aroma-content-text>
             </div>
           </div>
         </div>
@@ -87,7 +87,7 @@
     </div>
     <div class="aroma-footer__bottom padding-y-md ">
       <div class="container max-width-lg padding-bottom-md">
-      <aroma-content-text :content="content.content.footer_2"></aroma-content-text>
+      <aroma-content-text v-if="content.content && content.content.footer_2" :content="content.content.footer_2"></aroma-content-text>
       </div>
     </div>
   </footer>
